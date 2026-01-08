@@ -10,8 +10,8 @@ def init_db(db_path=DB_PATH):
         CREATE TABLE IF NOT EXISTS cves (
             cve_id TEXT PRIMARY KEY,
             description TEXT,
-            exploit_instruction TEXT,
-            label_cwe TEXT,
+            cwe_name TEXT,
+            cwe_description TEXT,
             label_attack TEXT,
             severity TEXT,
             known_vulnerable_software TEXT,

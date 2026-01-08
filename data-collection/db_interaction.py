@@ -19,8 +19,8 @@ def add_cve(cve_data: Dict[str, Any], db_path: str = DB_PATH) -> None:
         INSERT OR REPLACE INTO cves (
             cve_id,
             description,
-            exploit_instruction,
-            label_cwe,
+            cwe_name,
+            cwe_description,
             label_attack,
             severity,
             known_vulnerable_software,
@@ -30,8 +30,8 @@ def add_cve(cve_data: Dict[str, Any], db_path: str = DB_PATH) -> None:
         (
             cve_data.get("cve_id"),
             cve_data.get("description"),
-            cve_data.get("exploit_instruction"),
-            cve_data.get("label_cwe"),
+            cve_data.get("cwe_name"),
+            cve_data.get("cwe_description"),
             cve_data.get("label_attack"),
             str(cve_data.get("severity")),
             json.dumps(
@@ -66,6 +66,30 @@ def delete_cve(cve_id: str, db_path: str = DB_PATH) -> None:
     conn.close()
 
 
+def delete_all_cves(db_path: str = DB_PATH) -> None:
+    """Delete all CVE entries from the database."""
+
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM cves")
+
+    conn.commit()
+    conn.close()
+
+
+def get_cve_count(db_path: str = DB_PATH) -> int:
+    """Get the total number of CVE entries in the database."""
+
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM cves")
+    count = cursor.fetchone()[0]
+    conn.close()
+
+    return count
+
 
 def get_cve_by_id(cve_id: str, db_path: str = DB_PATH) -> Optional[Dict[str, Any]]:
     """Retrieve a single CVE by its CVE ID."""
@@ -87,8 +111,8 @@ def get_cve_by_id(cve_id: str, db_path: str = DB_PATH) -> Optional[Dict[str, Any
     return {
         "cve_id": row[0],
         "description": row[1],
-        "exploit_instruction": row[2],
-        "label_cwe": row[3],
+        "cwe_name": row[2],
+        "cwe_description": row[3],
         "label_attack": row[4],
         "severity": row[5],
         "known_vulnerable_software": json.loads(row[6]),
@@ -112,8 +136,8 @@ def get_all_cves(db_path: str = DB_PATH) -> List[Dict[str, Any]]:
         results.append({
             "cve_id": row[0],
             "description": row[1],
-            "exploit_instruction": row[2],
-            "label_cwe": row[3],
+            "cwe_name": row[2],
+            "cwe_description": row[3],
             "label_attack": row[4],
             "severity": row[5],
             "known_vulnerable_software": json.loads(row[6]),
@@ -121,3 +145,19 @@ def get_all_cves(db_path: str = DB_PATH) -> List[Dict[str, Any]]:
         })
 
     return results
+
+
+if __name__ == "__main__":
+    """Allow user to select action"""
+    while True:
+        action = input("Select action: (1) Get CVE count, (2) Delete all CVEs, empty to exit: ")
+        if action == "":
+            break
+        elif action == "1":
+            count = get_cve_count()
+            print(f"Total CVEs in database: {count}")
+        elif action == "2":
+            delete_all_cves()
+            print("All CVEs have been deleted from the database.")
+        else:
+            print("Invalid action selected.")
