@@ -1,0 +1,9 @@
+Due to limitations of the NVD 2.0 API, CVE data was collected using 120-day time windows.
+CVEs were streamed and capped per year to avoid unnecessary API calls and memory overhead.
+
+
+we dont care about: vulnStatus = "Rejected"
+
+NVD does not provide exploitation instructions or detailed descriptions.
+
+CVEs collected from: 2025, 2024, 2023

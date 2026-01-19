@@ -1,0 +1,58 @@
+Models used:
+deepseek-r1:8b
+llama3.1
+qwen3:8b
+
+
+Method:
+Ask 3 models to label a CVE with a MITRE ATT&CK technique
+compare answers
+if they all disagree, make a note of it
+if two or more agree, save the technique in datbase
+
+
+
+downloading models to ollama:
+ollama run llama3.1:8b
+ollama run qwen3:8b
+ollama run deepseek-r1
+
+
+
+Problem:
+The purpouse of using a vulnerability (the MITRE ATT&CK tactic it falls under) depends on the attackers starting point and goal. The same vulnerability could be "inital access" or "pric esc" depending on the attackers current standing.
+
+How can i determine which technique is best at a large scale (thousands of CVEs) when each answer seems to depend on the specific engagement the CVE would be used in?
+
+sometimes many different techniques describe a vulnerability, and labeling the CVE with any of them would arguably be correct.
+
+A CVE:
+    has no intent
+    has no phase
+    has no attacker position
+
+vulnerability vs adversary behaviour
+
+Mapping CVEs to MITRE ATT&CK techniques is an abstraction that assumes a level of attacker context.
+
+CWE-269 (Improper Privilege Management) Could enable :
+    Initial Access
+    Privilege Escalation
+    Defense Evasion
+
+Test 1: 
+    llama3.1 good
+    deepseek: mid
+    qwen: poor
+
+Test 2:
+    llama3.1: good
+    deepseek: good
+    qwen: very bad (failed to provide only id)
+
+Test 3:
+    All 3 failed
+
+
+We need a bigger LLM and a framework for repeatable technique labeling.
+Collect more data on CVE before assigning technique?

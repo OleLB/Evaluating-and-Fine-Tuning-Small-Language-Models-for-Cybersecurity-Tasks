@@ -1,2 +1,0 @@
-Does an AI understand "cpe" strings and known vulnerable software data? Turn into natural language using another AI?
-Include CWE description?
