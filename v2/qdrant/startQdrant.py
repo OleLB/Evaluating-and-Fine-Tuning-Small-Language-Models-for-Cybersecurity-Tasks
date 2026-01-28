@@ -181,7 +181,7 @@ def wait_for_qdrant(max_attempts=30, delay=1):
     return False
 
 
-def main():
+def start_qdrant():
     """Main execution flow."""
     print("=" * 60)
     print("Qdrant Docker Container Manager")
@@ -243,4 +243,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    start_qdrant()

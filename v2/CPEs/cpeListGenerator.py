@@ -20,7 +20,7 @@ import sqlite3
 import csv
 import json
 
-DATABASE = "../db/cve_database.db"
+DATABASE = "../../db/cve_database.db"
 
 def extract_cpe_list(cursor):
     cursor.execute("SELECT cve_id, cpe_list FROM cves")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     cursor = conn.cursor()
     
     cpe_entries = extract_cpe_list(cursor)
-    save_cpe_to_csv(cpe_entries, '../db/cpe_list.csv')
+    save_cpe_to_csv(cpe_entries, '../../db/cpe_list.csv')
     
     conn.close()
     print(f"Saved {len(cpe_entries)} CPE entries to ../db/cpe_list.csv")

@@ -8,7 +8,7 @@ from qdrant.getEmbedding import generate_embedding
 # Initialize Qdrant client
 qdrant = QdrantClient(host="localhost", port=6333)
 
-def query_qdrant(input_text: str, collection_name: str = "", top_k: int = 20) -> str:
+def query_qdrant(input_text: str, collection_name: str = "cpe_vulnerabilities", top_k: int = 20) -> str:
     """
     Query Qdrant collection with text input.
     
@@ -65,28 +65,26 @@ def query_qdrant(input_text: str, collection_name: str = "", top_k: int = 20) ->
         print(f"Error querying Qdrant: {e}")
         return ""
     
-    # Format results
-    formatted_results = []
-    for point in points:
-        if point.payload is None:
-            continue
+    # # Format results
+    # formatted_results = []
+    # for point in points:
+    #     if point.payload is None:
+    #         continue
         
-        text = point.payload.get("text", "")
-        doc = point.payload.get("document_name", "Unknown document")
-        cve_id = point.payload.get("CVE_ID", "")
-        score = point.score
+    #     text = point.payload.get("text", "")
+    #     doc = point.payload.get("document_name", "Unknown document")
+    #     cve_id = point.payload.get("CVE_ID", "")
+    #     score = point.score
         
-        # Format with CVE_ID if available
-        if cve_id:
-            formatted_results.append(f"[{cve_id}] (Score: {score:.4f})\n{text}")
-        else:
-            formatted_results.append(f"[{doc}] (Score: {score:.4f})\n{text}")
+    #     # Format with CVE_ID if available
+    #     if cve_id:
+    #         formatted_results.append(f"[{cve_id}] (Score: {score:.4f})\n{text}")
+    #     else:
+    #         formatted_results.append(f"[{doc}] (Score: {score:.4f})\n{text}")
     
-    if not formatted_results:
-        return "No results found."
-    
-    context_for_gpt = "\n\n---\n\n".join(formatted_results)
-    return context_for_gpt
+    if not points:
+        return []
+    return points
 
 
 # Example usage

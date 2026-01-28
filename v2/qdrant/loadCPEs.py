@@ -31,6 +31,7 @@ def read_cpe_csv(file_path: str) -> List[Dict[str, Any]]:
             for row in reader:
                 cve_id = row.get('CVE_ID', '').strip()
                 human_readable = row.get('HUMAN_READABLE', '').strip()
+                cpe = row.get('CPE', '').strip()
                 
                 # Skip rows with missing data
                 if not cve_id or not human_readable:
@@ -39,7 +40,8 @@ def read_cpe_csv(file_path: str) -> List[Dict[str, Any]]:
                 documents.append({
                     'text': human_readable,
                     'metadata': {
-                        'CVE_ID': cve_id
+                        'CVE_ID': cve_id,
+                        'CPE': cpe
                     }
                 })
         
