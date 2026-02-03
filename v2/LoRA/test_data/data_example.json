@@ -1,0 +1,22 @@
+[
+  {
+    "instruction": "Rewrite the following CVE description using professional cybersecurity terminology.",
+    "input": "A buffer overflow in the XYZ parser allows remote attackers to execute arbitrary code via crafted input.",
+    "response": "This vulnerability is a buffer overflow in the XYZ parser that can be exploited remotely, potentially resulting in remote code execution (RCE)."
+  },
+  {
+    "instruction": "What type of vulnerability is described in the following CVE description?",
+    "input": "A buffer overflow in the XYZ parser allows remote attackers to execute arbitrary code via crafted input.",
+    "response": "The vulnerability is a buffer overflow that may lead to remote code execution."
+  },
+  {
+    "instruction": "What is the security impact of the following vulnerability?",
+    "input": "A buffer overflow in the XYZ parser allows remote attackers to execute arbitrary code via crafted input.",
+    "response": "Successful exploitation could allow an unauthenticated remote attacker to execute arbitrary code on the affected system."
+  },
+  {
+    "instruction": "Which Common Weakness Enumeration (CWE) category is most applicable to the following vulnerability?",
+    "input": "A buffer overflow in the XYZ parser allows remote attackers to execute arbitrary code via crafted input.",
+    "response": "This vulnerability most closely aligns with CWE-120: Buffer Copy without Checking Size of Input. This classification is inferred based on the description."
+  }
+]

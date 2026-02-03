@@ -36,6 +36,7 @@ def reset_tables():
     execute_query("DELETE FROM cves")
     execute_query("DELETE FROM attack_technique")
 
+
 def expand_cve_table():
     """Expand the 'cves' table to include a 'mitigation' column."""
     execute_query(expand_table_query)
@@ -43,6 +44,6 @@ def expand_cve_table():
 
 if __name__ == "__main__":
     # reset_tables()
-    expand_cve_table()
-    # execute_query(add_table_query)
+    # expand_cve_table()
+    execute_query(add_table_query)
     # print("Database modified: 'attack_technique' table added.")

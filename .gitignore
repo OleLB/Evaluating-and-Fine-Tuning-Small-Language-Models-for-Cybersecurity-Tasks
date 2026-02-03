@@ -1,3 +1,4 @@
 *.key
 CVE_records/*
 Datasets/*
+v2/LoRA/traning_data/*
