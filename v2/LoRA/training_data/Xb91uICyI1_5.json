@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify how both authenticated and unauthenticated attackers can exploit these XSS vulnerabilities.",
+    "input": "An issue was discovered in CALDERA 2.8.1. It contains multiple reflected, stored, and self XSS vulnerabilities that may be exploited by authenticated and unauthenticated attackers.",
+    "output": "Authenticated attackers can leverage their access credentials to exploit stored XSS vulnerabilities, while unauthenticated attackers may exploit reflected or self XSS to affect users who access crafted URLs or inputs."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Outline a method to mitigate this type of vulnerability.",
+    "input": "Dynamic Transaction Queuing System v1.0 was discovered to contain a SQL injection vulnerability via the id parameter at /admin/ajax.php?action=delete_window.",
+    "output": "To mitigate SQL Injection vulnerabilities, implement input validation, use prepared statements with parameterized queries, and employ web application firewalls (WAFs) to filter malicious inputs."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the potential impact of this vulnerability using appropriate acronyms.",
+    "input": "All versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector.",
+    "output": "Exploiting this vulnerability can lead to Sandbox Bypass (SbB), potentially allowing unauthorized code execution and compromising system integrity."
+}

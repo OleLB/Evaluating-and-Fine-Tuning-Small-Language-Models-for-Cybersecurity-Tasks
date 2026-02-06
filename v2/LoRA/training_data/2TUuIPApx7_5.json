@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how the SEH might be manipulated in this context.",
+    "input": "A denial service vulnerability has been found on  Hex Workshop affecting version 6.7, an attacker could send a command line file arguments and control the Structured Exception Handler (SEH) records resulting in a service shutdown.",
+    "output": "An attacker can send malicious command line arguments that interfere with Structured Exception Handler (SEH) records, causing the application to mishandle exceptions and crash."
+}

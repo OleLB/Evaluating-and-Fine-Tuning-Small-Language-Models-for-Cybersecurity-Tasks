@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability in standard cybersecurity terms.",
+    "input": "Cross Site Scripting vulnerability found in NetScoutnGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code via the creator parameter of the Alert Configuration page.",
+    "output": "The vulnerability is classified as a Cross-Site Scripting (XSS) attack."
+}

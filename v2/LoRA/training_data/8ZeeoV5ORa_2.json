@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described.",
+    "input": "Information disclosure due to an insecure hostname validation in the RYDE application 5.8.43 for Android and iOS allows attackers to take over an account via a deep link.",
+    "output": "The vulnerability is an Information Disclosure issue due to inadequate hostname validation."
+}

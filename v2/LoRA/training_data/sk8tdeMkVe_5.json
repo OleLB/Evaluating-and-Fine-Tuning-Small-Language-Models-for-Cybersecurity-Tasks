@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how an attacker might exploit this vulnerability.",
+    "input": "There's a flaw in bfd_pef_scan_start_address() of bfd/pef.c in binutils which could allow an attacker who is able to submit a crafted file to be processed by objdump to cause a NULL pointer dereference. The greatest threat of this flaw is to application availability. This flaw affects binutils versions prior to 2.34.",
+    "output": "An attacker could exploit this vulnerability by crafting a malicious file designed to be processed by the objdump utility. Submission of this file could lead to a NULL pointer dereference, causing the application to crash and potentially leading to a Denial of Service (DoS) condition."
+}

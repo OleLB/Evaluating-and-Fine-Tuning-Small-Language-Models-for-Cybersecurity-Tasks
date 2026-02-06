@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how SQL injection vulnerabilities occur.",
+    "input": "There is a SQL injection vulnerability in Some ZTE Mobile Internet products. Due to insufficient validation of the input parameters of the SNTP interface, an authenticated attacker could use the vulnerability to execute stored XSS attacks.",
+    "output": "SQL injection vulnerabilities occur when an application fails to properly sanitize user input, allowing attackers to inject malicious SQL code into queries. This can lead to unauthorized database actions such as data retrieval, modification, or deletion."
+}

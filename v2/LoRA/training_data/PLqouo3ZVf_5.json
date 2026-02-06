@@ -1,0 +1,5 @@
+{
+    "instruction": "List possible attack vectors associated with information disclosure vulnerabilities.",
+    "input": "Windows Docker Information Disclosure Vulnerability",
+    "output": "Attack vectors might include exploiting misconfigured settings, intercepting unencrypted communications, or utilizing privileged user access to gain unauthorized information."
+}

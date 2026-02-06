@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what is meant by 'reflected XSS' in this context.",
+    "input": "An issue was discovered in CALDERA 2.8.1. It contains multiple reflected, stored, and self XSS vulnerabilities that may be exploited by authenticated and unauthenticated attackers.",
+    "output": "Reflected XSS occurs when malicious scripts are reflected off a web server and executed in a user’s browser, often via a manipulated URL, affecting users who initiate the request."
+}

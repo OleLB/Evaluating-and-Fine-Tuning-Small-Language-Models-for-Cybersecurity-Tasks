@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability.",
+    "input": "Windows Docker Information Disclosure Vulnerability",
+    "output": "The impact of an information disclosure vulnerability can include unauthorized access to sensitive data, potentially leading to data breaches or further exploitation."
+}

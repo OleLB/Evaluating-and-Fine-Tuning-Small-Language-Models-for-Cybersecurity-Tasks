@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "CoreFTP Server before 727 allows directory traversal (for file creation) by an authenticated attacker via ../ in an HTTP PUT request.",
+    "output": "CoreFTP Server versions prior to 727 are vulnerable to a directory traversal attack that allows an authenticated attacker to create files in arbitrary directories using '../' sequences in HTTP PUT requests."
+}

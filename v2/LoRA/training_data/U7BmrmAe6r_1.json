@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE in clear cybersecurity terms.",
+    "input": "A NULL pointer dereference in AcseConnection_parseMessage at src/mms/iso_acse/acse.c of libiec61850 v1.5.0 can lead to a segmentation fault or application crash.",
+    "output": "The vulnerability involves a NULL pointer dereference within the AcseConnection_parseMessage function in libiec61850 version 1.5.0, potentially causing a segmentation fault or crash."
+}

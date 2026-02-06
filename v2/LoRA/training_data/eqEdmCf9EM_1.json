@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the CVE description using clear and professional cybersecurity language.",
+    "input": "Grocy through 4.3.0 allows remote attackers to obtain sensitive information via direct requests to pages that are not shown in the UI, such as calendar and recipes.",
+    "output": "Grocy versions up to 4.3.0 are vulnerable to information disclosure, allowing remote attackers to access sensitive information by directly requesting pages not accessible through the user interface, such as calendar and recipe pages."
+}

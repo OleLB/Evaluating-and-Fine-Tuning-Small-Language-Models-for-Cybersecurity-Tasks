@@ -1,0 +1,5 @@
+{
+    "instruction": "List remediation strategies to mitigate this vulnerability.",
+    "input": "There is a resource management errors vulnerability in Huawei P30. Local attackers construct broadcast message for some application, causing this application to send this broadcast message and impact the customer's use experience.",
+    "output": "To mitigate this vulnerability, apply available patches from the vendor, implement strict access controls to limit local access, and use application whitelisting to prevent unauthorized message broadcasts."
+}

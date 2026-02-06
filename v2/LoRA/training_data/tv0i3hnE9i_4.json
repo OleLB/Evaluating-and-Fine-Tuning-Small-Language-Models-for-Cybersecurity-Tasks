@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the attack vector for this vulnerability.",
+    "input": "An issue found in NetScout nGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code and cause a denial of service via a crafted file.",
+    "output": "The attack vector for this vulnerability is 'Remote,' meaning it can be exploited by an attacker from a remote location without requiring physical access to the target system. The exploitation is achieved through a crafted input file."
+}

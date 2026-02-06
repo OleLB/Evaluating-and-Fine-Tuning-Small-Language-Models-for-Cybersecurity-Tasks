@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE in professional cybersecurity terms.",
+    "input": "Information disclosure while invoking callback function of sound model driver from ADSP for every valid opcode received from sound model driver.",
+    "output": "The vulnerability involves information disclosure occurring when a callback function in the sound model driver is invoked from the Audio DSP (ADSP) upon receiving a valid opcode."
+}

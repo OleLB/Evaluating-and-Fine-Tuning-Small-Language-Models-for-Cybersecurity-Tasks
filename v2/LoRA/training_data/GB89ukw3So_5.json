@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a general mitigation approach for this type of vulnerability.",
+    "input": "CoreFTP Server before 727 allows directory traversal (for file creation) by an authenticated attacker via ../ in an HTTP PUT request.",
+    "output": "To mitigate directory traversal vulnerabilities, input validation should be implemented to sanitize user input. Additionally, updating to a patched version of CoreFTP Server, such as version 727 or later, is recommended to address the issue."
+}

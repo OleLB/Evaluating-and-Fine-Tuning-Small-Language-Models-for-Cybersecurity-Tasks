@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the vulnerability in professional cybersecurity language.",
+    "input": "Talk-Android enables users to have video & audio calls through Nextcloud on Android. Due to passcode bypass, an attacker is able to access the user's Nextcloud files and view conversations. To exploit this the attacker needs to have physical access to the target's device. There are currently no known workarounds available. It is recommended that the Nextcloud Talk Android app is upgraded to 15.0.2.",
+    "output": "Talk-Android on Nextcloud allows for video and audio calls but has a passcode bypass vulnerability, allowing unauthorized access to user files and conversations if an attacker has physical access to the device. Upgrading to version 15.0.2 is recommended."
+}

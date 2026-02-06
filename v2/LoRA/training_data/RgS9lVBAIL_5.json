@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a generic mitigation strategy for addressing this vulnerability type.",
+    "input": "follow-redirects is vulnerable to Exposure of Private Personal Information to an Unauthorized Actor",
+    "output": "Mitigation can involve implementing secure communication channels using TLS, validating redirect requests, and applying strict access controls."
+}

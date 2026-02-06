@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "In the Linux kernel, the following vulnerability has been resolved: ACPI: x86: Add adev NULL check to acpi_quirk_skip_serdev_enumeration() acpi_dev_hid_match() does not check for adev == NULL, dereferencing it unconditional. Add a check for adev being NULL before calling acpi_dev_hid_match(). At the moment acpi_quirk_skip_serdev_enumeration() is never called with a controller_parent without an ACPI companion, but better safe than sorry.",
+    "output": "A vulnerability in the Linux kernel related to the ACPI subsystem on x86 architecture has been addressed. The function acpi_quirk_skip_serdev_enumeration() previously lacked a check for a NULL adev pointer before invoking acpi_dev_hid_match(), which could result in a NULL pointer dereference. The fix involves adding a condition to verify that adev is not NULL before proceeding with the function call. Although current implementations do not call this function with a controller_parent lacking an ACPI companion, this measure enhances robustness."
+}

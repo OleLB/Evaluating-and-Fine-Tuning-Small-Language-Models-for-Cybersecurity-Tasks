@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described.",
+    "input": "In the Linux kernel, the following vulnerability has been resolved: io_uring/eventfd: ensure io_eventfd_signal() defers another RCU period io_eventfd_do_signal() is invoked from an RCU callback, but when dropping the reference to the io_ev_fd, it calls io_eventfd_free() directly if the refcount drops to zero. This isn't correct, as any potential freeing of the io_ev_fd should be deferred another RCU grace period. Just call io_eventfd_put() rather than open-code the dec-and-test and free, which will correctly defer it another RCU grace period.",
+    "output": "The vulnerability is a Resource Management Error related to improper synchronization within the Read-Copy-Update (RCU) mechanism."
+}

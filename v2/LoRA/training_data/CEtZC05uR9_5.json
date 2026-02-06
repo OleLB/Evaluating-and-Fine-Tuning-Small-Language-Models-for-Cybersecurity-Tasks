@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest a general mitigation strategy for this type of vulnerability.",
+    "input": "Veno File Manager 3.5.6 is affected by a directory traversal vulnerability. Using the traversal allows an attacker to download sensitive files from the server.",
+    "output": "Implement stringent input validation to sanitize user inputs and restrict file access to designated directories only."
+}

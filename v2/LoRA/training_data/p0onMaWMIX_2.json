@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "A denial of service vulnerabiity exists in fig2dev through 3.28a due to a segfault in the open_stream function in readpics.c.",
+    "output": "The vulnerability is a Denial of Service (DoS) caused by a segmentation fault."
+}

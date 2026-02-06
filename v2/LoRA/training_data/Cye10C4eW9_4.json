@@ -1,0 +1,5 @@
+{
+    "instruction": "What component of the software does the vulnerability affect?",
+    "input": "An integer overflow vulnerability in Exif.cpp::jpeg_read_exif_dir in FreeImage 3.18.0 allows attackers to obtain information and cause a denial of service.",
+    "output": "The vulnerability affects the function jpeg_read_exif_dir within the Exif.cpp file of the FreeImage library."
+}

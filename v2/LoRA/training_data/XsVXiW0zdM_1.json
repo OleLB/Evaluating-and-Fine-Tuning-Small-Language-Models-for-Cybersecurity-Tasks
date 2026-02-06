@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. An app may be able to access protected user data.",
+    "output": "The vulnerability has been mitigated by implementing enhanced validation mechanisms. This issue has been resolved in macOS Sonoma 14, where an application could potentially access confidential user data without authorization."
+}

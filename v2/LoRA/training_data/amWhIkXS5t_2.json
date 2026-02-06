@@ -1,0 +1,5 @@
+{
+    "instruction": "Classify the vulnerability type using standard industry terminology.",
+    "input": "A reflected XSS vulnerability has been found in Axiell Iguana CMS, allowing an attacker to execute code in a victim's browser. The module parameter on the Service.template.cls endpoint does not properly neutralise user input, resulting in the vulnerability.",
+    "output": "The vulnerability is a Reflected Cross-Site Scripting (XSS) flaw."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Script injection in iOSWeb in Google Chrome on iOS prior to 84.0.4147.105 allowed a remote attacker to execute arbitrary code via a crafted HTML page.",
+    "output": "The impact of this vulnerability is Remote Code Execution (RCE), allowing an attacker to run arbitrary code on the affected device, potentially leading to data breach, privilege escalation, or full system compromise."
+}

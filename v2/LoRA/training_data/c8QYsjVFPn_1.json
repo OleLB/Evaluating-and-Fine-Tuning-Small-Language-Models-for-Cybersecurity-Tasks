@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify the CVE description using professional cybersecurity language.",
+    "input": "IBM OpenPages 9.0 could allow an authenticated user to obtain sensitive information such as configurations that should only be available to privileged users.",
+    "output": "In IBM OpenPages 9.0, an authenticated user may access sensitive configuration details typically restricted to privileged users."
+}

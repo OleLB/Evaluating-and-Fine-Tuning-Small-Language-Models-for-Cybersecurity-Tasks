@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how an out-of-bounds write vulnerability occurs.",
+    "input": "The Bluetooth module has an out-of-bounds write vulnerability. Successful exploitation of this vulnerability may result in malicious command execution at the remote end.",
+    "output": "An out-of-bounds write vulnerability occurs when a program writes data outside the boundaries of allocated memory, potentially allowing an attacker to corrupt memory and execute arbitrary code."
+}

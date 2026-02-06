@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how such vulnerabilities can typically be mitigated.",
+    "input": "Windows Docker Information Disclosure Vulnerability",
+    "output": "Mitigation strategies often include applying security patches, enforcing least privilege principles, and using network segmentation to isolate containers."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how receiving a valid opcode might contribute to the vulnerability.",
+    "input": "Information disclosure while invoking callback function of sound model driver from ADSP for every valid opcode received from sound model driver.",
+    "output": "Receiving a valid opcode triggers the callback function in the sound model driver, which could inadvertently disclose sensitive information, leading to an information disclosure vulnerability."
+}

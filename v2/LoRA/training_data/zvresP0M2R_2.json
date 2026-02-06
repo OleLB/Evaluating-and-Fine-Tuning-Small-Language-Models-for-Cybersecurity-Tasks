@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "An information disclosure vulnerability exists in the aVideoEncoder.json.php chunkFile path functionality of WWBN AVideo 11.6 and dev master commit 15fed957fb. A specially crafted HTTP request can lead to arbitrary file read.",
+    "output": "The vulnerability is classified as an Information Disclosure vulnerability, which falls under the category of unauthorized access vulnerabilities that allow the exposure of sensitive information."
+}

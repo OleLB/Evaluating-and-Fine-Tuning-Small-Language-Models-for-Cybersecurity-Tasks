@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a potential real-world consequence of this vulnerability.",
+    "input": "Script injection in iOSWeb in Google Chrome on iOS prior to 84.0.4147.105 allowed a remote attacker to execute arbitrary code via a crafted HTML page.",
+    "output": "A potential consequence could be an attacker exploiting this vulnerability to access sensitive information from a user’s device, or install malicious software without user consent, thereby compromising user privacy and security."
+}

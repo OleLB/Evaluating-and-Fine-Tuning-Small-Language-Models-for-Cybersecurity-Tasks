@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "A Stack Overflow vulnerability exists in Binaryen 103 via the printf_common function.",
+    "output": "The vulnerability type is a Stack Overflow."
+}

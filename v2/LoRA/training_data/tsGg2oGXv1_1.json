@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description in clear, professional language.",
+    "input": "Vulnerability of improper access control in the home screen widget module. Impact: Successful exploitation of this vulnerability may affect availability.",
+    "output": "The vulnerability pertains to insufficient access control in the home screen widget module, which could potentially impact system availability if exploited."
+}

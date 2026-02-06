@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "A Stack Overflow vulnerability exists in Binaryen 103 via the printf_common function.",
+    "output": "A Stack Overflow can lead to Denial of Service (DoS) or remote code execution (RCE) if exploited, compromising system integrity and availability."
+}

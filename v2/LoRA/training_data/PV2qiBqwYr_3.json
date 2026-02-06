@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "An issue was discovered in Open Design Alliance Drawings SDK before 2021.11. A NULL pointer dereference exists when rendering malformed .DXF and .DWG files. This can allow attackers to cause a crash, potentially enabling a denial of service attack (Crash, Exit, or Restart).",
+    "output": "The impact of this vulnerability includes potential application crashes, which can be exploited by attackers to execute a Denial of Service (DoS) attack."
+}

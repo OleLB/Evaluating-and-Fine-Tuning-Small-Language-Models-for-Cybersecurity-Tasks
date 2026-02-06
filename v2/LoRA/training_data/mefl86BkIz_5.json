@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify the role of an attacker in exploiting this vulnerability.",
+    "input": "Cross-site request forgery (CSRF) vulnerability in Quiz And Survey Master versions prior to 7.3.7 allows a remote attacker to hijack the authentication of administrators and conduct arbitrary operations via a specially crafted web page.",
+    "output": "An attacker using a CSRF vulnerability can induce an authenticated user to execute unintended actions on a web application, exploiting the user's authenticated state."
+}

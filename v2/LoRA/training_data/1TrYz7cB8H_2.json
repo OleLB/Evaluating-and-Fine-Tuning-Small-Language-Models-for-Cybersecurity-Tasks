@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "NASM v2.16 was discovered to contain a segmentation violation in the component ieee_write_file at /output/outieee.c.",
+    "output": "The vulnerability is a segmentation fault, which falls under the category of Memory Safety issues."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Arm Mali GPU Kernel Driver (Midgard r26p0 through r30p0, Bifrost r0p0 through r34p0, and Valhall r19p0 through r34p0) allows a non-privileged user to achieve write access to read-only memory, and possibly obtain root privileges, corrupt memory, and modify the memory of other processes.",
+    "output": "The impact of this vulnerability includes Privilege Escalation (PE), which may allow unauthorized users to obtain root access. Additionally, it can lead to Memory Corruption (MC) and unauthorized Memory Modification (MM) of other processes."
+}

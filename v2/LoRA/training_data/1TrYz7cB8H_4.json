@@ -1,0 +1,5 @@
+{
+    "instruction": "What component contains the vulnerability?",
+    "input": "NASM v2.16 was discovered to contain a segmentation violation in the component ieee_write_file at /output/outieee.c.",
+    "output": "The vulnerability is located in the ieee_write_file component of NASM."
+}

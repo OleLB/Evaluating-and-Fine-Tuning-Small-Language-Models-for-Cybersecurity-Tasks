@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what 'missing permission check' means in this context.",
+    "input": "In music service, there is a missing permission check. This could lead to local denial of service in contacts service with no additional execution privileges needed.",
+    "output": "'Missing permission check' means that the system fails to verify whether a user has the necessary permissions to access certain functionalities, leading to unauthorized use or disruption of services."
+}

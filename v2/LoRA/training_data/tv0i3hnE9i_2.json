@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described.",
+    "input": "An issue found in NetScout nGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code and cause a denial of service via a crafted file.",
+    "output": "The vulnerability can be classified as a Remote Code Execution (RCE) combined with a Denial of Service (DoS) vulnerability."
+}

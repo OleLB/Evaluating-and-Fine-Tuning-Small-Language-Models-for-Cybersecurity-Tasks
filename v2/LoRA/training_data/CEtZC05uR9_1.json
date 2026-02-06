@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize this vulnerability description using technical cybersecurity language.",
+    "input": "Veno File Manager 3.5.6 is affected by a directory traversal vulnerability. Using the traversal allows an attacker to download sensitive files from the server.",
+    "output": "The vulnerability in Veno File Manager 3.5.6 is a directory traversal flaw, permitting attackers to retrieve sensitive server files."
+}

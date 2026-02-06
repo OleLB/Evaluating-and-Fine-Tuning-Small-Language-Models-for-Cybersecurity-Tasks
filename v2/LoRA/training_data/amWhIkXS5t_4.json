@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the cause of the vulnerability using cybersecurity best practices terminology.",
+    "input": "A reflected XSS vulnerability has been found in Axiell Iguana CMS, allowing an attacker to execute code in a victim's browser. The module parameter on the Service.template.cls endpoint does not properly neutralise user input, resulting in the vulnerability.",
+    "output": "The root cause of the vulnerability is the insufficient input validation or escaping of user-supplied data in the 'module' parameter at the Service.template.cls endpoint of Axiell Iguana CMS."
+}

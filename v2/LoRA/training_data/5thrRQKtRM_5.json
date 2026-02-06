@@ -1,0 +1,5 @@
+{
+    "instruction": "List potential mitigation strategies for this vulnerability.",
+    "input": "SAP BusinessObjects Business Intelligence platform, versions 410, 420, allows an authenticated attacker to inject malicious JavaScript payload into the custom value input field of an Input Control, which can be executed by User who views the relevant application content, which leads to Stored Cross-Site Scripting.",
+    "output": "Potential mitigations include implementing input validation and output encoding, applying necessary security patches provided by SAP, enabling Content Security Policy (CSP), and educating users to recognize unexpected behaviors in applications."
+}

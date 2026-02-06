@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how improper access control can be a security risk.",
+    "input": "Vulnerability of improper access control in the home screen widget module. Impact: Successful exploitation of this vulnerability may affect availability.",
+    "output": "Improper access control can allow unauthorized users to access restricted resources, potentially leading to data breaches, unauthorized modifications, or service disruptions."
+}

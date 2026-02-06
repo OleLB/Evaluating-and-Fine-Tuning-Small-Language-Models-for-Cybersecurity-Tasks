@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using professional cybersecurity terminology.",
+    "input": "An issue found in NetScout nGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code and cause a denial of service via a crafted file.",
+    "output": "A vulnerability in NetScout nGeniusOne version 6.3.4 enables a remote attacker to execute arbitrary code and initiate a denial of service (DoS) through a specially crafted file."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the conditions under which this vulnerability can be exploited.",
+    "input": "Jenkins Debian Package Builder Plugin 1.6.11 and earlier implements functionality that allows agents to invoke command-line `git` at an attacker-specified path on the controller, allowing attackers able to control agent processes to invoke arbitrary OS commands on the controller.",
+    "output": "The vulnerability can be exploited when an attacker has control over agent processes and can specify a path for the command-line `git` execution on the Jenkins controller."
+}

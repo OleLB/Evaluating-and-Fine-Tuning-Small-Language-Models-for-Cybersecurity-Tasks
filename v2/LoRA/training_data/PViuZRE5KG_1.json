@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using precise cybersecurity terms.",
+    "input": "Citrix Secure Mail for Android before 20.11.0 suffers from Improper Control of Generation of Code ('Code Injection') by allowing unauthenticated access to read data stored within Secure Mail. Note that a malicious app would need to be installed on the Android device or a threat actor would need to execute arbitrary code on the Android device.",
+    "output": "A vulnerability in Citrix Secure Mail for Android versions prior to 20.11.0 allows unauthenticated access leading to potential code injection, permitting unauthorized reading of stored data."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how vulnerabilities like buffer overflows can be discovered.",
+    "input": "wolfSSL wolfMQTT 1.9 has a heap-based buffer overflow (8 bytes) in MqttDecode_Publish (called from MqttClient_DecodePacket and MqttClient_HandlePacket).",
+    "output": "Vulnerabilities such as buffer overflows can be discovered using code analysis tools like static analysis scanners, dynamic testing methods like fuzz testing, and manual code reviews by experienced security professionals."
+}

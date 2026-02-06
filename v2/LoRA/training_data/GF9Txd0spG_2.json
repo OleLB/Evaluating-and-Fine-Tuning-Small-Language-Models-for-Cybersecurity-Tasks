@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "It was discovered that the cls_route filter implementation in the Linux kernel would not remove an old filter from the hashtable before freeing it if its handle had the value 0.",
+    "output": "The vulnerability is classified as a 'Use-After-Free' issue within the hashtable management of the Linux kernel's cls_route filter."
+}

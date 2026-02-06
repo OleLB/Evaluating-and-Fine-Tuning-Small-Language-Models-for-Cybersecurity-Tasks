@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "The APDFL.dll contains an out-of-bounds write past the fixed-length heap-based buffer while parsing specially crafted PDF files. This could allow an attacker to execute code in the context of the current process.",
+    "output": "The vulnerability is identified as an 'Out-of-Bounds Write' vulnerability occurring on a heap-based buffer."
+}

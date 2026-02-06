@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Rock RMS versions before 8.10 and versions 9.0 through 9.3 fails to properly validate files uploaded in the application. The only protection mechanism is a file-extension blacklist that can be bypassed by adding multiple spaces and periods after the file name. This could allow an attacker to upload ASPX code and gain remote code execution on the application. The application typically runs as LocalSystem as mandated in the installation guide. Patched in versions 8.10 and 9.4.",
+    "output": "Exploitation of this vulnerability can lead to Remote Code Execution (RCE), as an attacker able to upload ASPX files may execute arbitrary code on the server. Given the application runs with LocalSystem privileges, the impact is severe, potentially compromising the entire host system."
+}

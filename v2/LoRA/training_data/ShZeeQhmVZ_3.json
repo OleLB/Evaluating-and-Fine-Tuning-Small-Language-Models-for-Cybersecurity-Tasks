@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the potential impact of the vulnerability on affected systems.",
+    "input": "Possible denial of service due to out of memory while processing RRC and NAS OTA message in Snapdragon Auto, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "The impact of this vulnerability could lead to system unavailability or crashes, as the out-of-memory condition prevents proper processing of critical OTA messages, resulting in a Denial of Service (DoS) scenario."
+}

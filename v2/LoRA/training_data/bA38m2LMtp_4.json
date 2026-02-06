@@ -1,0 +1,5 @@
+{
+    "instruction": "List applicable versions of the software that are affected by this vulnerability.",
+    "input": "IBM CICS TX Advanced 10.1, 11.1, and Standard 11.1 is vulnerable to stored cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.",
+    "output": "Affected software versions include IBM CICS TX Advanced 10.1, 11.1, and CICS TX Standard 11.1."
+}

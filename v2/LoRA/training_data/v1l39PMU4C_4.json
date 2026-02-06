@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the security risk posed by this vulnerability.",
+    "input": "Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to version 4.0.0-beta.361, the missing authorization allows any authenticated user to fetch the global coolify instance OAuth configuration. This exposes the 'client id' and 'client secret' for every custom OAuth provider. The attacker can also modify the global OAuth configuration. Version 4.0.0-beta.361 fixes the issue.",
+    "output": "This vulnerability poses a significant security risk, as it allows unauthorized modification and exposure of the OAuth configuration. This can lead to unauthorized access to connected applications and services, potentially compromising the entire system's integrity and confidentiality."
+}

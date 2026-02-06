@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "The APDFL.dll contains an out-of-bounds write past the fixed-length heap-based buffer while parsing specially crafted PDF files. This could allow an attacker to execute code in the context of the current process.",
+    "output": "The APDFL.dll component has a vulnerability where it performs an out-of-bounds write beyond a fixed-length heap-based buffer during the parsing of specifically crafted PDF files. This flaw could enable an attacker to execute arbitrary code within the security context of the running process."
+}

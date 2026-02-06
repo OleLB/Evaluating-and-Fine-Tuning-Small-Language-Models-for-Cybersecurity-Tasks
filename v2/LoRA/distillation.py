@@ -46,13 +46,13 @@ def arrayToFile(response_array: list, description) -> None:
     filename = ""
     while True:
         filename = generateRandomName(10) + ".json"
-        if not checkFileExists(f"LoRA/traning_data/{filename}"):
+        if not checkFileExists(f"LoRA/training_data/{filename}"):
             break
 
     for idx, item in enumerate(response_array):
         file_content = json.dumps(item, indent=4)
         file_content = file_content[:-2] + f',\n    "input": "{description}"\n}}'
-        file_path = f"LoRA/traning_data/{filename[:-5]}_{idx+1}.json"
+        file_path = f"LoRA/training_data/{filename[:-5]}_{idx+1}.json"
         writeFile(file_path, file_content)
     # print(f"Saved {len(response_array)} files with base name '{filename[:-5]}_<index>.json'.")
 
@@ -100,6 +100,13 @@ def cleanResponse(response: str) -> str:
     end_idx = response.rfind(']')
     if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
         return response[start_idx:end_idx+1]
+    
+
+    # replace double quote with single quote
+    response = response.replace('"', "'")
+
+    # remove new lines
+    response = response.replace('\n', ' ')
     return response
 
 def main():

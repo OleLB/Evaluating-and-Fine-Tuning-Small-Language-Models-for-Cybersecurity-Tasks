@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the file and function related to this vulnerability.",
+    "input": "NASM v2.16 was discovered to contain a segmentation violation in the component ieee_write_file at /output/outieee.c.",
+    "output": "The vulnerability pertains to the function ieee_write_file, which is in the source file /output/outieee.c."
+}

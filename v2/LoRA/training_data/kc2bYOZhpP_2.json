@@ -1,0 +1,5 @@
+{
+    "instruction": "Classify the type of vulnerability described.",
+    "input": "Windows Lightweight Directory Access Protocol (LDAP) Denial of Service Vulnerability",
+    "output": "The vulnerability is classified as a Denial of Service (DoS) vulnerability."
+}

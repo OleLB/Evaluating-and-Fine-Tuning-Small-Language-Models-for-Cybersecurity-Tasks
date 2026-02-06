@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "There's a flaw in binutils /bfd/pef.c. An attacker who is able to submit a crafted input file to be processed by the objdump program could cause a null pointer dereference. The greatest threat from this flaw is to application availability. This flaw affects binutils versions prior to 2.34.",
+    "output": "A vulnerability exists in the binutils component, specifically in the pef.c file. If an adversary submits a maliciously crafted input file to the objdump program, it may result in a null pointer dereference. This vulnerability predominantly threatens application availability and affects binutils versions below 2.34."
+}

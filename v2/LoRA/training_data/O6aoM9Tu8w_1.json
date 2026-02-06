@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Rock RMS versions before 8.10 and versions 9.0 through 9.3 fails to properly validate files uploaded in the application. The only protection mechanism is a file-extension blacklist that can be bypassed by adding multiple spaces and periods after the file name. This could allow an attacker to upload ASPX code and gain remote code execution on the application. The application typically runs as LocalSystem as mandated in the installation guide. Patched in versions 8.10 and 9.4.",
+    "output": "Rock RMS versions prior to 8.10 and versions 9.0 to 9.3 contain a vulnerability in the file upload mechanism due to improper validation. The system relies solely on a file-extension blacklist, which can be circumvented by appending multiple spaces and periods to the file name. This flaw permits attackers to upload ASPX code, potentially leading to remote code execution (RCE). The application typically operates with LocalSystem privileges, as outlined in the installation guide. The issue has been resolved in versions 8.10 and 9.4."
+}

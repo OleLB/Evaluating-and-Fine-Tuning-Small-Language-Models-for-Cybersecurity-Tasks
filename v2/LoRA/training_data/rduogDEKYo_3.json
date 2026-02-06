@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the potential impact of this SQL injection vulnerability.",
+    "input": "cscms v4.1 allows for SQL injection via the 'js_del' function.",
+    "output": "An SQL injection vulnerability could allow attackers to execute arbitrary SQL commands, leading to unauthorized data manipulation, data exfiltration, or database compromise."
+}

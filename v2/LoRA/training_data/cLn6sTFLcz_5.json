@@ -1,0 +1,5 @@
+{
+    "instruction": "Define a potential mitigation strategy for this XSS vulnerability.",
+    "input": "Cross Site Scripting vulnerability found in NetScoutnGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code via the creator parameter of the Alert Configuration page.",
+    "output": "Implement input validation and output encoding to ensure that any user-generated content is properly sanitized, preventing the execution of malicious scripts."
+}

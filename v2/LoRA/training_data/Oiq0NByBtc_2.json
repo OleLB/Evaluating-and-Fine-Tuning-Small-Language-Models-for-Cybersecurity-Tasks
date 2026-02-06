@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "A firmware update vulnerability exists in the fw_check.sh functionality of Wavlink AC3000 M33A8.V5030.210505. A specially crafted HTTP request can lead to arbitrary firmware update. An attacker can perform a man-in-the-middle attack to trigger this vulnerability.",
+    "output": "The vulnerability is a Firmware Update vulnerability, specifically involving improper input validation that can be exploited through a man-in-the-middle (MitM) attack."
+}

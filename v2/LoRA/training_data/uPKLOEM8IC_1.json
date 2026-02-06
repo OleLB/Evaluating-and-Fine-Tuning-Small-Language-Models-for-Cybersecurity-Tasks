@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Azure uAMQP is a general purpose C library for AMQP 1.0. The UAMQP library is used by several clients to implement AMQP protocol communication.  When clients using this library receive a crafted binary type data, an integer overflow or wraparound or memory safety issue can occur and may cause remote code execution.  This vulnerability has been patched in release 2024-01-01.",
+    "output": "Azure uAMQP is a C library used for AMQP 1.0 communications. Clients utilizing this library may experience an integer overflow, wraparound, or memory safety issue if crafted binary data is received, potentially leading to remote code execution. A patch to address this vulnerability is available as of release 2024-01-01."
+}

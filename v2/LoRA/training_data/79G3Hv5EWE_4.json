@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a scenario where this vulnerability might be exploited.",
+    "input": "There is a resource management errors vulnerability in Huawei P30. Local attackers construct broadcast message for some application, causing this application to send this broadcast message and impact the customer's use experience.",
+    "output": "An attacker with local access could construct a malicious broadcast message that, when executed by the application, disrupts normal operations or degrades performance, leading to a negative impact on the device's usability."
+}

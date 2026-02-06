@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the CVE in professional cybersecurity language.",
+    "input": "An open redirect vulnerability has been reported to affect QNAP device running QcalAgent. If exploited, this vulnerability allows attackers to redirect users to an untrusted page that contains malware. We have already fixed this vulnerability in the following versions of QcalAgent: QcalAgent 1.1.7 and later",
+    "output": "An open redirect vulnerability has been identified in QNAP devices utilizing QcalAgent. This vulnerability permits attackers to manipulate URL redirects, potentially leading users to malicious websites. It has been addressed in QcalAgent versions 1.1.7 and later."
+}

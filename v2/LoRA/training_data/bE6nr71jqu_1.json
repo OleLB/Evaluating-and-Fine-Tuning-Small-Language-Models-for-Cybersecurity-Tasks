@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "An issue has been discovered in GitLab CE/EE affecting all versions before 15.5.7, all versions starting from 15.6 before 15.6.4, all versions starting from 15.7 before 15.7.2. A race condition can lead to verified email forgery and takeover of third-party accounts when using GitLab as an OAuth provider.",
+    "output": "A vulnerability has been identified in GitLab Community Edition (CE) and Enterprise Edition (EE) affecting versions earlier than 15.5.7, versions 15.6.x before 15.6.4, and versions 15.7.x before 15.7.2. The issue involves a race condition that could allow an attacker to forge verified email addresses, potentially leading to unauthorized access to third-party accounts when GitLab is used as an OAuth provider."
+}

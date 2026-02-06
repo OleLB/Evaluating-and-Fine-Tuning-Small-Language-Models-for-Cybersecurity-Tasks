@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the security issue in professional terms.",
+    "input": "Information disclosure due to an insecure hostname validation in the RYDE application 5.8.43 for Android and iOS allows attackers to take over an account via a deep link.",
+    "output": "The RYDE application version 5.8.43 for both Android and iOS has a security vulnerability where improper hostname validation can lead to information disclosure, potentially allowing attackers to compromise user accounts through deep links."
+}

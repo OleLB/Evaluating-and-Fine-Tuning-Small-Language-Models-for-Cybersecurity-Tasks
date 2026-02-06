@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the implications of the vulnerability being publicly disclosed.",
+    "input": "A vulnerability was found in Codezips Project Management System 1.0. It has been classified as critical. This affects an unknown part of the file /pages/forms/teacher.php. The manipulation of the argument name leads to sql injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.",
+    "output": "Public disclosure of the vulnerability increases the risk of exploitation as it provides potentially malicious actors with detailed information needed to craft attacks before patches can be applied."
+}

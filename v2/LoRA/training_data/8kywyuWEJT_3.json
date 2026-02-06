@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability.",
+    "input": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Ekol Informatics Website Template allows SQL Injection.This issue affects Website Template: through 20231215.",
+    "output": "An SQL Injection vulnerability can lead to unauthorized access to the database, data exfiltration, data manipulation, or even complete database compromise, potentially violating CIA (Confidentiality, Integrity, Availability) principles."
+}

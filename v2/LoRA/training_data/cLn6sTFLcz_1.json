@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using clear cybersecurity terminology.",
+    "input": "Cross Site Scripting vulnerability found in NetScoutnGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code via the creator parameter of the Alert Configuration page.",
+    "output": "A Cross-Site Scripting (XSS) vulnerability in NetScout nGeniusOne version 6.3.4 permits remote attackers to execute arbitrary code through the creator parameter on the Alert Configuration page."
+}

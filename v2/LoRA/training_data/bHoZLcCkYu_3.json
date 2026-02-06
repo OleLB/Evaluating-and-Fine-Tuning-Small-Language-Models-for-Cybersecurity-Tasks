@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Tenda AC18 V15.03.05.19 was discovered to contain a stack overflow via the limitSpeedUp parameter in the formSetClientState function.",
+    "output": "A Stack Overflow can lead to Denial of Service (DoS) or potentially allow Remote Code Execution (RCE) by overwriting the return address or control data on the stack."
+}

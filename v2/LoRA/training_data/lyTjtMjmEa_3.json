@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "In Open-iSCSI tcmu-runner 1.3.x, 1.4.x, and 1.5.x through 1.5.2, xcopy_locate_udev in tcmur_cmd_handler.c lacks a check for transport-layer restrictions, allowing remote attackers to read or write files via directory traversal in an XCOPY request. For example, an attack can occur over a network if the attacker has access to one iSCSI LUN. NOTE: relative to CVE-2020-28374, this is a similar mistake in a different algorithm.",
+    "output": "The impact of this vulnerability is that remote attackers could exploit it to gain unauthorized access to files, potentially allowing them to read or modify files on the system. This occurs through a Directory Traversal attack over an XCOPY request. This could compromise confidentiality, integrity, and availability (CIA) if network access to an iSCSI LUN is obtained."
+}

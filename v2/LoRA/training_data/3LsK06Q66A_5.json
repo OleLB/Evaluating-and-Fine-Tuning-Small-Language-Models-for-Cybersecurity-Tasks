@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what 'CRLF sequences' are in the context of this vulnerability.",
+    "input": "An Improper Neutralization of CRLF Sequences in HTTP Headers ('http response splitting') vulnerability [CWE-113] in Fortinet FortiOS 7.2.0 through 7.6.0, FortiProxy 7.2.0 through 7.4.5 may allow a remote unauthenticated attacker to bypass the file filter via crafted HTTP headers.",
+    "output": "CRLF sequences refer to 'Carriage Return Line Feed' characters used in HTTP headers to signify the end of a line or header. In this vulnerability, improper handling of CRLF sequences can be exploited for malicious purposes such as injecting additional headers."
+}

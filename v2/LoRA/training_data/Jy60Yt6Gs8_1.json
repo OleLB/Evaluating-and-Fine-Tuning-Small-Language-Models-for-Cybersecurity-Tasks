@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Deserialization of Untrusted Data vulnerability in Apache InLong.This issue affects Apache InLong: from 1.7.0 through 1.9.0, the attackers can make a arbitrary file read attack using mysql driver. Users are advised to upgrade to Apache InLong's 1.10.0 or cherry-pick [1] to solve it.",
+    "output": "Apache InLong versions 1.7.0 through 1.9.0 are vulnerable to Deserialization of Untrusted Data, allowing attackers to perform arbitrary file read attacks via the MySQL driver. It is recommended to upgrade to version 1.10.0 or apply the patch available at the provided link."
+}

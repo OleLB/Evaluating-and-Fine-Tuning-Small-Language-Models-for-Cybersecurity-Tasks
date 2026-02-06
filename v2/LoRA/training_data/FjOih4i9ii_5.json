@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify the vendor's stance on this vulnerability.",
+    "input": "The AES instructions on the ARMv8 platform do not have an algorithm that is 'intrinsically resistant' to side-channel attacks. NOTE: the vendor reportedly offers the position 'while power side channel attacks ... are possible, they are not directly caused by or related to the Arm architecture.'",
+    "output": "The vendor's stance is that while the ARMv8 platform may be susceptible to power side-channel attacks, these attacks are not directly caused by or a result of the ARM architecture itself."
+}

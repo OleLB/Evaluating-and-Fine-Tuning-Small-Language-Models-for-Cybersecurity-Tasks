@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "In the Linux kernel, the following vulnerability has been resolved:rds: sysctl: rds_tcp_{rcv,snd}buf: avoid using current->nsproxy As mentioned in a previous commit of this series, using the 'net' structure via 'current' is not recommended for different reasons:- Inconsistency: getting info from the reader's/writer's netns vs only from the opener's netns. - current->nsproxy can be NULL in some cases, resulting in an 'Oops' (null-ptr-deref), e.g. when the current task is exiting, as spotted by syzbot [1] using acct(2). The per-netns structure can be obtained from the table->data using container_of(), then the 'net' one can be retrieved from the listen socket (if available).",
+    "output": "The vulnerability is classified as a 'null pointer dereference'. This occurs when a program attempts to read or write to a null pointer, typically leading to application crashes or system instability."
+}

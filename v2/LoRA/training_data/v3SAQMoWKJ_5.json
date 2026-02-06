@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the function of RFC 4213 in networking.",
+    "input": "IPv6-in-IPv4 tunneling (RFC 4213) allows an attacker to spoof and route traffic via an exposed network interface.",
+    "output": "RFC 4213 provides guidelines for transitioning from IPv4 to IPv6 by using tunneling mechanisms, enabling IPv6 traffic to be encapsulated within IPv4 packets to traverse networks not yet supporting IPv6 natively."
+}

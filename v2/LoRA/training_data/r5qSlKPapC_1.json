@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A race condition was addressed with improved state handling. This issue is fixed in macOS Big Sur 11.7.9, macOS Monterey 12.6.8, macOS Ventura 13.5. An app may be able to gain root privileges.",
+    "output": "A race condition vulnerability was mitigated through enhanced state management. This has been resolved in macOS Big Sur 11.7.9, macOS Monterey 12.6.8, and macOS Ventura 13.5. The flaw could allow an application to escalate its privileges to root level."
+}

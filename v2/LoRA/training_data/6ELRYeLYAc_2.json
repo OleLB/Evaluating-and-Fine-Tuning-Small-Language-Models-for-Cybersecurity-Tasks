@@ -1,0 +1,5 @@
+{
+    "instruction": "What type of vulnerability affects Fluxbb v1.4.12?",
+    "input": "Fluxbb v1.4.12 is affected by a Cross Site Scripting (XSS) vulnerability.",
+    "output": "The vulnerability is a Cross Site Scripting (XSS) flaw."
+}

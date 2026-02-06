@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how integer overflow can lead to code execution.",
+    "input": "A vulnerability was found in the Libksba library due to an integer overflow within the CRL parser. The vulnerability can be exploited remotely for code execution on the target system by passing specially crafted data to the application, for example, a malicious S/MIME attachment.",
+    "output": "Integer overflow occurs when an arithmetic operation results in a value that exceeds the storage capacity of the integer type. In this scenario, if the overflow is not properly handled, it can manipulate memory management in a way that allows execution of malicious code, leading to RCE."
+}

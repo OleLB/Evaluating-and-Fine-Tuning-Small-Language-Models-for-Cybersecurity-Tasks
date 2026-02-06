@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "There's a flaw in bfd_pef_scan_start_address() of bfd/pef.c in binutils which could allow an attacker who is able to submit a crafted file to be processed by objdump to cause a NULL pointer dereference. The greatest threat of this flaw is to application availability. This flaw affects binutils versions prior to 2.34.",
+    "output": "A vulnerability in the function bfd_pef_scan_start_address() located in bfd/pef.c of the Binutils package could permit an attacker to trigger a NULL pointer dereference by submitting a specially crafted file for processing by the objdump utility. This vulnerability poses a risk primarily to application availability and affects versions of Binutils before 2.34."
+}

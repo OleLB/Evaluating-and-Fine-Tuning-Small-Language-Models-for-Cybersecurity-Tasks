@@ -1,0 +1,5 @@
+{
+    "instruction": "Advise on the immediate action required for users of the affected software.",
+    "input": "USOC is an open source CMS with a focus on simplicity. In affected versions USOC allows for SQL injection via register.php. In particular usernames, email addresses, and passwords provided by the user were not sanitized and were used directly to construct a sql statement. Users are advised to upgrade as soon as possible. There are not workarounds for this issue.",
+    "output": "Users of the affected USOC CMS versions should immediately upgrade to the latest secure release to mitigate the SQL Injection vulnerability. There are no alternative mitigations or workarounds available."
+}

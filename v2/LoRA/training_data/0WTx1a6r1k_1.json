@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "When security guidelines for SAP NetWeaver Master Data Management running on windows have not been thoroughly reviewed, it might be possible for an external operator to try and set custom paths in the MDS server configuration. When no adequate protection has been enforced on any level (e.g., MDS Server password not set, network and OS configuration not properly secured, etc.), a malicious user might define UNC paths which could then be exploited to put the system at risk using a so-called SMB relay attack and obtain highly sensitive data, which leads to Information Disclosure.",
+    "output": "The SAP NetWeaver Master Data Management on Windows may be vulnerable if security guidelines are not properly reviewed. External actors could potentially configure custom paths in the MDS server settings. Insufficient protection such as unsecured MDS Server passwords or improper network and OS configurations could enable attackers to exploit UNC paths through SMB relay attacks, resulting in unauthorized information disclosure."
+}

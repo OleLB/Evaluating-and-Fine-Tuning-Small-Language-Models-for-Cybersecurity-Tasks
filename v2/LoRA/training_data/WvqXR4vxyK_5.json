@@ -1,0 +1,5 @@
+{
+    "instruction": "Outline the security risks associated with this type of vulnerability.",
+    "input": "Microsoft Exchange Server Remote Code Execution Vulnerability",
+    "output": "Remote Code Execution vulnerabilities pose risks such as system compromise, data exfiltration, service disruption, and potential propagation of malware throughout the network."
+}

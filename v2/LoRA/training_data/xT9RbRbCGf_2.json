@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described in the CVE.",
+    "input": "Startup control vulnerability in the ability module. Impact: Successful exploitation of this vulnerability may cause features to perform abnormally.",
+    "output": "This is a startup control vulnerability, indicating an issue with the initialization or configuration process within the affected module."
+}

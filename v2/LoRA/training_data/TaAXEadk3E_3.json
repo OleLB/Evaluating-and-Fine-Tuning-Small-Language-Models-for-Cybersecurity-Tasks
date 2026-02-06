@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "There is a SQL injection vulnerability in Some ZTE Mobile Internet products. Due to insufficient validation of the input parameters of the SNTP interface, an authenticated attacker could use the vulnerability to execute stored XSS attacks.",
+    "output": "The SQL Injection vulnerability allows an attacker to manipulate SQL queries, potentially leading to unauthorized database access. The exploitation through SQLi can result in stored XSS, enabling the execution of malicious scripts in the context of users' web browsers, leading to session hijacking (SH) and other security breaches."
+}

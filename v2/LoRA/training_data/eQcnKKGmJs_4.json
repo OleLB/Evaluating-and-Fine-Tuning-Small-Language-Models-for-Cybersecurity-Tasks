@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe what component of the software is affected using professional language.",
+    "input": "Inappropriate implementation in in Permission prompts in Google Chrome on Windows prior to 109.0.5414.74 allowed a remote attacker to force acceptance of a permission prompt via a crafted HTML page. (Chromium security severity: Medium)",
+    "output": "The component affected is the permission prompt handling mechanism within Google Chrome's user interface on Windows operating systems, which failed to correctly validate user interactions."
+}

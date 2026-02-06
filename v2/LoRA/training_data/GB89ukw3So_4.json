@@ -1,0 +1,5 @@
+{
+    "instruction": "What authentication state is required for the vulnerability to be exploited?",
+    "input": "CoreFTP Server before 727 allows directory traversal (for file creation) by an authenticated attacker via ../ in an HTTP PUT request.",
+    "output": "The vulnerability requires the attacker to be authenticated on the CoreFTP Server to exploit the directory traversal flaw."
+}

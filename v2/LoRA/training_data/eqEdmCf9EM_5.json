@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest a mitigation strategy for this vulnerability.",
+    "input": "Grocy through 4.3.0 allows remote attackers to obtain sensitive information via direct requests to pages that are not shown in the UI, such as calendar and recipes.",
+    "output": "Mitigation can include implementing proper access controls to ensure that all endpoints require authentication, conducting thorough security audits to identify undisclosed endpoints, and updating the application to a newer version if a patch is available."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "What prevention measures could mitigate this type of vulnerability?",
+    "input": "OCSInventory allow stored email template with special characters that lead to a Stored cross-site Scripting.",
+    "output": "To mitigate Stored XSS, input sanitization and output encoding should be implemented. Additionally, using Content Security Policy (CSP) headers can provide an extra layer of defense."
+}

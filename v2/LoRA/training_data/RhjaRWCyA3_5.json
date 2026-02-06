@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the role of a parser in software applications and its significance in this CVE.",
+    "input": "In Raptor RDF Syntax Library through 2.0.16, there is a heap-based buffer over-read when parsing triples with the nquads parser in raptor_ntriples_parse_term_internal().",
+    "output": "A parser interprets data formats and structures, converting them into usable output. In this CVE, the nquads parser improperly handles RDF triple parsing, causing a buffer over-read, highlighting parser influence in secure data handling."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the potential impact of this vulnerability using appropriate acronyms.",
+    "input": "HCL MyXalytics is affected by a session fixation vulnerability.  Cyber-criminals can exploit this by sending crafted URLs with a session token to access the victim's login session.",
+    "output": "Exploitation of this vulnerability may lead to Unauthorized Access (UA) to user sessions, compromising the integrity and confidentiality of user data."
+}

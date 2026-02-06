@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a tool that could help identify such vulnerabilities.",
+    "input": "Dynamic Transaction Queuing System v1.0 was discovered to contain a SQL injection vulnerability via the id parameter at /admin/ajax.php?action=delete_window.",
+    "output": "SQLMap is an open-source penetration testing tool that can automate the process of detecting and exploiting SQL injection vulnerabilities in web applications."
+}

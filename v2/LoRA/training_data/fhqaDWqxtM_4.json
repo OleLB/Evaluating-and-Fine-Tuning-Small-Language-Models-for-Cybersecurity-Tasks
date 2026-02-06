@@ -1,0 +1,5 @@
+{
+    "instruction": "Determine which component is affected by the vulnerability.",
+    "input": "Memory corruption in display driver due to incorrect type casting while accessing the fence structure fields",
+    "output": "The component affected by the vulnerability is the 'Display Driver.'"
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Out of bounds read in networking in Google Chrome prior to 87.0.4280.88 allowed a remote attacker who had compromised the renderer process to obtain potentially sensitive information from process memory via a crafted HTML page.",
+    "output": "An out-of-bounds read vulnerability in the networking component of Google Chrome versions before 87.0.4280.88 permitted a remote adversary, who had already compromised the renderer process, to access potentially sensitive data from process memory using a specially crafted HTML page."
+}

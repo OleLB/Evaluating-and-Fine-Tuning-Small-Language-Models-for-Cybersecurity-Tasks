@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description in clear cybersecurity terms.",
+    "input": "HCL MyXalytics is affected by a session fixation vulnerability.  Cyber-criminals can exploit this by sending crafted URLs with a session token to access the victim's login session.",
+    "output": "HCL MyXalytics contains a session fixation vulnerability, allowing attackers to manipulate session tokens in URLs to hijack user sessions."
+}

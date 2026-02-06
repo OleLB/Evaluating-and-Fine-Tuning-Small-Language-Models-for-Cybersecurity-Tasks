@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what kind of impact an XSS vulnerability can have.",
+    "input": "Cross Site Scripting vulnerability found in NetScoutnGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code via the creator parameter of the Alert Configuration page.",
+    "output": "An XSS vulnerability allows an attacker to inject malicious scripts into web pages viewed by users, potentially leading to session hijacking, defacement, or the distribution of malware."
+}

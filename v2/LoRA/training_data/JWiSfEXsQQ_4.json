@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the versions affected by the vulnerability.",
+    "input": "All versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector.",
+    "output": "All versions of the realms-shim package are affected by this vulnerability."
+}

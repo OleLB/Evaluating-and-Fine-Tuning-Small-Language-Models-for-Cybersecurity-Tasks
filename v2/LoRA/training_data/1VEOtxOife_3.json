@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Unsafe password recovery from configuration in M-Files Server before 25.1 allows a highly privileged user to recover external connector passwords",
+    "output": "The impact of this vulnerability allows improper disclosure of credentials, threatening confidentiality (C) by enabling unauthorized password recovery for external connectors."
+}

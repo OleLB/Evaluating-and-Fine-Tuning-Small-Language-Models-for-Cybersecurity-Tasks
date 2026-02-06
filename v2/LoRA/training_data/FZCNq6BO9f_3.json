@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Reflected cross-site scripting vulnerability in Quiz And Survey Master versions prior to 7.3.7 allows a remote attacker to inject an arbitrary script via unspecified vectors.",
+    "output": "The impact of this reflected XSS vulnerability includes the potential for remote attackers to execute arbitrary scripts in the context of the user's browser session, leading to unauthorized actions such as session hijacking or data theft."
+}

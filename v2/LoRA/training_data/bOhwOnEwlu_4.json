@@ -1,0 +1,5 @@
+{
+    "instruction": "What is the CWE designation for this vulnerability type?",
+    "input": "A vulnerability was found in CodeAstro Online Food Ordering System 1.0. It has been rated as problematic. Affected by this issue is some unknown functionality of the file dishes.php. The manipulation of the argument res_id leads to cross site scripting. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. VDB-250442 is the identifier assigned to this vulnerability.",
+    "output": "The Common Weakness Enumeration (CWE) designation for Cross-Site Scripting is CWE-79."
+}

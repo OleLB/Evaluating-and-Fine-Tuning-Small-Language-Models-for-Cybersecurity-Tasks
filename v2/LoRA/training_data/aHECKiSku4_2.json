@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability present in Octopus Deploy.",
+    "input": "In affected versions of Octopus Deploy it is possible for certain types of sensitive variables to inadvertently become unmasked when viewed in variable preview.",
+    "output": "This vulnerability is classified as an Information Disclosure vulnerability, where sensitive data may be exposed to unauthorized users."
+}

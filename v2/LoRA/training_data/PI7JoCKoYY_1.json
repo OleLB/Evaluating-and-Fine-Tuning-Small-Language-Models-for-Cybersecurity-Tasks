@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description in professional cybersecurity language.",
+    "input": "Delta Electronics CNCSoft-B Versions 1.0.0.2 and prior has a null pointer dereference issue while processing project files, which may allow an attacker to execute arbitrary code.",
+    "output": "Delta Electronics CNCSoft-B versions 1.0.0.2 and earlier are susceptible to a null pointer dereference vulnerability when processing project files. This flaw could be exploited by an attacker to execute arbitrary code."
+}

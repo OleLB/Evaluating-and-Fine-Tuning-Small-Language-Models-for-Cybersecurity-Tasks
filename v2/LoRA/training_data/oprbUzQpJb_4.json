@@ -1,0 +1,5 @@
+{
+    "instruction": "What conditions are necessary for an attacker to successfully exploit this vulnerability?",
+    "input": "Multiple use-after-free vulnerabilities exist in the VCD get_vartoken realloc functionality of GTKWave 3.3.115. A specially crafted .vcd file can lead to arbitrary code execution. A victim would need to open a malicious file to trigger these vulnerabilities.This vulnerability concerns the use-after-free when triggered via the GUI's recoder (default) VCD parsing code.",
+    "output": "To exploit this vulnerability, an attacker must lure a victim into opening a maliciously crafted .vcd file with the GTKWave application. The vulnerability is triggered through the application's GUI default VCD parsing mechanism."
+}

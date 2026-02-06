@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Remote Procedure Call Runtime Remote Code Execution Vulnerability",
+    "output": "This vulnerability involves a flaw in the Remote Procedure Call (RPC) runtime that allows remote code execution by an attacker."
+}

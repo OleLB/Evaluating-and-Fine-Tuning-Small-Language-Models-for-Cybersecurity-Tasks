@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the standard vulnerability type for this CVE.",
+    "input": "follow-redirects is vulnerable to Exposure of Private Personal Information to an Unauthorized Actor",
+    "output": "The vulnerability is an Information Disclosure flaw, where sensitive data is exposed to unauthorized parties."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what a stored XSS vulnerability is.",
+    "input": "AEM's Cloud Service offering, as well as version 6.5.10.0 (and below) are affected by a stored Cross-Site Scripting (XSS) vulnerability that could be abused by an attacker to inject malicious scripts into vulnerable form fields. Malicious JavaScript may be executed in a victim’s browser when they browse to the page containing the vulnerable field.",
+    "output": "A stored XSS vulnerability occurs when an application stores user input without proper sanitization, allowing attackers to inject malicious code that is executed in the victim's browser when accessing the affected content."
+}

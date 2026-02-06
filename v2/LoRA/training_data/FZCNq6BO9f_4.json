@@ -1,0 +1,5 @@
+{
+    "instruction": "Determine the potential attack vector of the vulnerability.",
+    "input": "Reflected cross-site scripting vulnerability in Quiz And Survey Master versions prior to 7.3.7 allows a remote attacker to inject an arbitrary script via unspecified vectors.",
+    "output": "The attack vector is through client-side injection, where the attacker crafts a URL containing a malicious script that the application reflects back to the user’s browser."
+}

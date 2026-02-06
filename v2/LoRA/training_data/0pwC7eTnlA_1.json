@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "wolfSSL wolfMQTT 1.9 has a heap-based buffer overflow (8 bytes) in MqttDecode_Publish (called from MqttClient_DecodePacket and MqttClient_HandlePacket).",
+    "output": "The wolfSSL wolfMQTT version 1.9 contains a heap-based buffer overflow vulnerability in the MqttDecode_Publish function. This function is invoked by MqttClient_DecodePacket and MqttClient_HandlePacket."
+}

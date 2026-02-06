@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the potential reasons for public disclosure of exploits.",
+    "input": "A vulnerability classified as critical has been found in zhenfeng13 My-Blog 1.0. Affected is the function uploadFileByEditomd of the file src/main/java/com/site/blog/my/core/controller/admin/BlogController.java. The manipulation of the argument editormd-image-file leads to unrestricted upload. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used.",
+    "output": "Public disclosure of exploits may occur to raise awareness among developers and users, prompt rapid patching and remediation, and encourage responsible disclosure practices. However, it also risks providing information to malicious actors."
+}

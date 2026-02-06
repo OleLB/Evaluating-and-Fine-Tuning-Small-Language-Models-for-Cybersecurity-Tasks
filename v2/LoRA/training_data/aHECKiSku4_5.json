@@ -1,0 +1,5 @@
+{
+    "instruction": "Briefly outline a mitigation strategy for this vulnerability.",
+    "input": "In affected versions of Octopus Deploy it is possible for certain types of sensitive variables to inadvertently become unmasked when viewed in variable preview.",
+    "output": "To mitigate this vulnerability, it is recommended to apply patches or updates provided by the vendor, restrict access to variable preview features, and ensure audit logging is implemented to track unauthorized access attempts."
+}

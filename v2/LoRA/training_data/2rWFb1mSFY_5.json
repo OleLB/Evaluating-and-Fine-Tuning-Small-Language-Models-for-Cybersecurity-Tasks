@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain why keeping software updated helps mitigate this class of vulnerabilities.",
+    "input": "Microsoft Edge (Chromium-based) Elevation of Privilege Vulnerability",
+    "output": "Regular updates often include patches that address known vulnerabilities, reducing the risk of exploitation by an adversary, thus preserving system integrity and security."
+}

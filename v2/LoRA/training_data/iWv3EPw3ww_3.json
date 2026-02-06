@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "A vulnerability was found in code-projects Admission Management System 1.0. It has been declared as critical. This vulnerability affects unknown code of the file index.php of the component Login. The manipulation of the argument u_id leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used.",
+    "output": "Exploiting this SQL Injection (SQLi) vulnerability may lead to unauthorized access to sensitive information, database compromise, or system control, increasing the risk for data breaches and violations of the CIA (Confidentiality, Integrity, Availability) triad."
+}

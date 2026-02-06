@@ -1,0 +1,5 @@
+{
+    "instruction": "What product categories are affected by this vulnerability?",
+    "input": "Improper handling of resource allocation in virtual machines can lead to information exposure in Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "The affected product categories include Snapdragon Consumer IoT, Snapdragon Industrial IoT, and Snapdragon Mobile."
+}

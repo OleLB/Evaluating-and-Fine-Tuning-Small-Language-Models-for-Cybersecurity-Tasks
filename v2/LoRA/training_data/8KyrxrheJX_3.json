@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Insufficient bound checks in the SMU may allow an attacker to update the SRAM from/to address space to an invalid value potentially resulting in a denial of service.",
+    "output": "The impact of this vulnerability could allow an attacker to manipulate SRAM addresses beyond their intended limits, causing a Denial of Service (DoS) which may disrupt system availability."
+}

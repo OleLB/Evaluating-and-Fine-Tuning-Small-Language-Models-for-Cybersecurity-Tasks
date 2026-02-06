@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using precise cybersecurity language.",
+    "input": "SQL Injection vulnerability discovered in Gila CMS 1.15.4 and earlier allows a remote attacker to execute arbitrary web scripts via the Area parameter under the Administration>Widget tab after the login portal.",
+    "output": "An SQL Injection vulnerability in Gila CMS versions 1.15.4 and prior allows remote attackers to run arbitrary queries by manipulating the 'Area' parameter within the Administration > Widget tab, post-authentication."
+}

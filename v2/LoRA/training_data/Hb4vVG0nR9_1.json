@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "In setLaunchIntent of BluetoothDevicePickerPreferenceController.java, there is a possible way to invoke an arbitrary broadcast receiver due to a confused deputy. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10 Android-12Android ID: A-195668284",
+    "output": "The vulnerability in the setLaunchIntent function of the BluetoothDevicePickerPreferenceController.java file allows an arbitrary broadcast receiver to be triggered, resulting in a local privilege escalation. This issue arises from a 'confused deputy' problem, and no user interaction or additional execution privileges are necessary to exploit it. This affects Android versions 10 to 12, identified by Android ID: A-195668284."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Bentley View 10.15.0.75. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the parsing of JT files. Crafted data in a JT file can trigger a write past the end of an allocated buffer. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-14898.",
+    "output": "The vulnerability allows remote attackers to execute arbitrary code on Bentley View version 10.15.0.75. Exploitation requires user interaction, such as visiting a malicious website or opening a harmful file. The issue stems from improper parsing of JT files, where crafted data can cause a buffer overflow, leading to code execution within the application's current process context. This vulnerability is referenced as ZDI-CAN-14898."
+}

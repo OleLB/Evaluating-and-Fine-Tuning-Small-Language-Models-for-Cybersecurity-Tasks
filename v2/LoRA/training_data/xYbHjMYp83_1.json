@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description in professional cybersecurity language.",
+    "input": "HCL MyXalytics is affected by a weak input validation vulnerability.  The application accepts special characters and there is no length validation. This can lead to security vulnerabilities like SQL injection, XSS, and buffer overflow.",
+    "output": "The HCL MyXalytics application exhibits a weak input validation vulnerability, allowing special characters and lacking proper length validation. This deficiency can facilitate security risks such as SQL injection, cross-site scripting (XSS), and buffer overflow attacks."
+}

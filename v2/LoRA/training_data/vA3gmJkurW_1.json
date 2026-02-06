@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Hyland Perceptive Filters releases before 2023-12-08 (e.g., 11.4.0.2647), as used in Cisco IronPort Email Security Appliance Software, Cisco Secure Email Gateway, and various non-Cisco products, allow attackers to trigger a segmentation fault and execute arbitrary code via a crafted document.",
+    "output": "Hyland Perceptive Filters versions prior to 2023-12-08, including version 11.4.0.2647, are vulnerable in multiple products like Cisco IronPort Email Security Appliance Software and Cisco Secure Email Gateway. This vulnerability allows attackers to cause a segmentation fault and execute arbitrary code by using a specially crafted document."
+}

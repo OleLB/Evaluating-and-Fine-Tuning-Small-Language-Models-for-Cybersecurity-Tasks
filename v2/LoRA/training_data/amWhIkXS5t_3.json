@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the potential impact of this vulnerability using appropriate terminology.",
+    "input": "A reflected XSS vulnerability has been found in Axiell Iguana CMS, allowing an attacker to execute code in a victim's browser. The module parameter on the Service.template.cls endpoint does not properly neutralise user input, resulting in the vulnerability.",
+    "output": "The Reflected XSS vulnerability may lead to the execution of arbitrary scripts in the victim's browser, potentially resulting in data theft, session hijacking, or defacement of the web application."
+}

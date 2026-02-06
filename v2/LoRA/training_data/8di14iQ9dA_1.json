@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A vulnerability was found in gmail-servlet and classified as critical. This issue affects the function search of the file src/Model.java. The manipulation leads to sql injection. The identifier of the patch is 5d72753c2e95bb373aa86824939397dc25f679ea. It is recommended to apply a patch to fix this issue. The identifier VDB-218021 was assigned to this vulnerability.",
+    "output": "A critical vulnerability has been identified in the gmail-servlet, specifically affecting the 'search' function in the file 'src/Model.java'. This vulnerability allows for SQL Injection, which could compromise database integrity. The issue is addressed in patch 5d72753c2e95bb373aa86824939397dc25f679ea. It is advised to apply the patch promptly. The vulnerability has been cataloged as VDB-218021."
+}

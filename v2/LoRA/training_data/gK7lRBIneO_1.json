@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A vulnerability was found in Inis up to 2.0.1. It has been rated as critical. This issue affects some unknown processing of the file app/api/controller/default/Proxy.php. The manipulation of the argument p_url leads to server-side request forgery. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. The associated identifier of this vulnerability is VDB-249875.",
+    "output": "A critical vulnerability has been identified in Inis versions up to 2.0.1, specifically affecting the file app/api/controller/default/Proxy.php. The issue arises from improper handling of the 'p_url' argument, leading to a server-side request forgery (SSRF) vulnerability. This can be exploited remotely, and details have been publicly disclosed under identifier VDB-249875."
+}

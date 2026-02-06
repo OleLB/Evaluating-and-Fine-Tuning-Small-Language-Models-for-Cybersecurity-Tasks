@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Unsafe password recovery from configuration in M-Files Server before 25.1 allows a highly privileged user to recover external connector passwords",
+    "output": "M-Files Server versions prior to 25.1 contain a vulnerability that permits a user with high-level privileges to retrieve the passwords for external connectors from the configuration settings."
+}

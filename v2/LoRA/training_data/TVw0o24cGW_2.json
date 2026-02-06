@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify and define the type of vulnerability described in the CVE.",
+    "input": "SQL Injection vulnerability discovered in Gila CMS 1.15.4 and earlier allows a remote attacker to execute arbitrary web scripts via the Area parameter under the Administration>Widget tab after the login portal.",
+    "output": "The vulnerability is an SQL Injection (SQLi), a type of injection attack that allows attackers to interfere with the queries that an application makes to its database."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a general mitigation strategy for this type of vulnerability.",
+    "input": "Reflected cross-site scripting vulnerability in Quiz And Survey Master versions prior to 7.3.7 allows a remote attacker to inject an arbitrary script via unspecified vectors.",
+    "output": "To mitigate reflected XSS vulnerabilities, implement rigorous input validation, context-aware output encoding, and security headers such as Content Security Policy (CSP) to prevent unwanted script execution."
+}

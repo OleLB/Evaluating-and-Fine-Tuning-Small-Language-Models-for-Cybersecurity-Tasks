@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain why null pointer dereference is considered a security risk.",
+    "input": "Delta Electronics CNCSoft-B Versions 1.0.0.2 and prior has a null pointer dereference issue while processing project files, which may allow an attacker to execute arbitrary code.",
+    "output": "Null pointer dereference occurs when a program attempts to use a null reference, leading to undefined behavior. If exploited, this can be leveraged to manipulate program execution, potentially resulting in RCE and compromising system security."
+}

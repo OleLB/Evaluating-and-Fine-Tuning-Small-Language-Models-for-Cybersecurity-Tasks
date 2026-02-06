@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "perfSONAR before 4.4.6, when performing participant discovery, incorrectly uses an HTTP request header value to determine a local address.",
+    "output": "In versions of perfSONAR prior to 4.4.6, the application incorrectly utilizes an HTTP request header value to ascertain a local IP address during the process of participant discovery."
+}

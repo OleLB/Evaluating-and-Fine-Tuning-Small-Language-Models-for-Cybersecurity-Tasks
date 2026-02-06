@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type from the CVE description.",
+    "input": "The issue was addressed with improved validation of environment variables. This issue is fixed in iOS 16.6 and iPadOS 16.6. An app may be able to access sensitive user data.",
+    "output": "This issue can be classified as an 'Improper Input Validation' vulnerability."
+}

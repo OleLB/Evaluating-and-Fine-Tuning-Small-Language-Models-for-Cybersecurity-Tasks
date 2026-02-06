@@ -1,0 +1,5 @@
+{
+    "instruction": "What is stored XSS and how does it differ from reflected XSS?",
+    "input": "There is a SQL injection vulnerability in Some ZTE Mobile Internet products. Due to insufficient validation of the input parameters of the SNTP interface, an authenticated attacker could use the vulnerability to execute stored XSS attacks.",
+    "output": "Stored Cross-Site Scripting (XSS) involves injecting malicious scripts that are persistently stored on a server, executed each time the affected page is accessed by any user. In contrast, reflected XSS occurs when user-supplied input is immediately reflected back to the user, typically leveraging crafted links, and is not stored on the server."
+}

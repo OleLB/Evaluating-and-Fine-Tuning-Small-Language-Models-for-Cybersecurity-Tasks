@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "The Bluetooth module has an out-of-bounds write vulnerability. Successful exploitation of this vulnerability may result in malicious command execution at the remote end.",
+    "output": "Exploitation of this vulnerability could lead to Remote Code Execution (RCE), allowing attackers to execute arbitrary commands on the targeted system."
+}

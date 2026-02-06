@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize how an attacker could exploit this issue.",
+    "input": "An information disclosure vulnerability exists in the aVideoEncoder.json.php chunkFile path functionality of WWBN AVideo 11.6 and dev master commit 15fed957fb. A specially crafted HTTP request can lead to arbitrary file read.",
+    "output": "An attacker could exploit this issue by crafting a malicious HTTP request targeted at the 'aVideoEncoder.json.php' script's 'chunkFile' function, resulting in the arbitrary reading of files from the vulnerable server."
+}

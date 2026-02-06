@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss the potential mitigation strategies for a DoS vulnerability in LDAP.",
+    "input": "Windows Lightweight Directory Access Protocol (LDAP) Denial of Service Vulnerability",
+    "output": "Mitigation strategies could include implementing rate limiting, applying regular security patches, using intrusion detection systems (IDS), and segregating network resources to reduce exposure."
+}

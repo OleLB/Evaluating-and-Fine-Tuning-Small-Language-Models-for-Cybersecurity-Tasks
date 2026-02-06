@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Memory corruption in display driver due to incorrect type casting while accessing the fence structure fields",
+    "output": "The vulnerability involves memory corruption in the display driver, caused by incorrect type casting when accessing fields within the fence structure."
+}

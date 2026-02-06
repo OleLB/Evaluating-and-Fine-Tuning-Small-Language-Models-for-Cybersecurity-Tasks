@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "IBM InfoSphere Information Server 11.7 could allow a remote user to obtain sensitive version information that could aid in further attacks against the system.",
+    "output": "Disclosure of sensitive version information can be leveraged in reconnaissance during an attack, thereby contributing to a more effective exploitation of the system's vulnerabilities."
+}

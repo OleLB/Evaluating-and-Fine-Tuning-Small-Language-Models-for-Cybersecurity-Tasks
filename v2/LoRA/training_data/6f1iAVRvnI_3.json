@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability.",
+    "input": "TinyMCE versions before 5.10.0 are affected by a cross-site scripting vulnerability. A remote and unauthenticated attacker could introduce crafted image or link URLs that would result in the execution of arbitrary JavaScript in an editing user's browser.",
+    "output": "The impact of this vulnerability is the unauthorized execution of JavaScript in a user's browser. This could lead to data theft, session hijacking, or other forms of malicious activities such as redirecting users or defacing the website."
+}

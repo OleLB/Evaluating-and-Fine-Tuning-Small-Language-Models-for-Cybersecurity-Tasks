@@ -1,0 +1,5 @@
+{
+    "instruction": "Detail the remediation steps as reported.",
+    "input": "An open redirect vulnerability has been reported to affect QNAP device running QcalAgent. If exploited, this vulnerability allows attackers to redirect users to an untrusted page that contains malware. We have already fixed this vulnerability in the following versions of QcalAgent: QcalAgent 1.1.7 and later",
+    "output": "To remediate this vulnerability, users should update to QcalAgent version 1.1.7 or later, where the issue has been resolved."
+}

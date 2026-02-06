@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "An out-of-bounds write vulnerability exists in the VZT LZMA_Read dmem extraction functionality of GTKWave 3.3.115. A specially crafted .vzt file can lead to arbitrary code execution. A victim would need to open a malicious file to trigger this vulnerability.",
+    "output": "The out-of-bounds write vulnerability can lead to Arbitrary Code Execution (ACE) when a victim opens a crafted file, potentially compromising the system's integrity, confidentiality, and availability."
+}

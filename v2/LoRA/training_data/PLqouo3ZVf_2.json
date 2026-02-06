@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described.",
+    "input": "Windows Docker Information Disclosure Vulnerability",
+    "output": "The vulnerability is categorized as an Information Disclosure vulnerability."
+}

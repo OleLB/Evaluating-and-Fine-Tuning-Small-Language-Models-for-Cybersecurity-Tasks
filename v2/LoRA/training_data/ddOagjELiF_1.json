@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using precise cybersecurity terms.",
+    "input": "IBM Security Guardium Data Encryption (GDE) 3.0.0.2 specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors.",
+    "output": "IBM Security Guardium Data Encryption version 3.0.0.2 contains a vulnerability where permissions for a critical security resource are misconfigured, permitting unauthorized access or modification."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest a mitigation strategy for this vulnerability.",
+    "input": "Unsafe password recovery from configuration in M-Files Server before 25.1 allows a highly privileged user to recover external connector passwords",
+    "output": "Implement secure password storage mechanisms and restrict access to configuration files to only necessary user roles, ensuring that recovery options are protected by appropriate access controls."
+}

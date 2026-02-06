@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "An Improper Neutralization of CRLF Sequences in HTTP Headers ('http response splitting') vulnerability [CWE-113] in Fortinet FortiOS 7.2.0 through 7.6.0, FortiProxy 7.2.0 through 7.4.5 may allow a remote unauthenticated attacker to bypass the file filter via crafted HTTP headers.",
+    "output": "A vulnerability in Fortinet FortiOS versions 7.2.0 through 7.6.0 and FortiProxy versions 7.2.0 through 7.4.5 involves improper neutralization of CRLF sequences in HTTP headers, known as HTTP response splitting. This flaw may allow an unauthenticated remote attacker to bypass the file filter by exploiting crafted HTTP headers."
+}

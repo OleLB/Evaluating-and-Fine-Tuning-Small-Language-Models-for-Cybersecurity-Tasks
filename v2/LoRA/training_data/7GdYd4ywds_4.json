@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the conditions under which this vulnerability can be exploited.",
+    "input": "A Null pointer dereference vulnerability in the Mobile Management Entity (MME) in Magma <= 1.8.0 (fixed in v1.9 commit 08472ba98b8321f802e95f5622fa90fec2dea486) allows network-adjacent attackers to crash the MME via an S1AP `Uplink NAS Transport` packet missing an expected `ENB_UE_S1AP_ID` field.",
+    "output": "This vulnerability can be exploited by an attacker who is network-adjacent, meaning the attacker must be within the same network proximity as the target system. The exploit is triggered by crafting and sending an S1AP `Uplink NAS Transport` packet that is missing the `ENB_UE_S1AP_ID` field."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the components affected by this vulnerability.",
+    "input": "Microsoft Exchange Server Remote Code Execution Vulnerability",
+    "output": "The affected component is Microsoft Exchange Server, which is critical for email and communication services within organizations."
+}

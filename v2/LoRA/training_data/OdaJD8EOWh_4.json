@@ -1,0 +1,5 @@
+{
+    "instruction": "What is RPC and why is it used in systems?",
+    "input": "Remote Procedure Call Runtime Remote Code Execution Vulnerability",
+    "output": "RPC, or Remote Procedure Call, is a protocol used in systems to enable a program to request a service from a program located on another computer in a network without needing to understand network details."
+}

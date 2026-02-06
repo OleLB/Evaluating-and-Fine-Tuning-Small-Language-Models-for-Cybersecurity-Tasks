@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify and classify the vulnerability type mentioned in the CVE.",
+    "input": "Possible denial of service due to out of memory while processing RRC and NAS OTA message in Snapdragon Auto, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "The vulnerability is classified as a Denial of Service (DoS) due to an Out of Memory (OOM) error."
+}

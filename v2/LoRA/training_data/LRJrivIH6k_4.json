@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain how pre-existing access is required for exploitation.",
+    "input": "Out of bounds read in networking in Google Chrome prior to 87.0.4280.88 allowed a remote attacker who had compromised the renderer process to obtain potentially sensitive information from process memory via a crafted HTML page.",
+    "output": "To exploit this vulnerability, the attacker must first compromise the renderer process, which acts as a prerequisite, enabling them to execute the out-of-bounds read."
+}

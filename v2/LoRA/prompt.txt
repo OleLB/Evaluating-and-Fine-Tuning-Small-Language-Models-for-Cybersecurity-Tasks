@@ -11,7 +11,7 @@ Requirements:
 - Assume the reader has basic IT knowledge
 - Be accurate.
 
-Based on a CVE description provided below you should create 5 instruction-response pairs. Suggested instructions (do not copy these, make your own):
+Based on a CVE description provided below you should create 5 instruction-output pairs. Suggested instructions (do not copy these, make your own):
 1. Rewrite the description in clear, professional cybersecurity language.
 2. Identify the vulnerability type using standard terminology.
 3. Explain the impact using correct acronyms where applicable.
@@ -19,7 +19,7 @@ Based on a CVE description provided below you should create 5 instruction-respon
 Output format: JSON array of objects.
 Each object must have:
 - "instruction"
-- "response"
+- "output"
 
 
 CVE Description:

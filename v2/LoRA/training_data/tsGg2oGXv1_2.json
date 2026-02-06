@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify and classify the type of vulnerability described.",
+    "input": "Vulnerability of improper access control in the home screen widget module. Impact: Successful exploitation of this vulnerability may affect availability.",
+    "output": "The vulnerability is classified as an Improper Access Control issue."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "OCSInventory allow stored email template with special characters that lead to a Stored cross-site Scripting.",
+    "output": "Stored XSS can result in the execution of arbitrary scripts in the user’s browser, potentially leading to session hijacking, phishing attacks, or unauthorized actions being performed on behalf of the user."
+}

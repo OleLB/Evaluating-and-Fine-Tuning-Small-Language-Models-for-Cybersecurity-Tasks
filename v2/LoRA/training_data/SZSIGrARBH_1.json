@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A vulnerability has been identified in JT2Go (All versions < V13.1.0), Teamcenter Visualization (All versions < V13.1.0). Affected applications lack proper validation of user-supplied data when parsing of PCX files. This could result in a heap-based buffer overflow. An attacker could leverage this vulnerability to execute code in the context of the current process.",
+    "output": "A security flaw exists in JT2Go and Teamcenter Visualization, affecting versions prior to V13.1.0. These applications do not adequately validate user input when processing PCX files, leading to a heap-based buffer overflow. This vulnerability may allow an attacker to execute arbitrary code within the context of the application process."
+}

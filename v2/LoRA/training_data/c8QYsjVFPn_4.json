@@ -1,0 +1,5 @@
+{
+    "instruction": "Determine the affected user base for this vulnerability.",
+    "input": "IBM OpenPages 9.0 could allow an authenticated user to obtain sensitive information such as configurations that should only be available to privileged users.",
+    "output": "The vulnerability affects authenticated users who gain access to information meant for privileged users, potentially escalating their access."
+}

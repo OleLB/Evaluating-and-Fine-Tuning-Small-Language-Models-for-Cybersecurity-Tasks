@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how this vulnerability relates to CVE-2020-28374.",
+    "input": "In Open-iSCSI tcmu-runner 1.3.x, 1.4.x, and 1.5.x through 1.5.2, xcopy_locate_udev in tcmur_cmd_handler.c lacks a check for transport-layer restrictions, allowing remote attackers to read or write files via directory traversal in an XCOPY request. For example, an attack can occur over a network if the attacker has access to one iSCSI LUN. NOTE: relative to CVE-2020-28374, this is a similar mistake in a different algorithm.",
+    "output": "This vulnerability is similar to CVE-2020-28374 in that both involve a failure to enforce necessary restrictions in algorithmic implementations within the tcmu-runner. However, the vulnerabilities arise in different algorithms, indicating a recurring oversight in input validation or access control within the software."
+}

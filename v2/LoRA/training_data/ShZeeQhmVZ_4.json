@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what the acronyms RRC and NAS stand for in the context of the CVE.",
+    "input": "Possible denial of service due to out of memory while processing RRC and NAS OTA message in Snapdragon Auto, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "In the context of the CVE, RRC stands for Radio Resource Control, which manages the connection and mobility management tasks in cellular networks. NAS stands for Non-Access Stratum, which handles signaling and messaging processes not directly related to radio access."
+}

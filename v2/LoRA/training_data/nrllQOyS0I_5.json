@@ -1,0 +1,5 @@
+{
+    "instruction": "Is user interaction necessary for this vulnerability to be exploited?",
+    "input": "In battery, there is a possible information disclosure due to a missing bounds check. This could lead to local information disclosure with System execution privileges needed. User interaction is not needed for exploitation. Patch ID: ALPS08308070; Issue ID: ALPS08308076.",
+    "output": "No user interaction is necessary for this vulnerability to be exploited. The flaw can be executed without user intervention, facilitating information disclosure."
+}

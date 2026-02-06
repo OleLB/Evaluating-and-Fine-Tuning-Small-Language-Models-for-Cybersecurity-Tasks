@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the CVE description using professional cybersecurity language.",
+    "input": "Go before 1.16.12 and 1.17.x before 1.17.5 on UNIX allows write operations to an unintended file or unintended network connection as a consequence of erroneous closing of file descriptor 0 after file-descriptor exhaustion.",
+    "output": "Versions of Go prior to 1.16.12 and 1.17.x prior to 1.17.5 on UNIX systems have a vulnerability that can result in unintended write operations. This occurs due to the incorrect closing of file descriptor 0 following file-descriptor exhaustion, potentially leading to data being written to an unintended file or network connection."
+}

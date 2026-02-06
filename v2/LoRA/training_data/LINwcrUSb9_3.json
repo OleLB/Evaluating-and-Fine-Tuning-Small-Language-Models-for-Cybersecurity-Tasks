@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "The Stackable – Page Builder Gutenberg Blocks plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'title' parameter of the Button block in all versions up to, and including, 3.13.11 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with Contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.",
+    "output": "The impact of this Stored XSS vulnerability includes the execution of arbitrary scripts within the context of a user's session. This can lead to unauthorized actions such as session hijacking, defacement, or distribution of malware. It is primarily effective against users with a lower level of access control, possibly leading to further exploitation."
+}

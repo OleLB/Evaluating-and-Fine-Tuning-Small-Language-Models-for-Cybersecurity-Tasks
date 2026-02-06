@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Dynamic Transaction Queuing System v1.0 was discovered to contain a SQL injection vulnerability via the id parameter at /admin/ajax.php?action=delete_window.",
+    "output": "SQL injection vulnerabilities can lead to unauthorized data access, potential data manipulation, and compromised system integrity, affecting the CIA triad—Confidentiality, Integrity, and Availability."
+}

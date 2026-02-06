@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how this vulnerability affects data confidentiality.",
+    "input": "In affected versions of Octopus Deploy it is possible for certain types of sensitive variables to inadvertently become unmasked when viewed in variable preview.",
+    "output": "This vulnerability compromises data confidentiality by potentially exposing sensitive variables, which could reveal critical information to unauthorized users if exploited."
+}

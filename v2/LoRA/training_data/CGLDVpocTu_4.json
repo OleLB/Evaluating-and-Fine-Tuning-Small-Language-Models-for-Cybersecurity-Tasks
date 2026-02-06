@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a secure coding practice to mitigate authorization vulnerabilities.",
+    "input": "Missing Authorization vulnerability in Profilegrid ProfileGrid – User Profiles, Memberships, Groups and Communities.This issue affects ProfileGrid – User Profiles, Memberships, Groups and Communities: from n/a through 5.0.3.",
+    "output": "Implement role-based access control (RBAC) to ensure that users can only access resources and perform actions permitted to their role, thereby mitigating authorization vulnerabilities."
+}

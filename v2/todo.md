@@ -14,6 +14,10 @@
 
 # LoRA
 1. Write a script to do LoRA traning with the dataset (on Mistral-Nemo)
+    + Fix how the datasets are imported (custom data)
+    + start traning
+
+
 
 # Experimental
 Dont show qdrant results to user and show top 20 to the AI? (Mistral-Nemo has a large context window)

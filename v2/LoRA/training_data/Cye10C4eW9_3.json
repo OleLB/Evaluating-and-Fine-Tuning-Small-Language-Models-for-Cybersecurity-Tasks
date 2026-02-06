@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "An integer overflow vulnerability in Exif.cpp::jpeg_read_exif_dir in FreeImage 3.18.0 allows attackers to obtain information and cause a denial of service.",
+    "output": "The impact includes Information Disclosure, where attackers can gain access to sensitive data, and Denial of Service (DoS), which disrupts normal service operation."
+}

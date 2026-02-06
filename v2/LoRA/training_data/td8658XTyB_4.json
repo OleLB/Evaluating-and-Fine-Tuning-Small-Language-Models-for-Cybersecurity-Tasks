@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how this vulnerability compares to others in terms of potential severity.",
+    "input": "There is an unauthorized buffer overflow vulnerability in Tenda AX12 v22.03.01.21 _ cn. This vulnerability can cause the web service not to restart or even execute arbitrary code. It is a different vulnerability from CVE-2022-2414.",
+    "output": "Buffer overflow vulnerabilities are often considered high severity due to their ability to lead to Remote Code Execution (RCE) and Denial of Service (DoS), making them critical to address."
+}

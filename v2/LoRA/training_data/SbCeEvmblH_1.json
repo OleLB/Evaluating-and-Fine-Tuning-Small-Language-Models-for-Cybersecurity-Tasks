@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the vulnerability described in the CVE.",
+    "input": "In music service, there is a missing permission check. This could lead to local denial of service in contacts service with no additional execution privileges needed.",
+    "output": "The vulnerability involves a missing permission check in a music service, potentially allowing a local denial of service (DoS) in the contacts service without requiring additional execution privileges."
+}

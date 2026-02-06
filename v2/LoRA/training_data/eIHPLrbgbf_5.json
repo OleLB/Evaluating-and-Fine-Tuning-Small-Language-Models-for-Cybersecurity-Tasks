@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest a mitigation strategy for this vulnerability.",
+    "input": "Script injection in iOSWeb in Google Chrome on iOS prior to 84.0.4147.105 allowed a remote attacker to execute arbitrary code via a crafted HTML page.",
+    "output": "A recommended mitigation strategy is to ensure systems are updated to the latest version of Google Chrome on iOS, as updates often contain security patches that address known vulnerabilities."
+}

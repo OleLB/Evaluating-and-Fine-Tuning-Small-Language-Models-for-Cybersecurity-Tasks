@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "In wlan driver, there is a possible missing bounds check. This could lead to local denial of service in wlan services.",
+    "output": "The WLAN driver contains a vulnerability due to a potential missing bounds check, which might result in a local denial of service within WLAN services."
+}

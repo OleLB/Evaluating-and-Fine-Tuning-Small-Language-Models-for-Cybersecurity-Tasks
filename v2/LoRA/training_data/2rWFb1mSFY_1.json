@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the CVE description in clear, professional cybersecurity language.",
+    "input": "Microsoft Edge (Chromium-based) Elevation of Privilege Vulnerability",
+    "output": "A vulnerability in Microsoft Edge, which is based on the Chromium framework, allows for elevation of privilege."
+}

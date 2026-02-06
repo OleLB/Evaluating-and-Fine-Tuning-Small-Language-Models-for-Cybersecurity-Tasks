@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the vulnerability in clear, professional terms.",
+    "input": "All versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector.",
+    "output": "The realms-shim package is susceptible to a Sandbox Bypass due to a Prototype Pollution vulnerability."
+}

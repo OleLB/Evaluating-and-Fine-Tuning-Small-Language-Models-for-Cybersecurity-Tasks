@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability using appropriate acronyms.",
+    "input": "Vulnerability of improper access control in the home screen widget module. Impact: Successful exploitation of this vulnerability may affect availability.",
+    "output": "The successful exploitation of this Improper Access Control vulnerability may result in a denial of service (DoS), affecting system availability."
+}

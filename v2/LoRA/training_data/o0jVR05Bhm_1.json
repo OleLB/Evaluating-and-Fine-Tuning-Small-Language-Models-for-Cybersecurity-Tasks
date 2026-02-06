@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "The Qe SEO Handyman WordPress plugin through 1.0 does not properly sanitize and escape a parameter before using it in a SQL statement, leading to a SQL injection exploitable by high privilege users such as admin",
+    "output": "The Qe SEO Handyman WordPress plugin, up to version 1.0, insufficiently sanitizes user input, leading to a potential SQL injection vulnerability. This flaw can be exploited by users with high privileges, such as administrators."
+}

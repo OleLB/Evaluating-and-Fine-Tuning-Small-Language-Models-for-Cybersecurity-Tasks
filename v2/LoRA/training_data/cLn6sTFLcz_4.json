@@ -1,0 +1,5 @@
+{
+    "instruction": "Provide a concise explanation of how this vulnerability could be exploited.",
+    "input": "Cross Site Scripting vulnerability found in NetScoutnGeniusOne v.6.3.4 allows a remote attacker to execute arbitrary code via the creator parameter of the Alert Configuration page.",
+    "output": "An attacker can craft a malicious input for the creator parameter on the Alert Configuration page, allowing the execution of unauthorized scripts in the user's web browser session."
+}

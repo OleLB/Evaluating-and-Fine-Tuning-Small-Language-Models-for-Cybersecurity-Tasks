@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Microsoft Edge (Chromium-based) Elevation of Privilege Vulnerability",
+    "output": "An Elevation of Privilege (EoP) vulnerability may allow an attacker to gain higher permissions or access rights on the affected system, potentially leading to unauthorized actions."
+}

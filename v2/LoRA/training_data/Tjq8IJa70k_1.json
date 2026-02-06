@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A Pointer Dereference Vulnerability exists in GPAC 1.0.1 via the Media_IsSelfContained function, which could cause a Denial of Service. .",
+    "output": "GPAC version 1.0.1 contains a vulnerability in the Media_IsSelfContained function related to pointer dereferencing, leading to potential Denial of Service (DoS) conditions."
+}

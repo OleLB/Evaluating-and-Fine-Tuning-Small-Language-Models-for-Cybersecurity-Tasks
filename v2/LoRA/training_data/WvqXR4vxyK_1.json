@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the given CVE description in professional cybersecurity terms.",
+    "input": "Microsoft Exchange Server Remote Code Execution Vulnerability",
+    "output": "The vulnerability allows an attacker to execute arbitrary code remotely on Microsoft Exchange Server systems."
+}

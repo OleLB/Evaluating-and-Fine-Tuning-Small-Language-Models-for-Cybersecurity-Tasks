@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the conditions necessary for this vulnerability to be exploited.",
+    "input": "An out-of-bounds write vulnerability exists in the VZT LZMA_Read dmem extraction functionality of GTKWave 3.3.115. A specially crafted .vzt file can lead to arbitrary code execution. A victim would need to open a malicious file to trigger this vulnerability.",
+    "output": "For this vulnerability to be exploited, a user must open a specially crafted .vzt file using the GTKWave application."
+}

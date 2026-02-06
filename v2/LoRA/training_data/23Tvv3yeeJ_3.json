@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "perfSONAR before 4.4.6, when performing participant discovery, incorrectly uses an HTTP request header value to determine a local address.",
+    "output": "The incorrect use of HTTP headers to determine local addresses may lead to unauthorized access or exposure of sensitive data, potentially compromising the system’s integrity and confidentiality."
+}

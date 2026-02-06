@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the provided CVE description in professional cybersecurity language.",
+    "input": "In Boa, there is a possible command injection due to improper input validation. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. Patch ID: A20220026; Issue ID: OSBNB00144124.",
+    "output": "The Boa software contains a command injection vulnerability resulting from insufficient input validation. This flaw may allow an attacker to achieve remote privilege escalation without requiring additional execution privileges or user interaction. Reference: Patch ID A20220026; Issue ID OSBNB00144124."
+}

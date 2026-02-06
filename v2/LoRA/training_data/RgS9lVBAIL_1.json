@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using professional cybersecurity language.",
+    "input": "follow-redirects is vulnerable to Exposure of Private Personal Information to an Unauthorized Actor",
+    "output": "The 'follow-redirects' library has a vulnerability that exposes private personal information to unauthorized actors."
+}

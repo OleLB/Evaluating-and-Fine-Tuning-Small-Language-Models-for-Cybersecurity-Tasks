@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability using standard terminology.",
+    "input": "In music service, there is a missing permission check. This could lead to local denial of service in contacts service with no additional execution privileges needed.",
+    "output": "The vulnerability is a 'Missing Authorization' issue, where inadequate permission checks can lead to unauthorized actions."
+}

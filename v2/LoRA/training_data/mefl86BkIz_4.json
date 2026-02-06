@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe a potential mitigation strategy for this type of vulnerability.",
+    "input": "Cross-site request forgery (CSRF) vulnerability in Quiz And Survey Master versions prior to 7.3.7 allows a remote attacker to hijack the authentication of administrators and conduct arbitrary operations via a specially crafted web page.",
+    "output": "To mitigate CSRF vulnerabilities, implement anti-CSRF tokens and ensure that state-changing requests are checked for these tokens to validate authenticity."
+}

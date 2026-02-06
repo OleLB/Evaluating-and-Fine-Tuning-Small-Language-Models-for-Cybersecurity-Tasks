@@ -1,0 +1,5 @@
+{
+    "instruction": "What security feature does the default behavior of BackWPup attempt to implement?",
+    "input": "The BackWPup plugin for WordPress is vulnerable to Directory Traversal in versions up to, and including, 4.0.1 via the Log File Folder. This allows authenticated attackers to store backups in arbitrary folders on the server provided they can be written to by the server. Additionally, default settings will place an index.php and a .htaccess file into the chosen directory (unless already present) when the first backup job is run that are intended to prevent directory listing and file access. This means that an attacker could set the backup directory to the root of another site in a shared environment and thus disable that site.",
+    "output": "The default behavior of BackWPup attempts to implement security measures such as preventing directory listing and unauthorized file access by placing an index.php and a .htaccess file into the chosen backup directory."
+}

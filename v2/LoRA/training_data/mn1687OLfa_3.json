@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "In Eternal Terminal 6.2.1, etserver and etclient have predictable logfile names in /tmp.",
+    "output": "Predictable log file names can lead to unauthorized access to potentially sensitive information, breaching CIA principles: confidentiality and integrity."
+}

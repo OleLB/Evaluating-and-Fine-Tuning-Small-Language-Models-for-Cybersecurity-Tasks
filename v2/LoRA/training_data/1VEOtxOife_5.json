@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss why this vulnerability is critical for systems reliant on external connectors.",
+    "input": "Unsafe password recovery from configuration in M-Files Server before 25.1 allows a highly privileged user to recover external connector passwords",
+    "output": "This vulnerability is critical because compromising external connector passwords can lead to unauthorized data access, system integrity breaches, and potential cascading security failures in interconnected systems."
+}

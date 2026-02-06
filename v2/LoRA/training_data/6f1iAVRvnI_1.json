@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description using professional cybersecurity terms.",
+    "input": "TinyMCE versions before 5.10.0 are affected by a cross-site scripting vulnerability. A remote and unauthenticated attacker could introduce crafted image or link URLs that would result in the execution of arbitrary JavaScript in an editing user's browser.",
+    "output": "TinyMCE versions prior to 5.10.0 contain a cross-site scripting (XSS) vulnerability. This allows a remote attacker without authentication to execute arbitrary JavaScript by introducing specially crafted image or link URLs, targeting the user's browser during editing."
+}

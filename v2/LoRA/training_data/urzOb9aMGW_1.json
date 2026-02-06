@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Arm Mali GPU Kernel Driver (Midgard r26p0 through r30p0, Bifrost r0p0 through r34p0, and Valhall r19p0 through r34p0) allows a non-privileged user to achieve write access to read-only memory, and possibly obtain root privileges, corrupt memory, and modify the memory of other processes.",
+    "output": "The Arm Mali GPU Kernel Driver, specifically versions Midgard r26p0 through r30p0, Bifrost r0p0 through r34p0, and Valhall r19p0 through r34p0, contains a vulnerability that allows non-privileged users to write to read-only memory. This flaw could potentially lead to privilege escalation, memory corruption, and unauthorized modification of other processes' memory."
+}

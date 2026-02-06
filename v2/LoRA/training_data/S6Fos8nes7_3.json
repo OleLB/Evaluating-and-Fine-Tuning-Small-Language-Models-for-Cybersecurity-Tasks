@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "ROPium v3.1 was discovered to contain an invalid memory address dereference via the find() function.",
+    "output": "A Null Pointer Dereference can lead to a Denial of Service (DoS) condition, causing the application to crash."
+}

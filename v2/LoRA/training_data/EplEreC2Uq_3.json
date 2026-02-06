@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability.",
+    "input": "A vulnerability, which was classified as critical, has been found in CampCodes Computer Laboratory Management System 1.0. Affected by this issue is some unknown functionality of the file /class/edit/edit. The manipulation of the argument e_photo leads to unrestricted upload. The attack may be launched remotely. The exploit has been disclosed to the public and may be used.",
+    "output": "The unrestricted file upload vulnerability could allow Remote Code Execution (RCE), unauthorized access, or data compromise, as attackers can upload and execute malicious files remotely."
+}

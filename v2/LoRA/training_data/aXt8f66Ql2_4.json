@@ -1,0 +1,5 @@
+{
+    "instruction": "List the affected versions of the FortiClientEMS software.",
+    "input": "An improper verification of source of a communication channel vulnerability [CWE-940] in FortiClientEMS 7.4.0, 7.2.0 through 7.2.4, 7.0 all versions, 6.4 all versions may allow a remote attacker to bypass the trusted host feature via session connection.",
+    "output": "Affected versions of FortiClientEMS software include 7.4.0, 7.2.0 through 7.2.4, and all versions of 7.0 and 6.4."
+}

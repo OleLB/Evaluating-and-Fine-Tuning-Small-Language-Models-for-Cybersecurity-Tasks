@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what is meant by Denial of Service in a cybersecurity context.",
+    "input": "Windows Lightweight Directory Access Protocol (LDAP) Denial of Service Vulnerability",
+    "output": "Denial of Service (DoS) refers to an attack that aims to make a system, service, or network resource unavailable to its intended users, typically by overwhelming it with a flood of illegitimate requests."
+}

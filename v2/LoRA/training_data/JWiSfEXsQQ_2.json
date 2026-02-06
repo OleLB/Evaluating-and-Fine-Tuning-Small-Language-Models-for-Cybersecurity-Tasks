@@ -1,0 +1,5 @@
+{
+    "instruction": "Classify the type of vulnerability using industry-standard terminology.",
+    "input": "All versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector.",
+    "output": "The vulnerability is classified as a Prototype Pollution, which allows an attacker to manipulate the structure of an object's prototype."
+}

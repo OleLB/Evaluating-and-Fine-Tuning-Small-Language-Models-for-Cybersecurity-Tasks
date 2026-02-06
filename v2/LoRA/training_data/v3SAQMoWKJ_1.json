@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "IPv6-in-IPv4 tunneling (RFC 4213) allows an attacker to spoof and route traffic via an exposed network interface.",
+    "output": "The vulnerability involves IPv6-in-IPv4 tunneling as specified in RFC 4213, which permits an attacker to spoof and redirect network traffic through an unprotected interface."
+}

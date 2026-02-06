@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize how UNIX systems are affected by this vulnerability in Go.",
+    "input": "Go before 1.16.12 and 1.17.x before 1.17.5 on UNIX allows write operations to an unintended file or unintended network connection as a consequence of erroneous closing of file descriptor 0 after file-descriptor exhaustion.",
+    "output": "On UNIX systems, the improper management of file descriptors in certain versions of Go can lead to unintentional file or network writes due to the erroneous closure of file descriptor 0 following exhaustion of available file descriptors, potentially causing data mishandling."
+}

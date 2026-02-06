@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how the vulnerability was addressed.",
+    "input": "A race condition was addressed with improved state handling. This issue is fixed in macOS Big Sur 11.7.9, macOS Monterey 12.6.8, macOS Ventura 13.5. An app may be able to gain root privileges.",
+    "output": "The vulnerability was addressed by implementing improved state handling mechanisms to prevent the race condition from occurring."
+}

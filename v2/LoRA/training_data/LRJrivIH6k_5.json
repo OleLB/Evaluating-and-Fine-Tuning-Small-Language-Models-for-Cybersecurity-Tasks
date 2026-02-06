@@ -1,0 +1,5 @@
+{
+    "instruction": "Specify the affected browser and version in this vulnerability.",
+    "input": "Out of bounds read in networking in Google Chrome prior to 87.0.4280.88 allowed a remote attacker who had compromised the renderer process to obtain potentially sensitive information from process memory via a crafted HTML page.",
+    "output": "The affected software is Google Chrome, specifically versions prior to 87.0.4280.88."
+}

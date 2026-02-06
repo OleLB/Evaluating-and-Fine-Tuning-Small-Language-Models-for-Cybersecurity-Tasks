@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify the relationship of this CVE to other CVEs, if any.",
+    "input": "SphinxSearch in Sphinx Technologies Sphinx through 3.1.1 allows directory traversal (in conjunction with CVE-2019-14511) because the mysql client can be used for CALL SNIPPETS and load_file operations on a full pathname (e.g., a file in the /etc directory). NOTE: this is unrelated to CMUSphinx.",
+    "output": "This CVE is related to CVE-2019-14511, indicating that the exploitation may involve combined vulnerabilities for increased impact or attack surface."
+}

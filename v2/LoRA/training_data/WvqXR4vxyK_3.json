@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability using appropriate acronyms.",
+    "input": "Microsoft Exchange Server Remote Code Execution Vulnerability",
+    "output": "An RCE vulnerability could allow an attacker to gain unauthorized access and execute malicious code on the affected system, potentially leading to data breaches or escalation of privileges."
+}

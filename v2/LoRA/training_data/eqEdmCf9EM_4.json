@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how this vulnerability could potentially be exploited by an attacker.",
+    "input": "Grocy through 4.3.0 allows remote attackers to obtain sensitive information via direct requests to pages that are not shown in the UI, such as calendar and recipes.",
+    "output": "An attacker can exploit this vulnerability by constructing and sending HTTP requests to specific endpoints that are not protected or visible in the main user interface, thereby retrieving sensitive information without authentication."
+}

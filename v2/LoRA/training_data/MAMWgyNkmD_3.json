@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "A memory leak problem was found in ctnetlink_create_conntrack in net/netfilter/nf_conntrack_netlink.c in the Linux Kernel. This issue may allow a local attacker with CAP_NET_ADMIN privileges to cause a denial of service (DoS) attack due to a refcount overflow.",
+    "output": "The impact of this vulnerability allows a local user with CAP_NET_ADMIN privileges to cause a denial of service (DoS) by exploiting a memory leak and refcount overflow, potentially disrupting system availability."
+}

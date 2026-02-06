@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the affected system and version in the issue.",
+    "input": "The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. An app may be able to access protected user data.",
+    "output": "The affected system is macOS Sonoma, specifically version 14, where the vulnerability was present prior to the implementation of the fix."
+}

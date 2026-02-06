@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Missing Authorization vulnerability in Kadence WP Gutenberg Blocks by Kadence Blocks allows Exploiting Incorrectly Configured Access Control Security Levels. This issue affects Gutenberg Blocks by Kadence Blocks: from n/a through 3.3.1.",
+    "output": "The Kadence WP Gutenberg Blocks, specifically versions up to 3.3.1, have a Missing Authorization vulnerability. This issue is caused by improperly configured access control settings, allowing users to perform unauthorized actions."
+}

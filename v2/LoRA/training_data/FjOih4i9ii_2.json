@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described in the CVE.",
+    "input": "The AES instructions on the ARMv8 platform do not have an algorithm that is 'intrinsically resistant' to side-channel attacks. NOTE: the vendor reportedly offers the position 'while power side channel attacks ... are possible, they are not directly caused by or related to the Arm architecture.'",
+    "output": "The vulnerability described is a 'side-channel attack vulnerability,' where sensitive information might be inferred through indirect means such as power analysis."
+}

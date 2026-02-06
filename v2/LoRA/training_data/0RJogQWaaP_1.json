@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "IBM InfoSphere Information Server 11.7 could allow a remote user to obtain sensitive version information that could aid in further attacks against the system.",
+    "output": "IBM InfoSphere Information Server version 11.7 contains a vulnerability that permits unauthorized remote users to access sensitive version information, potentially facilitating additional system attacks."
+}

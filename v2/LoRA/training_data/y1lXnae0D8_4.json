@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how this vulnerability is exploited without giving a step-by-step guide.",
+    "input": "A stored cross site scripting (XSS) vulnerability in Checkmk 1.6.0x prior to 1.6.0p19 allows an authenticated remote attacker to inject arbitrary JavaScript via a javascript: URL in a view title.",
+    "output": "An attacker can exploit this vulnerability by injecting malicious JavaScript into a view title within the application’s interface. Once other users load this view, the JavaScript executes in their browsers under authenticated sessions."
+}

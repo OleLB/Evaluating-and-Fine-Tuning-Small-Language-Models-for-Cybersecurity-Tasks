@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Insufficient bound checks in the SMU may allow an attacker to update the SRAM from/to address space to an invalid value potentially resulting in a denial of service.",
+    "output": "A vulnerability exists due to inadequate boundary checks in the System Management Unit (SMU), which may permit an attacker to improperly alter the Static Random-Access Memory (SRAM) address space. This could potentially lead to a Denial of Service (DoS) condition."
+}

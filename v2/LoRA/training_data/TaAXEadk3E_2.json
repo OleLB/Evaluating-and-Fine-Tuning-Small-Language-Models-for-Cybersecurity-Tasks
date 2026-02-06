@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "There is a SQL injection vulnerability in Some ZTE Mobile Internet products. Due to insufficient validation of the input parameters of the SNTP interface, an authenticated attacker could use the vulnerability to execute stored XSS attacks.",
+    "output": "The primary vulnerability is a SQL Injection (SQLi), which could further result in a stored Cross-Site Scripting (XSS) attack."
+}

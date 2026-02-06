@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "A cross-site scripting (xss) vulnerability exists in the login.cgi set_lang_CountryCode() functionality of Wavlink AC3000 M33A8.V5030.210505. A specially crafted HTTP request can lead to a disclosure of sensitive information. An attacker can make an unauthenticated HTTP request to trigger this vulnerability.",
+    "output": "A cross-site scripting (XSS) vulnerability has been identified in the 'set_lang_CountryCode()' function within the 'login.cgi' of Wavlink AC3000 firmware version M33A8.V5030.210505. An attacker could exploit this flaw by sending a specially crafted HTTP request, potentially leading to the disclosure of sensitive information. This attack can be performed without authentication."
+}

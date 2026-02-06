@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain how SQL injection could be mitigated in web applications.",
+    "input": "cscms v4.1 allows for SQL injection via the 'js_del' function.",
+    "output": "SQL injection can be mitigated by implementing input validation, using parameterized queries or prepared statements, and employing ORM (Object-Relational Mapping) frameworks that abstract direct query execution."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how the issue was resolved technically.",
+    "input": "In the Linux kernel, the following vulnerability has been resolved: io_uring/eventfd: ensure io_eventfd_signal() defers another RCU period io_eventfd_do_signal() is invoked from an RCU callback, but when dropping the reference to the io_ev_fd, it calls io_eventfd_free() directly if the refcount drops to zero. This isn't correct, as any potential freeing of the io_ev_fd should be deferred another RCU grace period. Just call io_eventfd_put() rather than open-code the dec-and-test and free, which will correctly defer it another RCU grace period.",
+    "output": "The issue was resolved by replacing a direct call to io_eventfd_free() with io_eventfd_put(), ensuring the reference count drop and release are deferred correctly to observe an additional RCU grace period."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability in standard terminology.",
+    "input": "HCL MyXalytics is affected by a weak input validation vulnerability.  The application accepts special characters and there is no length validation. This can lead to security vulnerabilities like SQL injection, XSS, and buffer overflow.",
+    "output": "The vulnerability in HCL MyXalytics is categorized as an 'Improper Input Validation' flaw."
+}

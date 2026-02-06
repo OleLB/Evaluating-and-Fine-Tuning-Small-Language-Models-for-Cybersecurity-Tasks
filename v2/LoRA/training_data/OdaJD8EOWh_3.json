@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "Remote Procedure Call Runtime Remote Code Execution Vulnerability",
+    "output": "A successful exploitation of this vulnerability may lead to unauthorized Remote Code Execution (RCE), potentially allowing an attacker to execute arbitrary code on the target system with the same privileges as the RPC service."
+}

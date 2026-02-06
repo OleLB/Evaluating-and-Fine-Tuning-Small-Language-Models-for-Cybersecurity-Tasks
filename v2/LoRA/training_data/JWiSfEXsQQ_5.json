@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain what 'Sandbox Bypass' means in a cybersecurity context.",
+    "input": "All versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector.",
+    "output": "Sandbox Bypass occurs when security controls meant to restrict code execution and limit potential damage are circumvented, allowing malicious actions to escape containment."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "An improper verification of source of a communication channel vulnerability [CWE-940] in FortiClientEMS 7.4.0, 7.2.0 through 7.2.4, 7.0 all versions, 6.4 all versions may allow a remote attacker to bypass the trusted host feature via session connection.",
+    "output": "The vulnerability type can be classified as Improper Verification of Source of a Communication Channel, associated with CWE-940."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Determine if this vulnerability could affect system performance.",
+    "input": "Startup control vulnerability in the ability module. Impact: Successful exploitation of this vulnerability may cause features to perform abnormally.",
+    "output": "Yes, since the vulnerability may cause features to perform abnormally, it could degrade overall system performance or reliability."
+}

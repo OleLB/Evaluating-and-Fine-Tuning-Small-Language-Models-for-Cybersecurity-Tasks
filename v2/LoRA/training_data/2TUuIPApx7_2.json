@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described.",
+    "input": "A denial service vulnerability has been found on  Hex Workshop affecting version 6.7, an attacker could send a command line file arguments and control the Structured Exception Handler (SEH) records resulting in a service shutdown.",
+    "output": "The vulnerability is a Denial of Service (DoS) resulting from improper handling of Structured Exception Handler (SEH) records."
+}

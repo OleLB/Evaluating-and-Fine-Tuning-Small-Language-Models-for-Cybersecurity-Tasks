@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest potential mitigation strategies without providing specific instructions.",
+    "input": "Improper handling of resource allocation in virtual machines can lead to information exposure in Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "Potential mitigation strategies include implementing stricter resource access controls, conducting thorough security assessments, and applying vendor-released patches promptly to reduce the risk of information exposure."
+}

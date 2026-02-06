@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "It was discovered that the cls_route filter implementation in the Linux kernel would not remove an old filter from the hashtable before freeing it if its handle had the value 0.",
+    "output": "A vulnerability was identified in the cls_route filter of the Linux kernel. The issue occurs because the old filter is not removed from the hashtable before being freed if its handle value is zero."
+}

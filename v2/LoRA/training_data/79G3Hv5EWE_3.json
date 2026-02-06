@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact using correct acronyms where applicable.",
+    "input": "There is a resource management errors vulnerability in Huawei P30. Local attackers construct broadcast message for some application, causing this application to send this broadcast message and impact the customer's use experience.",
+    "output": "Exploitation of this vulnerability can lead to a Denial of Service (DoS) condition, impacting the user experience by potentially causing application instability or failure."
+}

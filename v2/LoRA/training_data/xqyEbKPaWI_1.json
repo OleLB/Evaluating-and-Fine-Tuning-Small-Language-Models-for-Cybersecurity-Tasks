@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the CVE description professionally.",
+    "input": "An improper array index validation vulnerability exists in the nowindow functionality of OFFIS DCMTK 3.6.8. A specially crafted DICOM file can lead to an out-of-bounds write. An attacker can provide a malicious file to trigger this vulnerability.",
+    "output": "An improper array index validation vulnerability in the nowindow functionality of OFFIS DCMTK 3.6.8 allows for an out-of-bounds write through a crafted DICOM file."
+}

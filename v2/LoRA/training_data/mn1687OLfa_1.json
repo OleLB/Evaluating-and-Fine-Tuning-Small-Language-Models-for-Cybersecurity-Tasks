@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "In Eternal Terminal 6.2.1, etserver and etclient have predictable logfile names in /tmp.",
+    "output": "In Eternal Terminal version 6.2.1, both 'etserver' and 'etclient' create log files in the /tmp directory with predictable naming patterns."
+}

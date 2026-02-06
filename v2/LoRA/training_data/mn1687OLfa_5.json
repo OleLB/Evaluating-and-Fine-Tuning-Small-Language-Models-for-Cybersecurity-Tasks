@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe how predictable file naming can be exploited.",
+    "input": "In Eternal Terminal 6.2.1, etserver and etclient have predictable logfile names in /tmp.",
+    "output": "An attacker with local access can anticipate log file names, allowing them to read or manipulate log data, potentially leading to information disclosure or privilege escalation."
+}

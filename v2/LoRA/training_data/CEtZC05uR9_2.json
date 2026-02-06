@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability present in Veno File Manager 3.5.6.",
+    "input": "Veno File Manager 3.5.6 is affected by a directory traversal vulnerability. Using the traversal allows an attacker to download sensitive files from the server.",
+    "output": "The vulnerability is a directory traversal issue, categorized under improper limitation of a pathname to a restricted directory ('Path Traversal')."
+}

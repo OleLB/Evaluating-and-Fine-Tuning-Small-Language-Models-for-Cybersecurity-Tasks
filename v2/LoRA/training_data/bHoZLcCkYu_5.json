@@ -1,0 +1,5 @@
+{
+    "instruction": "Provide an example of how this type of vulnerability might be discovered during a security assessment.",
+    "input": "Tenda AC18 V15.03.05.19 was discovered to contain a stack overflow via the limitSpeedUp parameter in the formSetClientState function.",
+    "output": "This vulnerability might be discovered through fuzz testing, where unexpected data is sent to the limitSpeedUp parameter to observe any abnormal behavior or crashes."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type.",
+    "input": "IBM OpenPages 9.0 could allow an authenticated user to obtain sensitive information such as configurations that should only be available to privileged users.",
+    "output": "This vulnerability is classified as an Information Disclosure vulnerability."
+}

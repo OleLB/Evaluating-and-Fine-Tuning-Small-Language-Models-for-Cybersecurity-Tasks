@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability in the provided CVE using standard terminology.",
+    "input": "IBM Jazz Foundation 6.0.6, 6.0.6.1, 7.0, 7.0.1, and 7.0.2 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session.",
+    "output": "The vulnerability in the provided CVE is a Cross-Site Scripting (XSS) vulnerability."
+}

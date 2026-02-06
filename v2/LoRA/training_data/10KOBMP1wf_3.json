@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "In wlan driver, there is a possible missing bounds check. This could lead to local denial of service in wlan services.",
+    "output": "The absence of bounds checking can lead to a Local Denial of Service (DoS), disrupting WLAN services and affecting system availability."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the potential impact of this vulnerability using appropriate industry acronyms.",
+    "input": "IBM Emptoris Sourcing 10.1.0, 10.1.1, and 10.1.3 is vulnerable to web cache poisoning, caused by improper input validation by modifying HTTP request headers. IBM X-Force ID: 190987.",
+    "output": "This vulnerability can lead to cache poisoning attacks, allowing unauthorized actors to manipulate cached web data. It can affect the CIA (Confidentiality, Integrity, Availability) triad by altering data integrity and potentially affecting service availability."
+}

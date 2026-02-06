@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe potential consequences of this vulnerability being exploited.",
+    "input": "Under some circumstances an Insufficiently Protected Credentials vulnerability in Johnson Controls Metasys ADS/ADX/OAS 10 versions prior to 10.1.6 and 11 versions prior to 11.0.3 allows API calls to expose credentials in plain text.",
+    "output": "Exploitation of this vulnerability could result in attackers gaining unauthorized access to systems (UA), potentially allowing them to manipulate system operations, extract sensitive data (E), or perform unauthorized actions (UA) within the environment."
+}

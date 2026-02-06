@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Improper handling of resource allocation in virtual machines can lead to information exposure in Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile",
+    "output": "A flaw in the management of resource allocation within virtual machines can result in unauthorized information disclosure in Snapdragon Consumer IoT, Snapdragon Industrial IoT, and Snapdragon Mobile platforms."
+}

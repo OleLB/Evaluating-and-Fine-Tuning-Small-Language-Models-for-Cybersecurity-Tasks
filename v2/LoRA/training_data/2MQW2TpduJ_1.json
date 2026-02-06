@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "KEPServerEX v6.0 to v6.9, ThingWorx Kepware Server v6.8 and v6.9, ThingWorx Industrial Connectivity (all versions), OPC-Aggregator (all versions), Rockwell Automation KEPServer Enterprise, GE Digital Industrial Gateway Server v7.68.804 and v7.66, and Software Toolbox TOP Server all 6.x versions, are vulnerable to a heap-based buffer overflow. Opening a specifically crafted OPC UA message could allow an attacker to crash the server and potentially leak data.",
+    "output": "The software products KEPServerEX (versions 6.0 to 6.9), ThingWorx Kepware Server (versions 6.8 and 6.9), ThingWorx Industrial Connectivity (all versions), OPC-Aggregator (all versions), Rockwell Automation KEPServer Enterprise, GE Digital Industrial Gateway Server (versions 7.68.804 and 7.66), and all 6.x versions of Software Toolbox TOP Server have a vulnerability related to heap-based buffer overflow. By sending a specially crafted OPC UA message, an attacker could crash the server and possibly extract sensitive information."
+}

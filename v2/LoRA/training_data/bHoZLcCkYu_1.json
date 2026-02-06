@@ -1,0 +1,5 @@
+{
+    "instruction": "Rewrite the description in clear, professional cybersecurity language.",
+    "input": "Tenda AC18 V15.03.05.19 was discovered to contain a stack overflow via the limitSpeedUp parameter in the formSetClientState function.",
+    "output": "The Tenda AC18 router, version V15.03.05.19, contains a stack overflow vulnerability in the formSetClientState function through the limitSpeedUp parameter."
+}

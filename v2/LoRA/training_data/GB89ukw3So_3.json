@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "CoreFTP Server before 727 allows directory traversal (for file creation) by an authenticated attacker via ../ in an HTTP PUT request.",
+    "output": "The impact includes unauthorized file creation that could lead to further system compromise or data integrity issues. If exploited, this vulnerability may provide an attacker with the ability to write to locations outside the intended directory, potentially enabling Unauthorized Access."
+}

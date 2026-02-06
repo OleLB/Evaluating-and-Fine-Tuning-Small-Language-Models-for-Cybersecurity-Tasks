@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain the impact using correct acronyms where applicable.",
+    "input": "A buffer overflow vulnerability exists in Linksys WRT54GL Wireless-G Broadband Router with firmware <= 4.30.18.006. A stack-based buffer overflow in the Start_EPI function within the httpd binary allows an authenticated attacker with administrator privileges to execute arbitrary commands on the underlying Linux operating system as root. This vulnerablity can be triggered over the network via a malicious POST request to /apply.cgi.",
+    "output": "The impact of this vulnerability includes Remote Code Execution (RCE) due to the ability to execute arbitrary commands. It allows an attacker to gain root-level access (privilege escalation) on the underlying Linux operating system if exploited successfully."
+}

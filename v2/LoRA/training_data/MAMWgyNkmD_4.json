@@ -1,0 +1,5 @@
+{
+    "instruction": "Describe the privileges required to exploit this vulnerability.",
+    "input": "A memory leak problem was found in ctnetlink_create_conntrack in net/netfilter/nf_conntrack_netlink.c in the Linux Kernel. This issue may allow a local attacker with CAP_NET_ADMIN privileges to cause a denial of service (DoS) attack due to a refcount overflow.",
+    "output": "Exploitation of this vulnerability requires local access with CAP_NET_ADMIN privileges, which allows network administration capabilities within the system."
+}

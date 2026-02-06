@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the vulnerability type using standard terminology.",
+    "input": "Cross-Site Request Forgery (CSRF) vulnerability in Rara Theme Lawyer Landing Page allows Cross Site Request Forgery.This issue affects Lawyer Landing Page: from n/a through 1.2.4.",
+    "output": "The vulnerability is classified as a Cross-Site Request Forgery (CSRF) vulnerability."
+}

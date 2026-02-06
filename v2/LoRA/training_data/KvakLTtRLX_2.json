@@ -1,0 +1,5 @@
+{
+    "instruction": "Identify the type of vulnerability described in the CVE.",
+    "input": "A vulnerability has been found in code-projects Chat System 1.0 and classified as critical. Affected by this vulnerability is an unknown functionality of the file /admin/deleteroom.php. The manipulation of the argument id leads to sql injection. The attack can be launched remotely. The exploit has been disclosed to the public and may be used.",
+    "output": "The described vulnerability is a SQL Injection (SQLi) issue."
+}

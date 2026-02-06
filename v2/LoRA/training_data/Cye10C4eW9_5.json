@@ -1,0 +1,5 @@
+{
+    "instruction": "Suggest a general mitigation strategy for this type of vulnerability.",
+    "input": "An integer overflow vulnerability in Exif.cpp::jpeg_read_exif_dir in FreeImage 3.18.0 allows attackers to obtain information and cause a denial of service.",
+    "output": "To mitigate integer overflow vulnerabilities, implement input validation to ensure values are within expected ranges and apply boundary checks around arithmetic operations."
+}

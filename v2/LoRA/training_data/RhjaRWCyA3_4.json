@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain why accurate library version tracking is important in cybersecurity.",
+    "input": "In Raptor RDF Syntax Library through 2.0.16, there is a heap-based buffer over-read when parsing triples with the nquads parser in raptor_ntriples_parse_term_internal().",
+    "output": "Accurate library version tracking is crucial as it helps identify which versions contain vulnerabilities, ensuring proper patch management and minimizing security risks by deploying fixes promptly."
+}

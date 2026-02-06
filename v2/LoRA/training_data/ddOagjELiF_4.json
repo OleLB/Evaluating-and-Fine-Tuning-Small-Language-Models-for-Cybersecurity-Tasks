@@ -1,0 +1,5 @@
+{
+    "instruction": "What is the version of the affected IBM product?",
+    "input": "IBM Security Guardium Data Encryption (GDE) 3.0.0.2 specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors.",
+    "output": "The affected version of IBM Security Guardium Data Encryption is 3.0.0.2."
+}

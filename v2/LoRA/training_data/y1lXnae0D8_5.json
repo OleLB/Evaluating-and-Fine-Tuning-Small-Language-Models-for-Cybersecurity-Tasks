@@ -1,0 +1,5 @@
+{
+    "instruction": "Provide mitigation strategies for this vulnerability.",
+    "input": "A stored cross site scripting (XSS) vulnerability in Checkmk 1.6.0x prior to 1.6.0p19 allows an authenticated remote attacker to inject arbitrary JavaScript via a javascript: URL in a view title.",
+    "output": "To mitigate this vulnerability, update Checkmk to version 1.6.0p19 or later. Ensure proper input validation and output encoding are implemented to prevent injection of malicious scripts. Regularly review and apply security patches as part of a comprehensive patch management strategy."
+}

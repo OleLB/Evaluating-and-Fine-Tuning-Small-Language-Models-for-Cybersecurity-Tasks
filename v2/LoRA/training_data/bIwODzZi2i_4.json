@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify the role of 'login.cgi' in this vulnerability scenario.",
+    "input": "A cross-site scripting (xss) vulnerability exists in the login.cgi set_lang_CountryCode() functionality of Wavlink AC3000 M33A8.V5030.210505. A specially crafted HTTP request can lead to a disclosure of sensitive information. An attacker can make an unauthenticated HTTP request to trigger this vulnerability.",
+    "output": "The 'login.cgi' script is involved as it contains the function 'set_lang_CountryCode()' where the XSS vulnerability resides. Exploiting this function through a crafted request allows attackers to execute scripts, leading to sensitive information exposure."
+}

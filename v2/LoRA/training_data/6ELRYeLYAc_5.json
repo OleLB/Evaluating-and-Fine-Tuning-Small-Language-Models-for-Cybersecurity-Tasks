@@ -1,0 +1,5 @@
+{
+    "instruction": "List possible consequences of an XSS vulnerability in web applications.",
+    "input": "Fluxbb v1.4.12 is affected by a Cross Site Scripting (XSS) vulnerability.",
+    "output": "Consequences of an XSS vulnerability include unauthorized access to user data, execution of phishing attacks, and manipulation of website content."
+}

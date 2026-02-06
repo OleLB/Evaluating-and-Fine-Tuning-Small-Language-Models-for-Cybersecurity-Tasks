@@ -1,0 +1,5 @@
+{
+    "instruction": "Determine the affected software versions.",
+    "input": "A stack-based buffer overflow in Fortinet FortiWeb versions 7.2.0 through 7.2.7, and 7.4.0 through 7.4.1 may allow a privileged user to execute arbitrary code via specially crafted CLI commands, provided the user is able to evade FortiWeb stack protections.",
+    "output": "Affected software versions include Fortinet FortiWeb 7.2.0 through 7.2.7, and 7.4.0 through 7.4.1."
+}

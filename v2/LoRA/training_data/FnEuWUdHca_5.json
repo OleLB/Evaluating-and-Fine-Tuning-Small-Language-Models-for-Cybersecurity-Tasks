@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss potential mitigation strategies for this vulnerability.",
+    "input": "HCL MyXalytics is affected by a session fixation vulnerability.  Cyber-criminals can exploit this by sending crafted URLs with a session token to access the victim's login session.",
+    "output": "Mitigation strategies include regenerating session IDs after login (SID Renewal) and implementing secure cookie attributes like HttpOnly and Secure flags."
+}

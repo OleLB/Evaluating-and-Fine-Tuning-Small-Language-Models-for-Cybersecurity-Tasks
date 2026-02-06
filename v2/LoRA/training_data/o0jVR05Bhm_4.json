@@ -1,0 +1,5 @@
+{
+    "instruction": "Discuss how high privilege users can exploit this vulnerability.",
+    "input": "The Qe SEO Handyman WordPress plugin through 1.0 does not properly sanitize and escape a parameter before using it in a SQL statement, leading to a SQL injection exploitable by high privilege users such as admin",
+    "output": "High privilege users, such as administrators, can exploit this SQL Injection vulnerability by providing crafted input that is improperly sanitized. This allows them to manipulate database queries to exfiltrate data or alter the database integrity."
+}

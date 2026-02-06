@@ -1,0 +1,5 @@
+{
+    "instruction": "Explain how this type of vulnerability could be prevented using standard cybersecurity practices.",
+    "input": "A reflected XSS vulnerability has been found in Axiell Iguana CMS, allowing an attacker to execute code in a victim's browser. The module parameter on the Service.template.cls endpoint does not properly neutralise user input, resulting in the vulnerability.",
+    "output": "To prevent Reflected XSS vulnerabilities, implement input sanitization and output encoding. Additionally, use security libraries or frameworks that automatically handle these tasks, and regularly perform code reviews and security testing."
+}

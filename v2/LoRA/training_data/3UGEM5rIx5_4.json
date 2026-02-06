@@ -1,0 +1,5 @@
+{
+    "instruction": "What environment is mentioned as being at risk due to this vulnerability?",
+    "input": "There is a vulnerability caused by unsafe Java deserialization that allows for arbitrary command execution in a containerized environment within Airwave Glass before 1.3.3. Successful exploitation can lead to complete compromise of the underlying host operating system.",
+    "output": "The vulnerability specifically affects a containerized environment within Airwave Glass software prior to version 1.3.3."
+}

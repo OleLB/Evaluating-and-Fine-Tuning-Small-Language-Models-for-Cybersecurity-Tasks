@@ -1,0 +1,5 @@
+{
+    "instruction": "Clarify what a NULL pointer dereference entails.",
+    "input": "A NULL pointer dereference in AcseConnection_parseMessage at src/mms/iso_acse/acse.c of libiec61850 v1.5.0 can lead to a segmentation fault or application crash.",
+    "output": "A NULL pointer dereference occurs when a program attempts to read or write to a memory location through a pointer that is NULL, leading to undefined behavior, often resulting in a program crash."
+}

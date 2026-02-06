@@ -1,0 +1,5 @@
+{
+    "instruction": "Translate the given CVE description into clear, professional cybersecurity language.",
+    "input": "Dnsmasq 2.86 has a heap-based buffer overflow in check_bad_address (called from check_for_bogus_wildcard and FuzzCheckForBogusWildcard). NOTE: the vendor's position is that CVE-2021-45951 through CVE-2021-45957 'do not represent real vulnerabilities, to the best of our knowledge.",
+    "output": "Dnsmasq version 2.86 contains a vulnerability in the function check_bad_address, which results in a heap-based buffer overflow. This vulnerability is triggered during the execution of check_for_bogus_wildcard and FuzzCheckForBogusWildcard. The vendor believes that CVE-2021-45951 through CVE-2021-45957 are not actual vulnerabilities based on their current understanding."
+}

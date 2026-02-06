@@ -1,0 +1,5 @@
+{
+    "instruction": "What is the root cause of this vulnerability in Veno File Manager?",
+    "input": "Veno File Manager 3.5.6 is affected by a directory traversal vulnerability. Using the traversal allows an attacker to download sensitive files from the server.",
+    "output": "The root cause is insufficient input validation, allowing improper directory access beyond the application's intended constraints."
+}

@@ -1,0 +1,5 @@
+{
+    "instruction": "Summarize the vulnerability in professional cybersecurity language.",
+    "input": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Ekol Informatics Website Template allows SQL Injection.This issue affects Website Template: through 20231215.",
+    "output": "The vulnerability is an SQL Injection flaw within the Ekol Informatics Website Template that allows unauthorized SQL commands to be executed. This affects versions up to December 15, 2023."
+}
