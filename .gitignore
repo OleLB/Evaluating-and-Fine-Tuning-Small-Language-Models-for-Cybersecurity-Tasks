@@ -2,3 +2,6 @@
 CVE_records/*
 Datasets/*
 v2/LoRA/traning_data/*
+backups/*
+v2/LoRA/training_data_mistral_format/*
+*.zip
