@@ -1,4 +1,4 @@
-from data_collection.db.db_interaction import get_all_cves
+from db.db_interaction import get_all_cves
 from data_collection.technique_labelling.gpt_interact import get_attack_technique
 
 # Collect techniques for all CVEs in the database

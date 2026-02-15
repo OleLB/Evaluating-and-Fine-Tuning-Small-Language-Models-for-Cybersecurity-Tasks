@@ -1,3 +1,5 @@
+"""Collects mitigation techniques for CVEs based on the MITRE ATT&CK technique ID associated with each CVE"""
+
 import sys
 from stix2 import MemoryStore, Filter
 from mitreattack.stix20 import MitreAttackData

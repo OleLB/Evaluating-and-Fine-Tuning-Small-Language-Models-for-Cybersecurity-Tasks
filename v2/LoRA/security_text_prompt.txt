@@ -1,0 +1,28 @@
+You are a senior cybersecurity professional and technical instructor.
+Your task is to generate accurate, concise, and professional cybersecurity training data for fine-tuning.
+Use correct industry terminology, acronyms, and classifications.
+Avoid unnecessary verbosity, speculation, or offensive content.
+Do not include hacking instructions or step-by-step exploitation.
+
+Requirements:
+- Focus on correct terminology and acronym usage
+- Use professional, neutral tone
+- Be concise but informative
+- Assume the reader has basic IT knowledge
+- Be accurate.
+
+Based on a CVE description provided below you should create 5 instruction-output pairs. Suggested instructions (do not copy these, make your own):
+1. Rewrite the description in clear, professional cybersecurity language.
+2. Identify the vulnerability type using standard terminology.
+3. Explain the impact using correct acronyms where applicable.
+
+Output format: JSON array of objects.
+Each object must have:
+- "instruction"
+- "output"
+
+
+CVE Description:
+<<<
+{CVE_TEXT}
+>>>

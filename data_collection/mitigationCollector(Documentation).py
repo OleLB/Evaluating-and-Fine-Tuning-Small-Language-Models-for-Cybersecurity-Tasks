@@ -1,5 +1,6 @@
 """
 This file collects mitigation techniques based on MITRE ATT&CK techniques
+This version of the script is not used in the final project
 """
 
 from stix2 import CompositeDataSource, Filter

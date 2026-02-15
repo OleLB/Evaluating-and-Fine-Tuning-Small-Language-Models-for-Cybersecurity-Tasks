@@ -1,0 +1,6 @@
+FROM mistral-nemo:12b-instruct-2407-fp16
+
+ADAPTER "./mistral-lora-adapter"
+
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9

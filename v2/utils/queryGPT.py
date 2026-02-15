@@ -76,6 +76,9 @@ def queryGPT(prompt: str, model: str = AI_MODEL):
   
 
 if __name__ == "__main__":
-    test_prompt = "hello, how are you today."
-    response, usage = queryGPT(test_prompt, "gpt-4o")
-    print(response)
+    while True:
+        user_input = input("Enter a prompt (or 'exit' to quit): ")
+        if user_input.lower() == 'exit':
+            break
+        response, usage = queryGPT(user_input, "gpt-4o")
+        print(response)

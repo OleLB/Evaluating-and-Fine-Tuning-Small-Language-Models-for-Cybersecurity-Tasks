@@ -19,6 +19,41 @@ def getDescription(cve_id: str, database = DATABASE) -> str:
         return "CVE not found in the database."
     
 
+def getCVEInfo(cve_id: str, database = DATABASE) -> str:
+    """Retrieve detailed information about a CVE from the database."""
+    try:
+        conn = sqlite3.connect(database)
+        cursor = conn.cursor()
+        # Fix: Select all needed columns, not just description
+        cursor.execute("""
+            SELECT cve_id, description, cwe_name, cwe_description, 
+                label_attack, severity, known_vulnerable_software, 
+                cpe_list, mitigation 
+            FROM cves 
+            WHERE cve_id = ?
+        """, (cve_id,))
+        row = cursor.fetchone()
+        conn.close()
+    except Exception as e:
+        return f"Error connecting to CVE database: {e}"
+    
+    if row:
+        formatted_info = {
+            "CVE_ID": row[0],
+            "Description": row[1],
+            "CWE_Name": row[2],
+            "CWE_Description": row[3],
+            "Attack_Technique": row[4],
+            "Severity": row[5],
+            "Known_Vulnerable_Software": row[6],
+            "CPE_List": row[7],
+            "Mitigation": row[8]
+        }
+        return formatted_info
+    else:
+        return "CVE not found in the database."
+    
+
 def getRowCount(table_name: str, database = DATABASE) -> int:
     """Get the number of rows in a specified table."""
     try:
@@ -33,9 +68,9 @@ def getRowCount(table_name: str, database = DATABASE) -> int:
         return -1
     
 
-def getRandomCVEs():
+def getRandomCVEs(limit=200):
     """Retrieve 200 random CVE IDs from the database."""
-    query = "SELECT * FROM cves ORDER BY RANDOM() LIMIT 200;"
+    query = f"SELECT * FROM cves ORDER BY RANDOM() LIMIT {limit};"
     try:
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()

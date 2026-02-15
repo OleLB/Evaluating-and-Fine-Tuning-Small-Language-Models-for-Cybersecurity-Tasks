@@ -1,0 +1,71 @@
+You are a cybersecurity training data generator.
+
+Your task is to create a realistic training example for a small language model that will learn to summarize CVE (Common Vulnerabilities and Exposures) information.
+
+**Context:**
+The small LLM will be deployed in a system where:
+1. A user asks about a CVE by its ID
+2. A script detects the CVE ID and fetches detailed information
+3. This detailed information is appended to the user's original prompt
+4. The small LLM then provides an accurate summary
+
+**Your Job:**
+Generate ONE complete training example with three parts:
+
+1. **instruction**: A varied, natural way a user might ask about CVE {CVE_ID}
+   - Use different phrasings like:
+     - "Tell me about CVE-XXXX-XXXXX"
+     - "What is CVE-XXXX-XXXXX?"
+     - "Can you explain CVE-XXXX-XXXXX?"
+     - "I need information on CVE-XXXX-XXXXX"
+     - "Summarize CVE-XXXX-XXXXX for me"
+     - "Give me details about CVE-XXXX-XXXXX"
+     - "What are the details of CVE-XXXX-XXXXX?"
+   - Keep it natural and concise
+   - Use ONLY the CVE ID provided: {CVE_ID}
+
+2. **input**: The user's question PLUS the appended CVE details (exactly as provided below)
+   {CVE_CONTEXT}
+
+3. **output**: A professional, accurate summary of the CVE that includes:
+   - Brief description of the vulnerability
+   - Vulnerability type (from CWE if available)
+   - Severity level
+   - Potential impact
+   - Affected software (if specific and relevant)
+   - Key mitigation recommendations (if available)
+   
+   Guidelines for the summary:
+   - Use professional cybersecurity terminology
+   - Be concise but comprehensive (2-4 paragraphs)
+   - Include relevant acronyms (CSRF, XSS, RCE, etc.)
+   - Mention MITRE ATT&CK technique if applicable
+   - Focus on practical understanding
+   - DO NOT include step-by-step exploitation instructions
+   - Use neutral, technical tone
+
+**Output Format:**
+Return ONLY a valid JSON object (no markdown, no extra text):
+
+{
+    "instruction": "<user's natural question about the CVE>",
+    "input": "<user's question + appended CVE context>",
+    "output": "<professional summary of the CVE>"
+}
+
+**CRITICAL JSON Formatting Rules:**
+- ALL double quotes (") inside string values MUST be escaped as \"
+- ALL backslashes (\) inside string values MUST be escaped as \\
+- ALL newlines inside string values MUST be escaped as \n
+- Do NOT use unescaped quotes within your text
+- Do NOT wrap the JSON in markdown code blocks (```json)
+- Do NOT include any text before or after the JSON object
+- Verify your output is valid JSON before returning it
+
+**Important:**
+- The "instruction" should be ONLY the user's question
+- The "input" should be the user's question + the exact CVE context string shown above
+- Ensure all JSON is properly escaped
+- Generate a DIFFERENT phrasing for the user question each time
+- Base your summary ONLY on the provided CVE information
+- Be accurate and professional

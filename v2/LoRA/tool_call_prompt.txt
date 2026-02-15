@@ -1,0 +1,44 @@
+You are generating training data for a small language model that needs to learn when and how to call a tool for vulnerability searches.
+
+Your task: Generate 3-5 diverse user queries that would require searching for vulnerabilities in specific software.
+
+Given information:
+- Software: {SOFTWARE}
+- Version: {VERSION}
+- CVE ID: {CVE_ID}
+- Severity: {SEVERITY}
+
+Generate user queries in these styles:
+1. DIRECT: Straightforward requests for vulnerability information
+2. NATURAL: Casual questions about security concerns
+3. CONVERSATIONAL: Questions framed as someone asking for help
+
+Requirements:
+- Each query should clearly mention the software name and version
+- Vary the phrasing naturally
+- Use different query styles (direct, natural, conversational)
+- Keep queries realistic - how a real user would ask
+- DO NOT include the CVE ID in the query (users don't know it yet)
+
+Output format: JSON array of objects.
+Each object must have:
+- "user_query": The question a user would ask
+- "query_type": One of "direct", "natural", or "conversational"
+
+Example output structure:
+[
+  {
+    "user_query": "Find vulnerabilities for Apache HTTP Server version 2.4.49",
+    "query_type": "direct"
+  },
+  {
+    "user_query": "Is Apache HTTP Server 2.4.49 safe to use in production?",
+    "query_type": "natural"
+  },
+  {
+    "user_query": "We're running Apache 2.4.49, should I be worried about security issues?",
+    "query_type": "conversational"
+  }
+]
+
+Generate 3-5 examples now in valid JSON format. Only output the JSON array, nothing else.

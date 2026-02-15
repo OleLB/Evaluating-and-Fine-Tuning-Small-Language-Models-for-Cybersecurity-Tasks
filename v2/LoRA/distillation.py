@@ -6,7 +6,7 @@ from utils.checkFileExists import checkFileExists
 from utils.generateRandomName import generateRandomName
 import json
 
-PROMPT_PATH = "LoRA/prompt.txt"
+PROMPT_PATH = "LoRA/security_text_prompt.txt"
 SYSTEM_PROMPT = readFile(PROMPT_PATH)
 
 # Example response format
@@ -14,19 +14,19 @@ SYSTEM_PROMPT = readFile(PROMPT_PATH)
 [
   {
     "instruction": "Rewrite the following CVE description using professional cybersecurity terminology.",
-    "response": "This vulnerability is a buffer overflow in the XYZ parser that can be exploited remotely, potentially resulting in remote code execution (RCE)."
+    "output": "This vulnerability is a buffer overflow in the XYZ parser that can be exploited remotely, potentially resulting in remote code execution (RCE)."
   },
   {
     "instruction": "What type of vulnerability is described in the following CVE description?",
-    "response": "The vulnerability is a buffer overflow that may lead to remote code execution."
+    "output": "The vulnerability is a buffer overflow that may lead to remote code execution."
   },
   {
     "instruction": "What is the security impact of the following vulnerability?",
-    "response": "Successful exploitation could allow an unauthenticated remote attacker to execute arbitrary code on the affected system."
+    "output": "Successful exploitation could allow an unauthenticated remote attacker to execute arbitrary code on the affected system."
   },
   {
     "instruction": "Which Common Weakness Enumeration (CWE) category is most applicable to the following vulnerability?",
-    "response": "This vulnerability most closely aligns with CWE-120: Buffer Copy without Checking Size of Input. This classification is inferred based on the description."
+    "output": "This vulnerability most closely aligns with CWE-120: Buffer Copy without Checking Size of Input. This classification is inferred based on the description."
   }
 ]
 """
@@ -40,7 +40,7 @@ def arrayToFile(response_array: list, description) -> None:
     {
         "instruction": "Rewrite the following CVE description using professional cybersecurity terminology.",
         "input": "A buffer overflow in the XYZ parser allows remote attackers to execute arbitrary code via crafted input.",
-        "response": "This vulnerability is a buffer overflow in the XYZ parser that can be exploited remotely, potentially resulting in remote code execution (RCE)."
+        "output": "This vulnerability is a buffer overflow in the XYZ parser that can be exploited remotely, potentially resulting in remote code execution (RCE)."
     }
   """
     filename = ""
@@ -76,8 +76,8 @@ def validateJSONResponse(response) -> bool:
             if not isinstance(item, dict):
                 print("Item is not a dictionary.")
                 return False
-            if 'instruction' not in item or 'response' not in item:
-                print("Missing instruction or response.")
+            if 'instruction' not in item or 'output' not in item:
+                print("Missing instruction or output.")
                 return False
 
         return True
@@ -128,40 +128,6 @@ def main():
     print(f"Total cost for processing CVEs: ${total_price:.4f}")
 
 
-def test():
-    cve = "CVE-2023-4863"
-    description = """MaxKB is an open-source knowledge base system that leverages language models and retrieval-augmented generation to provide intelligent responses. A remote command execution vulnerability (CVE-2023-4863) was identified in MaxKB's function library module prior to version 1.9.0. This vulnerability allowed privileged users to execute operating system commands via custom scripts. The issue was addressed and patched in version 1.9.0."""
-    test_response = """
-[
-    {
-        "instruction": "Rewrite the description in clear, professional cybersecurity language.",
-        "response": "MaxKB, an open-source knowledge base system utilizing language models and retrieval-augmented generation, contained a remote command execution vulnerability in its function library module prior to version 1.9.0. This flaw permitted privileged users to execute operating system commands via custom scripts. The issue was addressed and patched in version 1.9.0."
-    },
-    {
-        "instruction": "Identify the vulnerability type using standard terminology.",
-        "response": "The described issue is a Remote Command Execution (RCE) vulnerability, which occurs when an attacker is able to remotely execute arbitrary commands on the host operating system."
-    },
-    {
-        "instruction": "Explain the impact using correct acronyms where applicable.",
-        "response": "The vulnerability allows unauthorized execution of OS commands, leading to potential breaches such as privilege escalation or unauthorized access. This can compromise the CIA triad: confidentiality, integrity, and availability of the system."
-    },
-    {
-        "instruction": "Describe the conditions under which this vulnerability can be exploited.",
-        "response": "Exploiting this vulnerability requires privileged access to the system where an attacker can execute custom scripts, enabling remote command execution on the server."
-    },
-    {
-        "instruction": "Provide a preventive measure to mitigate this type of vulnerability.",
-        "response": "Regularly update software to the latest versions to apply security patches. Implement the principle of least privilege (PoLP) to minimize the permissions necessary for user accounts, reducing the risk of privilege escalation."
-    }
-]
-"""
-    if validateJSONResponse(test_response):
-        print("Valid JSON response.")
-        response_array = json.loads(test_response)
-        arrayToFile(response_array, description)
-    else:
-        print(f"Invalid JSON response for CVE {cve}.")
 
 if __name__ == "__main__":
     main()
-    # test()

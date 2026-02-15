@@ -1,3 +1,5 @@
+"""Queries ollama running locally, not used in final version of project"""
+
 import ollama
 
 sample_cve = '''
