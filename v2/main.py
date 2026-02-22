@@ -22,28 +22,31 @@ CVE_PATTERN = r"CVE-\d{4}-\d{4,7}"
 DEFAULT_AI_MODEL = "mistral-nemo-cve2:latest"
 
 SYSTEM_PROMPT = """
-You are a cybersecurity expert assistant.
-Your task is to help users find information about software vulnerabilities and explain CVEs.
-You have access to a vector database containing software version data.
-Use the vector database tool if the user is asking about a specific software version, such as "Are there any vulnerabilities in XYZ version 1.2.3?".
+You are a cybersecurity assistant specialized in CVE and vulnerability lookup.
+Your purpose is to help users find and understand software vulnerabilities.
 
-In order to retrieve information from the vector database, use the following tool format in your response:
-<vector_database_retrieval>{"query": <YOUR QUERY HERER>}</vector_database_retrieval>
+You have access to a vector database of software vulnerability data.
+Use the vector database tool ONLY when the user asks about vulnerabilities affecting a specific software name and version (e.g. "Are there any vulnerabilities in nginx 1.18.0?").
 
-If performing a tool call:
-Results from the tool should be presented to the user in a structured format, show a maximum of 5 results. Prioritize vulnerabilities that are rated as CRITICAL or HIGH severity.
-Type out the CVE IDs of the relevant vulnerabilities and explain why they are relevant.
+When presenting vector database results:
+- Show a maximum of 5 results
+- Prioritize CRITICAL and HIGH severity findings
+- List the CVE IDs and explain why each is relevant
 
+When a user asks about a specific CVE ID:
+- You will be provided with the CVE description, affected software, and other details from the database. Use this information to answer the user's question.
+- Report only what is available in the database record
+- The database uses NVD data, which is sometimes incomplete
+- If specific details (such as authentication requirements, affected components, or exploit conditions) are not present in the data, say so explicitly
+- Do NOT infer or fabricate details that are not in the data — an honest "the NVD record does not specify this" is always preferable to a plausible-sounding guess
 
-DO NOT Provide URLs to the user.
-DO NOT Use the tool to learn more about a specific CVE, only use it to learn about software versions.
+For general cybersecurity questions (not about a specific CVE or software version):
+- Answer from your training knowledge without using any tools
+- Make clear you are speaking from general knowledge, not from the CVE database
 
-
-Examples:
-If a user enters only a CVE ID (e.g., CVE-2023-12345), provide information about it. Do not use the vector database tool.
-If a user enters a software name and version, use the vector database tool to find relevant vulnerabilities.
+Do NOT use the vector database tool to look up details about a specific CVE ID.
+Do NOT provide URLs.
 """
-
 
 def getCVEInfo(cve_id: str) -> str:
     try:
@@ -169,7 +172,7 @@ def qdrantRAG(tool_call, top_x=5) -> str:
     
 #     # If no tool was needed, just return the direct response
 #     return response['message']['content']
-def dynamic_rag(user_prompt: str, cve_data: dict, model: str = DEFAULT_AI_MODEL):
+def dynamic_rag(user_prompt: str, cve_data: dict, model: str):
     # 2. Define the 'tool' schema so the model knows what the function does
     tools = [{
         'type': 'function',
@@ -268,7 +271,7 @@ def dynamic_rag(user_prompt: str, cve_data: dict, model: str = DEFAULT_AI_MODEL)
     return response_text
 
 
-def handle_user_query(query: str) -> str:
+def handle_user_query(query: str, model_name: str = DEFAULT_AI_MODEL) -> str:
     # Check for CVE pattern in the query
     cve_matches = re.findall(CVE_PATTERN, query)
     cve_data = {}
@@ -277,7 +280,7 @@ def handle_user_query(query: str) -> str:
             cve_info_dict = getCVEInfo(cve_id)
             cve_data[cve_id] = cve_info_dict
 
-    response = dynamic_rag(query, cve_data)
+    response = dynamic_rag(query, cve_data, model_name)
     return response
 
 def main():

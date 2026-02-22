@@ -32,7 +32,8 @@ def calculateCost(input_tokens, output_tokens, model: str = AI_MODEL) -> float:
         input_tokens (int): Number of input tokens.
         output_tokens (int): Number of output tokens.
     Returns:
-        float: The total cost in USD.
+        response (str): The model's response.,
+        cost (dict): The total cost in USD.
     """
     # Cost is in USD per million tokens
     cost_per_1M_input_tokens = next((item["input_per_1M_tokens"] for item in COST_DICT if item["model"] == model), 0.25)
