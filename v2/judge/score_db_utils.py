@@ -9,16 +9,22 @@ def get_connection():
 
 
 # 1. Add input/output pair, return created row id
-def add_entry(input_text: str, output_text: str, model_name: str) -> int:
+def add_entry(input_text: str, output_text: str, model_name: str, rag_usage: dict, cve_data: dict = None) -> int:
+    rag_output = rag_usage["rag_results"] if rag_usage["used_rag"] else None
+    
+    # cve_data is a dict of CVEs where the CVE id is the key
+    # it needs to be converted to a string to be stored in the database
+    cve_data_str = str(cve_data) if cve_data else None
+
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
             """
-            INSERT INTO Scores (input, output, model_name)
+            INSERT INTO Scores (input, output, model_name, rag_output, cve_data)
 
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
             """,
-            (input_text, output_text, model_name),
+            (input_text, output_text, model_name, rag_output, cve_data_str),
         )
         conn.commit()
         return cursor.lastrowid
@@ -138,9 +144,23 @@ def get_average_scores(model: str) -> Tuple[Optional[float], Optional[float]]:
         )
         result = cursor.fetchone()
         return result if result else (None, None)
+    
+
+def delete_all_entries_by_model(model: str) -> int:
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            DELETE FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        conn.commit()
+        return cursor.rowcount
 
 
 if __name__ == "__main__":
     # print("Database interaction module ready.")
-    score = get_average_scores("mistral-nemo-cve2")
-    print(f"Average scores for model 'mistral-nemo-cve2': {score}")
+    model = "mistral-nemo-cve2"
+    # delete_LLM_scores_by_model(model)

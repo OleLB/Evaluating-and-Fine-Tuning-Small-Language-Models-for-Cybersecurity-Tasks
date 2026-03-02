@@ -12,6 +12,8 @@ def initialize_database(db_name="scores.db"):
             model_name TEXT NOT NULL,
             input TEXT NOT NULL,
             output TEXT NOT NULL,
+            rag_output TEXT,
+            cve_data TEXT,
             LLM_score REAL,
             Human_score REAL
         );

@@ -25,18 +25,14 @@ SYSTEM_PROMPT = """
 You are a cybersecurity assistant specialized in CVE and vulnerability lookup.
 Your purpose is to help users find and understand software vulnerabilities.
 
-You have access to a vector database of software vulnerability data.
+You have access to a vector database tool that contains software vulnerability information.
 Use the vector database tool ONLY when the user asks about vulnerabilities affecting a specific software name and version (e.g. "Are there any vulnerabilities in nginx 1.18.0?").
-
-When presenting vector database results:
-- Show a maximum of 5 results
-- Prioritize CRITICAL and HIGH severity findings
-- List the CVE IDs and explain why each is relevant
+Do NOT use the vector database tool to look up details about a specific CVE ID.
+If you use the tool, and dont recive results that are relevant for the requested software, they should not be presented to the user.
 
 When a user asks about a specific CVE ID:
 - You will be provided with the CVE description, affected software, and other details from the database. Use this information to answer the user's question.
 - Report only what is available in the database record
-- The database uses NVD data, which is sometimes incomplete
 - If specific details (such as authentication requirements, affected components, or exploit conditions) are not present in the data, say so explicitly
 - Do NOT infer or fabricate details that are not in the data — an honest "the NVD record does not specify this" is always preferable to a plausible-sounding guess
 
@@ -44,9 +40,21 @@ For general cybersecurity questions (not about a specific CVE or software versio
 - Answer from your training knowledge without using any tools
 - Make clear you are speaking from general knowledge, not from the CVE database
 
-Do NOT use the vector database tool to look up details about a specific CVE ID.
-Do NOT provide URLs.
+NEVER provide URLs.
+
+
 """
+
+'''
+To call a tool, use the following format in your response:
+{
+    "function": {
+        "name": "vector_database_retrieval",
+        "arguments": "{\"query\": \"vulnerability for <software_name> version x.y.z\"}"
+      }
+    }
+}
+'''
 
 def getCVEInfo(cve_id: str) -> str:
     try:
@@ -81,12 +89,12 @@ def getCVEInfo(cve_id: str) -> str:
         return "CVE not found in the database."
     
 
-def qdrantRAG(tool_call, top_x=5) -> str:
+def qdrantRAG(query, top_x=5) -> str:
     try:
         # 1. Access 'function' as an attribute
         # 2. Access 'arguments' as an attribute
         # 3. 'arguments' is a dictionary, so use ['query']
-        query = tool_call.function.arguments['query']
+
         
         print("Executing RAG with Qdrant with query:", query)
         points = query_qdrant(query)
@@ -124,61 +132,14 @@ def qdrantRAG(tool_call, top_x=5) -> str:
     # Join the top x unique results into the final context string
     return "\n\n---\n\n".join(top_x_results)
 
-#! This is the RAG function without tool parsing
-# def dynamic_rag(user_prompt: str, cve_data: dict, model: str = DEFAULT_AI_MODEL):
-#     # 2. Define the 'tool' schema so the model knows what the function does
-#     tools = [{
-#         'type': 'function',
-#         'function': {
-#             'name': 'vector_database_retrieval',
-#             'description': 'Attempt to discover weaknesses for a software version using a vector database. Use the tool if the user is asking you to find a vulnerability for a piece of software. Do NOT use this tool to learn more about a CVE. The results may or may not be relevant. The most promising results should be presented to the user in a structured format, show a maximum of 5 results. Prioritize vulnerabilities that are rated as CRITICAL or HIGH severity.',
-#             'parameters': {
-#                 'type': 'object',
-#                 'properties': {
-#                     'query': {'type': 'string', 'description': 'A search query on the format: "vulnerability for <software name> version <version number>"'},
-#                 },
-#                 'required': ['query'],
-#             },
-#         },
-#     }]
 
-#     # 3. Initial Chat Call
-#     system_prompt = SYSTEM_PROMPT
-#     if cve_data:
-#         system_prompt += "\n\nThe user has mentioned a CVE, the following CVE information is available:\n"
-#         for cve_id, cve_info in cve_data.items():
-#             system_prompt += f"\n{cve_info}\n"
-            
-#     messages = [{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': user_prompt}]
-#     response = ollama.chat(model=model, messages=messages, tools=tools)
-
-#     # 4. Check if the model wants to use the tool
-#     if response.get('message', {}).get('tool_calls'):
-#         for tool in response['message']['tool_calls']:
-#             if tool['function']['name'] == 'vector_database_retrieval':
-#                 # Execute the function
-#                 context = qdrantRAG(tool)
-                
-#                 # Add the tool's result to the conversation
-#                 messages.append(response['message'])
-#                 messages.append({
-#                     'role': 'tool',
-#                     'content': context,
-#                 })
-        
-#         # Final call to generate answer based on the retrieved context
-#         final_response = ollama.chat(model=model, messages=messages)
-#         return final_response['message']['content']
-    
-#     # If no tool was needed, just return the direct response
-#     return response['message']['content']
 def dynamic_rag(user_prompt: str, cve_data: dict, model: str):
     # 2. Define the 'tool' schema so the model knows what the function does
     tools = [{
         'type': 'function',
         'function': {
             'name': 'vector_database_retrieval',
-            'description': 'Attempt to discover weaknesses for a software version using a vector database. Use the tool if the user is asking you to find a vulnerability for a piece of software. Do NOT use this tool to learn more about a CVE. The results may or may not be relevant. The most promising results should be presented to the user in a structured format, show a maximum of 5 results. Prioritize vulnerabilities that are rated as CRITICAL or HIGH severity.',
+            'description': 'Attempt to discover weaknesses for a software version using a vector database. Use the tool if the user is asking you to find a vulnerability for a piece of software. Do NOT use this tool to learn more about a CVE. The results may or may not be relevant. The most promising results should be presented to the user in a structured format, show a maximum of 5 results. Prioritize vulnerabilities that are rated as CRITICAL or HIGH severity. Do not present irrelevant results to the user.',
             'parameters': {
                 'type': 'object',
                 'properties': {
@@ -198,14 +159,18 @@ def dynamic_rag(user_prompt: str, cve_data: dict, model: str):
             
     messages = [{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': user_prompt}]
     response = ollama.chat(model=model, messages=messages, tools=tools)
+
+    rag_output = {"used_rag": False, "rag_results": None}
     
     # 4a. Check for standard tool calls (normal models)
     if response.get('message', {}).get('tool_calls'):
         for tool in response['message']['tool_calls']:
             if tool['function']['name'] == 'vector_database_retrieval':
                 # Execute the function
-                context = qdrantRAG(tool)
-                
+                query = tool.function.arguments['query']
+                context = qdrantRAG(query)
+                rag_output["used_rag"] = True
+                rag_output["rag_results"] = context
                 # Add the tool's result to the conversation
                 messages.append(response['message'])
                 messages.append({
@@ -215,73 +180,47 @@ def dynamic_rag(user_prompt: str, cve_data: dict, model: str):
         
         # Final call to generate answer based on the retrieved context
         final_response = ollama.chat(model=model, messages=messages)
-        return final_response['message']['content']
+        return final_response['message']['content'], rag_output
     
     # 4b. Check for custom text-based tool calls (fine-tuned model)
     response_text = response.get('message', {}).get('content', '')
-    tool_match = re.search(
-        r'<vector_database_retrieval>\s*(\{[^}]+\})\s*</vector_database_retrieval>',
-        response_text,
-        re.DOTALL
-    )
-    
-    if tool_match:
+    if "vector_database_retrieval" in response_text:
         try:
-            # Extract and parse the JSON arguments
-            args_str = tool_match.group(1).strip()
-            # Clean up formatting (tabs, newlines)
-            args_str = re.sub(r'\s+', ' ', args_str)
-            args = json.loads(args_str)
-            
-            # Convert to the object structure that qdrantRAG expects
-            # tool_call.function.arguments['query']
-            mock_tool_call = SimpleNamespace(
-                function=SimpleNamespace(
-                    name='vector_database_retrieval',
-                    arguments=args
-                )
-            )
-            
-            # Execute the function
-            context = qdrantRAG(mock_tool_call)
-            
-            # Add the assistant's message (without the tool call text) and tool result
-            messages.append({
-                'role': 'assistant',
-                'content': ''  # Empty content since it was just a tool call
-            })
-            messages.append({
-                'role': 'tool',
-                'content': context,
-            })
-            
-            # Final call to generate answer based on the retrieved context
-            final_response = ollama.chat(model=model, messages=messages)
-            return final_response['message']['content']
-            
-        except json.JSONDecodeError as e:
-            print(f"Failed to parse tool arguments: {e}")
-            print(f"Raw arguments: {args_str}")
-            # Fall through to return the original response
+            tool_call = json.loads(response_text)
+            if tool_call['function']['name'] == 'vector_database_retrieval':
+                query = tool_call['function']['arguments']['query']
+                context = qdrantRAG(query)
+                rag_output["used_rag"] = True
+                rag_output["rag_results"] = context
+                # Add the tool's result to the conversation
+                messages.append({'role': 'assistant', 'content': response_text})
+                messages.append({'role': 'tool', 'content': context})
+                
+                # Final call to generate answer based on the retrieved context
+                final_response = ollama.chat(model=model, messages=messages)
+                return final_response['message']['content'], rag_output
+        except json.JSONDecodeError:
+            print("Failed to parse tool call as JSON. Response was:", response_text)
         except Exception as e:
-            print(f"Error executing tool: {e}")
-            # Fall through to return the original response
-    
-    # If no tool was needed, just return the direct response
-    return response_text
+            print("Error processing tool call:", e)
+            print("Response text was:", response_text)
+
+    # If no tool calls, return the original response
+    return response_text, rag_output
 
 
 def handle_user_query(query: str, model_name: str = DEFAULT_AI_MODEL) -> str:
     # Check for CVE pattern in the query
     cve_matches = re.findall(CVE_PATTERN, query)
     cve_data = {}
+    rag_usage = {}
     if cve_matches:
         for cve_id in cve_matches:
             cve_info_dict = getCVEInfo(cve_id)
             cve_data[cve_id] = cve_info_dict
 
-    response = dynamic_rag(query, cve_data, model_name)
-    return response
+    response, rag_usage = dynamic_rag(query, cve_data, model_name)
+    return response, rag_usage, cve_data
 
 def main():
     print('Type "exit" to quit.')
@@ -289,7 +228,7 @@ def main():
         user_input = input("prompt> ")
         if user_input.lower() == 'exit':
             break
-        response = handle_user_query(user_input)
+        response, _, _ = handle_user_query(user_input)
         print("Response:", response)
 
 
