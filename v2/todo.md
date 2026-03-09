@@ -9,3 +9,7 @@
 
     
 
+## The model is displaying a poor ability to reliably call the vector database tool
+Test it without lora finetuning?
+Test with a pattern based system for calling vectordatabase?
+Use a separate LLM dedicated to tool calling?

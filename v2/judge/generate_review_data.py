@@ -4,7 +4,7 @@ from judge.score_db_utils import add_entry # function to add input/output pairs 
 from utils.queryGPT import queryGPT # function to query the LLM
 from utils.querySQLite import getRandomCVEs, getCVEInfo # function to get random CVEs from the database
 
-NUM_TO_GENERATE = 8
+NUM_TO_GENERATE = 191
 
 PROMPT = """You are roleplaying as a real human user typing a quick message into a cybersecurity chatbot. The chatbot is a vulnerability lookup tool — users typically ask it one of three things:
   1. Look up a specific CVE by ID (e.g. "tell me about CVE-2024-1234" or "whats CVE-2024-1234 about")
