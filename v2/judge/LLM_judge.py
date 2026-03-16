@@ -115,10 +115,10 @@ Reserve 9–10 for genuinely strong, well-aligned responses.
 --------------------------------
 OUTPUT FORMAT (STRICT)
 --------------------------------
-Output a single integer from 1 to 10.
-No explanation.
-No text.
-Only the number.
+1. Think step-by-step: Briefly explain your reasoning for the score (max 3 sentences).
+2. Score: Output the single integer from 1–10.
+
+Final Output: [Reasoning] | Score: [Integer]
 """
 
 
@@ -144,7 +144,15 @@ def main(model_to_score: str, judge_model: str):
             prompt += f"\n\nCVE data used in the response:\n{cve_data}"
         prompt += f"\n\nModel's answer to evaluate:\n{output_text}"
 
-        llm_score, usage_cost = queryGPT(prompt, judge_model)
+        llm_response, usage_cost = queryGPT(prompt, judge_model)
+
+        try:
+            llm_reasoning, llm_score_str = llm_response.split("| Score:")
+        except ValueError:
+            print(f"Warning: unexpected LLM response format for row {row['id']}: '{llm_response}' — skipping")
+            continue
+        llm_score = llm_score_str.strip()
+        llm_reasoning = llm_reasoning.replace("Reasoning:", "").strip()
         
         # Strip and validate the score before saving
         try:
@@ -155,7 +163,7 @@ def main(model_to_score: str, judge_model: str):
             print(f"Warning: unexpected score format for row {row['id']}: '{llm_score}' — skipping")
             continue
 
-        update_llm_score(row["id"], score)
+        update_llm_score(row["id"], score, llm_reasoning)
         total_cost += usage_cost["total_cost"]
         print(f"Row {row['id']} scored: {score}")
 

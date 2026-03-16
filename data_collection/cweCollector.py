@@ -11,7 +11,7 @@ def collect_cwe(cwe_id: int):
         A CWE object
     """
     db = Database()
-    cwe = db.get(cwe_id)
+    cwe = db.get(cwe_id)()
     return cwe
 # Output: "Server-Side Request Forgery (SSRF)"
 

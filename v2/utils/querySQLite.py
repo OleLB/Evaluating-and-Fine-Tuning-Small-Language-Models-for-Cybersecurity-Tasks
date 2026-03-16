@@ -81,3 +81,41 @@ def getRandomCVEs(limit=200):
     except Exception as e:
         print(f"Error connecting to database: {e}")
         return []
+    
+def addColumn():
+    # Add a column "attack_technique_name" to the cves table
+    try:
+        conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
+        cursor.execute("ALTER TABLE cves ADD COLUMN attack_technique_name TEXT")
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"Error connecting to database: {e}")
+        return
+    
+def getAllCVEs(database = DATABASE):
+    """Get all rows from a specified table."""
+    try:
+        conn = sqlite3.connect(database)
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM cves")
+        rows = cursor.fetchall()
+        conn.close()
+        return rows
+    except Exception as e:
+        print(f"Error connecting to database: {e}")
+        return []
+    
+
+def getConnection(database = DATABASE):
+    """Get a connection to the SQLite database."""
+    try:
+        conn = sqlite3.connect(database)
+        return conn
+    except Exception as e:
+        print(f"Error connecting to database: {e}")
+        return None
+    
+if __name__ == "__main__":
+    addColumn()

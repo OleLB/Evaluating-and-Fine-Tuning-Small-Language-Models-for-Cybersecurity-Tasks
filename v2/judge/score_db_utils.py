@@ -74,23 +74,23 @@ def get_all_unscored_by_llm(model: str) -> List[Dict[str, Any]]:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT * FROM Scores WHERE LLM_score IS NULL AND model_name = ?", (model,)
+            "SELECT * FROM Scores WHERE LLM_score IS NULL AND model_name = ? AND output != 'tmp'", (model,)
         )
         rows = cursor.fetchall()
         return [dict(row) for row in rows]
 
 
 # 6. Insert/update LLM_score for a given id
-def update_llm_score(row_id: int, score: float) -> bool:
+def update_llm_score(row_id: int, score: float, reasoning: str = None) -> bool:
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
             """
             UPDATE Scores
-            SET LLM_score = ?
+            SET LLM_score = ?, reasoning = ?
             WHERE id = ?
             """,
-            (score, row_id),
+            (score, reasoning, row_id),
         )
         conn.commit()
         return cursor.rowcount > 0
@@ -158,9 +158,83 @@ def delete_all_entries_by_model(model: str) -> int:
         )
         conn.commit()
         return cursor.rowcount
+    
+
+def reset():
+    # delete the data in "output", "rag_output", "cve_data", "Human_score", and "LLM_score" for all entries in the database
+    verify = input("Are you sure you want to reset the database? This will delete all output, rag_output, cve_data, Human_score, and LLM_score values. Type 'RESET' to confirm: ")
+    if verify != "RESET":
+        print("Reset cancelled.")
+        exit(0)
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            UPDATE Scores
+            SET output = 'tmp',
+                rag_output = NULL,
+                cve_data = NULL,
+                Human_score = NULL,
+                LLM_score = NULL,
+                reasoning = NULL
+            """,
+        )
+        conn.commit()
+        return cursor.rowcount
+
+
+def get_missing_output_entries(model: str) -> List[Dict[str, Any]]:
+    with get_connection() as conn:
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT * FROM Scores
+            WHERE output == 'tmp' AND model_name = ?
+            """,
+            (model,),
+        )
+        rows = cursor.fetchall()
+        return [dict(row) for row in rows]
+    
+def insert_output_by_id(row_id: int, output_text: str, rag_result: dict, cve_data: dict) -> bool:
+    rag_output = rag_result if rag_result else None
+    cve_data = str(cve_data) if cve_data else None
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            UPDATE Scores
+            SET output = ?,
+                rag_output = ?,
+                cve_data = ?
+            WHERE id = ?
+            """,
+            (output_text, rag_output, cve_data, row_id),
+        )
+        conn.commit()
+        return cursor.rowcount > 0
+
+def find_average_scores_by_model(model: str) -> Tuple[Optional[float], Optional[float]]:
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT
+                AVG(Human_score),
+                AVG(LLM_score)
+            FROM Scores
+            WHERE (Human_score IS NOT NULL AND model_name = ?)
+               OR (LLM_score IS NOT NULL AND model_name = ?)
+            """,
+            (model, model)
+        )
+        result = cursor.fetchone()
+        return result if result else (None, None)
 
 
 if __name__ == "__main__":
     # print("Database interaction module ready.")
     model = "mistral-nemo-cve2"
-    # delete_LLM_scores_by_model(model)
+    avg_human, avg_llm = find_average_scores_by_model(model)
+    print(f"Average scores for model '{model}': Human_score = {avg_human}, LLM_score = {avg_llm}")
