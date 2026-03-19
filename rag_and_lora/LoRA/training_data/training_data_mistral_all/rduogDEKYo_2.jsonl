@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the type of vulnerability present in cscms v4.1.\n\ncscms v4.1 allows for SQL injection via the 'js_del' function."}, {"role": "assistant", "content": "The vulnerability in cscms v4.1 is an SQL Injection (SQLi) vulnerability."}]}

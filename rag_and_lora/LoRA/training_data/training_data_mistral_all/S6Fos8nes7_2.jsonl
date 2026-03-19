@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nROPium v3.1 was discovered to contain an invalid memory address dereference via the find() function."}, {"role": "assistant", "content": "The vulnerability is classified as a 'Null Pointer Dereference'."}]}

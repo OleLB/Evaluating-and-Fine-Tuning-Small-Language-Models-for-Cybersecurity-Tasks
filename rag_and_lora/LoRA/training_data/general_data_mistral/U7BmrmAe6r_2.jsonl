@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the type of vulnerability described.\n\nA NULL pointer dereference in AcseConnection_parseMessage at src/mms/iso_acse/acse.c of libiec61850 v1.5.0 can lead to a segmentation fault or application crash."}, {"role": "assistant", "content": "This is a NULL pointer dereference vulnerability."}]}

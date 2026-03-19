@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Rewrite the description in clear, professional cybersecurity language.\n\nRemote Procedure Call Runtime Remote Code Execution Vulnerability"}, {"role": "assistant", "content": "This vulnerability involves a flaw in the Remote Procedure Call (RPC) runtime that allows remote code execution by an attacker."}]}

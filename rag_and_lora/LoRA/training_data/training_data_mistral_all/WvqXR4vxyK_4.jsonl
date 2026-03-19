@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Describe the components affected by this vulnerability.\n\nMicrosoft Exchange Server Remote Code Execution Vulnerability"}, {"role": "assistant", "content": "The affected component is Microsoft Exchange Server, which is critical for email and communication services within organizations."}]}

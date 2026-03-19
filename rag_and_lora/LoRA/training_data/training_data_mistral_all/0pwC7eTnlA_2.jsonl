@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nwolfSSL wolfMQTT 1.9 has a heap-based buffer overflow (8 bytes) in MqttDecode_Publish (called from MqttClient_DecodePacket and MqttClient_HandlePacket)."}, {"role": "assistant", "content": "This vulnerability is classified as a heap-based buffer overflow."}]}

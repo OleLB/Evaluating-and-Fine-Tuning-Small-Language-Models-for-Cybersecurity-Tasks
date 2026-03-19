@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Summarize the CVE description using standard cybersecurity language.\n\ncscms v4.1 allows for SQL injection via the 'js_del' function."}, {"role": "assistant", "content": "The cscms version 4.1 software is vulnerable to SQL injection through its 'js_del' function."}]}

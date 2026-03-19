@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Summarize the CVE description in clear technical language.\n\nWindows Docker Information Disclosure Vulnerability"}, {"role": "assistant", "content": "This CVE refers to an information disclosure vulnerability present in Docker for Windows."}]}

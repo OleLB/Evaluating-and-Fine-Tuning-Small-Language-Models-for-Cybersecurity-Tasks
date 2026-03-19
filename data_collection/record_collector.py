@@ -9,12 +9,15 @@ from datetime import datetime, timedelta
 from requests.exceptions import HTTPError
 import random
 import time
-from data_collection.db.db_interaction import add_cve, delete_cve, get_cve_by_id, get_all_cves
+from db.db_interaction import add_cve, delete_cve, get_cve_by_id, get_all_cves
 from cweCollector import collect_cwe
 
 
 
 API_KEY = "8c14429b-01ef-420f-aa7c-2b0ea95c853a"
+YEARS = [2022, 2021]
+CVE_COUNT_PER_YEAR = 1000
+
 
 def get_highest_nvd_severity(r):
     best_score = None
@@ -204,8 +207,7 @@ def process_cve(cve):
 
 
 if __name__ == "__main__":
-    years = [2022, 2021]
-    for year in years:
-        CVE_list = get_cves_multi_year(year, per_year=1000, instant_process=True)
+    for year in YEARS:
+        CVE_list = get_cves_multi_year(year, per_year=CVE_COUNT_PER_YEAR, instant_process=True)
 
     print("CVE data collection complete.")

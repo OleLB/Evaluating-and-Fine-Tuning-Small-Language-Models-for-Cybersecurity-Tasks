@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nIn Eternal Terminal 6.2.1, etserver and etclient have predictable logfile names in /tmp."}, {"role": "assistant", "content": "This is a local information disclosure vulnerability due to insecure temporary file creation."}]}

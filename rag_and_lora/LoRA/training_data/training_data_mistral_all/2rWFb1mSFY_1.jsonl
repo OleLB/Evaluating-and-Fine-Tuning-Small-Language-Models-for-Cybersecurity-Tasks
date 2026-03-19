@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Rewrite the CVE description in clear, professional cybersecurity language.\n\nMicrosoft Edge (Chromium-based) Elevation of Privilege Vulnerability"}, {"role": "assistant", "content": "A vulnerability in Microsoft Edge, which is based on the Chromium framework, allows for elevation of privilege."}]}

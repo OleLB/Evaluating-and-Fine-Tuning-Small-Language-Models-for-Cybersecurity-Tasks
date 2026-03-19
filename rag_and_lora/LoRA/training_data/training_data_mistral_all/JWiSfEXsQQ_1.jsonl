@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Describe the vulnerability in clear, professional terms.\n\nAll versions of package realms-shim are vulnerable to Sandbox Bypass via a Prototype Pollution attack vector."}, {"role": "assistant", "content": "The realms-shim package is susceptible to a Sandbox Bypass due to a Prototype Pollution vulnerability."}]}

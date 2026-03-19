@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Translate the provided CVE description for a technical report.\n\nFluxbb v1.4.12 is affected by a Cross Site Scripting (XSS) vulnerability."}, {"role": "assistant", "content": "Fluxbb version 1.4.12 has a Cross Site Scripting (XSS) vulnerability, which could be exploited to execute unauthorized scripts within user sessions."}]}

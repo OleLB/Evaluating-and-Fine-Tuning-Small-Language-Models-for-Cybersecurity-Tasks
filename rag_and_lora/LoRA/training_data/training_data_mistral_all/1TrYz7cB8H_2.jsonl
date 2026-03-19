@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nNASM v2.16 was discovered to contain a segmentation violation in the component ieee_write_file at /output/outieee.c."}, {"role": "assistant", "content": "The vulnerability is a segmentation fault, which falls under the category of Memory Safety issues."}]}

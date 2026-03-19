@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Classify the type of vulnerability based on standard terminology.\n\nInformation disclosure while invoking callback function of sound model driver from ADSP for every valid opcode received from sound model driver."}, {"role": "assistant", "content": "This vulnerability is classified as an Information Disclosure issue."}]}

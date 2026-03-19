@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Summarize the CVE description using professional cybersecurity terminology.\n\nWindows Lightweight Directory Access Protocol (LDAP) Denial of Service Vulnerability"}, {"role": "assistant", "content": "The vulnerability is a Denial of Service (DoS) issue related to the Windows Lightweight Directory Access Protocol (LDAP)."}]}

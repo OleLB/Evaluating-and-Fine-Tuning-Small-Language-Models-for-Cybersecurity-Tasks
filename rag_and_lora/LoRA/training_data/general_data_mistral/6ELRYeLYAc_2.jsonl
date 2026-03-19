@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "What type of vulnerability affects Fluxbb v1.4.12?\n\nFluxbb v1.4.12 is affected by a Cross Site Scripting (XSS) vulnerability."}, {"role": "assistant", "content": "The vulnerability is a Cross Site Scripting (XSS) flaw."}]}

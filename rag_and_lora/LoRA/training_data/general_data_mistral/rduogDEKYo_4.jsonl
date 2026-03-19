@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Describe the vulnerability using appropriate technical terminology.\n\ncscms v4.1 allows for SQL injection via the 'js_del' function."}, {"role": "assistant", "content": "This issue is classified as an input validation vulnerability where unsanitized user input is executed in a database query, exposing the system to SQL injection."}]}

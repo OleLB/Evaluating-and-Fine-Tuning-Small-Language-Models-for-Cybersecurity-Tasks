@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the standard vulnerability type for this CVE.\n\nfollow-redirects is vulnerable to Exposure of Private Personal Information to an Unauthorized Actor"}, {"role": "assistant", "content": "The vulnerability is an Information Disclosure flaw, where sensitive data is exposed to unauthorized parties."}]}

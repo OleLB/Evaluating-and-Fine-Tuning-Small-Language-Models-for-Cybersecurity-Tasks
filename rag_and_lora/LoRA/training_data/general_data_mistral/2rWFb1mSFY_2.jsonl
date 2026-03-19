@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nMicrosoft Edge (Chromium-based) Elevation of Privilege Vulnerability"}, {"role": "assistant", "content": "This is an Elevation of Privilege (EoP) vulnerability."}]}

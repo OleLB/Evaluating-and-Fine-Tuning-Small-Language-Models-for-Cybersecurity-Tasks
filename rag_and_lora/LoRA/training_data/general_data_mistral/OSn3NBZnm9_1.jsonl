@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Rewrite the description in clear, professional cybersecurity language.\n\nA Stack Overflow vulnerability exists in Binaryen 103 via the printf_common function."}, {"role": "assistant", "content": "A Stack Overflow vulnerability has been identified in Binaryen version 103, specifically within the printf_common function."}]}

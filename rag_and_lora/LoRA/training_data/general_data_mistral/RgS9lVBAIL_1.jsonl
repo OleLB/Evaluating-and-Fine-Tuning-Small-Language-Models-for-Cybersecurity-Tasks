@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Summarize the CVE description using professional cybersecurity language.\n\nfollow-redirects is vulnerable to Exposure of Private Personal Information to an Unauthorized Actor"}, {"role": "assistant", "content": "The 'follow-redirects' library has a vulnerability that exposes private personal information to unauthorized actors."}]}

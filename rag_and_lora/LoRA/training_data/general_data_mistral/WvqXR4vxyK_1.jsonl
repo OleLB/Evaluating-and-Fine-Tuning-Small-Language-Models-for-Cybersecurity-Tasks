@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Summarize the given CVE description in professional cybersecurity terms.\n\nMicrosoft Exchange Server Remote Code Execution Vulnerability"}, {"role": "assistant", "content": "The vulnerability allows an attacker to execute arbitrary code remotely on Microsoft Exchange Server systems."}]}

@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nCoreFTP Server before 727 allows directory traversal (for file creation) by an authenticated attacker via ../ in an HTTP PUT request."}, {"role": "assistant", "content": "The vulnerability type is Directory Traversal, which allows path manipulation."}]}

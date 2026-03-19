@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the affected software and version.\n\nA denial of service vulnerabiity exists in fig2dev through 3.28a due to a segfault in the open_stream function in readpics.c."}, {"role": "assistant", "content": "The affected software is fig2dev, and the vulnerability exists in versions up to and including 3.28a."}]}

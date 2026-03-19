@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Describe where the issue occurs within the code.\n\nA denial of service vulnerabiity exists in fig2dev through 3.28a due to a segfault in the open_stream function in readpics.c."}, {"role": "assistant", "content": "The issue occurs in the open_stream function within the readpics.c source file of fig2dev."}]}

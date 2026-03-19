@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Classify the type of vulnerability described.\n\nWindows Lightweight Directory Access Protocol (LDAP) Denial of Service Vulnerability"}, {"role": "assistant", "content": "The vulnerability is classified as a Denial of Service (DoS) vulnerability."}]}

@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Rewrite the description in clear, professional cybersecurity language.\n\nROPium v3.1 was discovered to contain an invalid memory address dereference via the find() function."}, {"role": "assistant", "content": "ROPium version 3.1 contains a vulnerability where an invalid memory address dereference occurs in the find() function."}]}

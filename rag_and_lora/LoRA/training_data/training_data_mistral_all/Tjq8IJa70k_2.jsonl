@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Identify the vulnerability type using standard terminology.\n\nA Pointer Dereference Vulnerability exists in GPAC 1.0.1 via the Media_IsSelfContained function, which could cause a Denial of Service. ."}, {"role": "assistant", "content": "The vulnerability type is a Pointer Dereference, which is a category of memory safety issues."}]}

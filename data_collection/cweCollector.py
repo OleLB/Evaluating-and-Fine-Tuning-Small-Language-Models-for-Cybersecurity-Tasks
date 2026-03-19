@@ -1,4 +1,7 @@
-"""This script collects CWE data from a CWE id using the cwe library."""
+"""
+This script collects CWE data from a CWE id using the cwe library.
+It is automatically called by record_collector.py
+"""
 
 from cwe import Database
 
