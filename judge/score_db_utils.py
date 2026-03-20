@@ -1,30 +1,34 @@
 import sqlite3
 from typing import List, Optional, Tuple, Dict, Any
 
-DB_PATH = "db/scores.db"
+DB_PATH = "db/scores_new.db"
 
 
 def get_connection():
     return sqlite3.connect(DB_PATH)
 
 
+def _get_or_create_input_id(cursor, input_text: str) -> int:
+    """Insert input_text into Inputs if not present, return its id."""
+    cursor.execute("INSERT OR IGNORE INTO Inputs (input) VALUES (?)", (input_text,))
+    cursor.execute("SELECT id FROM Inputs WHERE input = ?", (input_text,))
+    return cursor.fetchone()[0]
+
+
 # 1. Add input/output pair, return created row id
 def add_entry(input_text: str, output_text: str, model_name: str, rag_usage: dict, cve_data: dict = None) -> int:
     rag_output = rag_usage["rag_results"] if rag_usage["used_rag"] else None
-    
-    # cve_data is a dict of CVEs where the CVE id is the key
-    # it needs to be converted to a string to be stored in the database
     cve_data_str = str(cve_data) if cve_data else None
 
     with get_connection() as conn:
         cursor = conn.cursor()
+        input_id = _get_or_create_input_id(cursor, input_text)
         cursor.execute(
             """
-            INSERT INTO Scores (input, output, model_name, rag_output, cve_data)
-
+            INSERT INTO Scores (input_id, output, model_name, rag_output, cve_data)
             VALUES (?, ?, ?, ?, ?)
             """,
-            (input_text, output_text, model_name, rag_output, cve_data_str),
+            (input_id, output_text, model_name, rag_output, cve_data_str),
         )
         conn.commit()
         return cursor.lastrowid
@@ -35,7 +39,15 @@ def get_row_by_id(row_id: int) -> Optional[Dict[str, Any]]:
     with get_connection() as conn:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Scores WHERE id = ?", (row_id,))
+        cursor.execute(
+            """
+            SELECT s.id, s.model_name, i.input, s.output, s.rag_output, s.cve_data, s.LLM_score, s.Human_score
+            FROM Scores s
+            JOIN Inputs i ON s.input_id = i.id
+            WHERE s.id = ?
+            """,
+            (row_id,),
+        )
         row = cursor.fetchone()
         return dict(row) if row else None
 
@@ -57,8 +69,10 @@ def get_random_unscored_by_human(limit: int, model: str) -> List[Dict[str, Any]]
         cursor = conn.cursor()
         cursor.execute(
             """
-            SELECT * FROM Scores
-            WHERE Human_score IS NULL AND model_name = ?
+            SELECT s.id, s.model_name, i.input, s.output, s.rag_output, s.cve_data, s.LLM_score, s.Human_score
+            FROM Scores s
+            JOIN Inputs i ON s.input_id = i.id
+            WHERE s.Human_score IS NULL AND s.model_name = ?
             ORDER BY RANDOM()
             LIMIT ?
             """,
@@ -74,7 +88,13 @@ def get_all_unscored_by_llm(model: str) -> List[Dict[str, Any]]:
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT * FROM Scores WHERE LLM_score IS NULL AND model_name = ? AND output != 'tmp'", (model,)
+            """
+            SELECT s.id, s.model_name, i.input, s.output, s.rag_output, s.cve_data, s.LLM_score, s.Human_score
+            FROM Scores s
+            JOIN Inputs i ON s.input_id = i.id
+            WHERE s.LLM_score IS NULL AND s.model_name = ? AND s.output != 'tmp'
+            """,
+            (model,),
         )
         rows = cursor.fetchall()
         return [dict(row) for row in rows]
@@ -110,7 +130,8 @@ def update_human_score(row_id: int, score: float) -> bool:
         )
         conn.commit()
         return cursor.rowcount > 0
-    
+
+
 def delete_LLM_scores_by_model(model: str) -> int:
     # Sets all LLM_score values to NULL for the specified model
     with get_connection() as conn:
@@ -140,11 +161,11 @@ def get_average_scores(model: str) -> Tuple[Optional[float], Optional[float]]:
             WHERE (Human_score IS NOT NULL AND model_name = ?)
                OR (LLM_score IS NOT NULL AND model_name = ?)
             """,
-            (model, model)
+            (model, model),
         )
         result = cursor.fetchone()
         return result if result else (None, None)
-    
+
 
 def delete_all_entries_by_model(model: str) -> int:
     with get_connection() as conn:
@@ -158,7 +179,7 @@ def delete_all_entries_by_model(model: str) -> int:
         )
         conn.commit()
         return cursor.rowcount
-    
+
 
 def reset():
     # delete the data in "output", "rag_output", "cve_data", "Human_score", and "LLM_score" for all entries in the database
@@ -189,14 +210,17 @@ def get_missing_output_entries(model: str) -> List[Dict[str, Any]]:
         cursor = conn.cursor()
         cursor.execute(
             """
-            SELECT * FROM Scores
-            WHERE output == 'tmp' AND model_name = ?
+            SELECT s.id, s.model_name, i.input, s.output, s.rag_output, s.cve_data, s.LLM_score, s.Human_score
+            FROM Scores s
+            JOIN Inputs i ON s.input_id = i.id
+            WHERE s.output = 'tmp' AND s.model_name = ?
             """,
             (model,),
         )
         rows = cursor.fetchall()
         return [dict(row) for row in rows]
-    
+
+
 def insert_output_by_id(row_id: int, output_text: str, rag_result: dict, cve_data: dict) -> bool:
     rag_output = rag_result if rag_result else None
     cve_data = str(cve_data) if cve_data else None
@@ -215,6 +239,7 @@ def insert_output_by_id(row_id: int, output_text: str, rag_result: dict, cve_dat
         conn.commit()
         return cursor.rowcount > 0
 
+
 def find_average_scores_by_model(model: str) -> Tuple[Optional[float], Optional[float]]:
     with get_connection() as conn:
         cursor = conn.cursor()
@@ -227,14 +252,13 @@ def find_average_scores_by_model(model: str) -> Tuple[Optional[float], Optional[
             WHERE (Human_score IS NOT NULL AND model_name = ?)
                OR (LLM_score IS NOT NULL AND model_name = ?)
             """,
-            (model, model)
+            (model, model),
         )
         result = cursor.fetchone()
         return result if result else (None, None)
 
 
 if __name__ == "__main__":
-    # print("Database interaction module ready.")
     model = "mistral-nemo-cve2"
     avg_human, avg_llm = find_average_scores_by_model(model)
     print(f"Average scores for model '{model}': Human_score = {avg_human}, LLM_score = {avg_llm}")

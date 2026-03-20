@@ -2,5 +2,5 @@ keys/*
 CVE_records/*
 v2/LoRA/training_data*
 *.zip
-finetuned_models/*
+finetuned_models/*/
 env/*

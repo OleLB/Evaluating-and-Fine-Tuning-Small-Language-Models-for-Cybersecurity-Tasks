@@ -7,10 +7,11 @@ from peft import LoraConfig, get_peft_model
 from pathlib import Path
 from huggingface_hub import login
 import torch
+from utils.readFile import readFile
 
 HUGGINGFACE_TOKEN_PATH = "keys/huggingface_token.key"
-with open(HUGGINGFACE_TOKEN_PATH, "r") as f:
-    HUGGINGFACE_TOKEN = f.read().strip()
+HUGGINGFACE_TOKEN = readFile(HUGGINGFACE_TOKEN_PATH).strip()
+
 login(token=HUGGINGFACE_TOKEN)
 
 # --------------------------

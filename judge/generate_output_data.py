@@ -1,3 +1,5 @@
+"""This script generates answers to questions that already exist in the database, but are missing outputs"""
+
 from judge.score_db_utils import get_missing_output_entries, insert_output_by_id
 from main import handle_user_query
 
