@@ -1,7 +1,7 @@
 import sqlite3
 from typing import List, Optional, Tuple, Dict, Any
 
-DB_PATH = "db/scores_new.db"
+DB_PATH = "db/scores.db"
 
 
 def get_connection():
@@ -240,25 +240,8 @@ def insert_output_by_id(row_id: int, output_text: str, rag_result: dict, cve_dat
         return cursor.rowcount > 0
 
 
-def find_average_scores_by_model(model: str) -> Tuple[Optional[float], Optional[float]]:
-    with get_connection() as conn:
-        cursor = conn.cursor()
-        cursor.execute(
-            """
-            SELECT
-                AVG(Human_score),
-                AVG(LLM_score)
-            FROM Scores
-            WHERE (Human_score IS NOT NULL AND model_name = ?)
-               OR (LLM_score IS NOT NULL AND model_name = ?)
-            """,
-            (model, model),
-        )
-        result = cursor.fetchone()
-        return result if result else (None, None)
+
 
 
 if __name__ == "__main__":
-    model = "mistral-nemo-cve2"
-    avg_human, avg_llm = find_average_scores_by_model(model)
-    print(f"Average scores for model '{model}': Human_score = {avg_human}, LLM_score = {avg_llm}")
+    pass

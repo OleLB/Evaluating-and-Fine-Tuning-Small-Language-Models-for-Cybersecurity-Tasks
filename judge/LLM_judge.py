@@ -60,5 +60,5 @@ def main(model_to_score: str, judge_model: str):
 
 if __name__ == "__main__":
     JUDGE_MODEL = "gpt-5"
-    MODEL_TO_SCORE = "mistral-nemo-cve2"
+    MODEL_TO_SCORE = "llama3.1_cve"
     main(MODEL_TO_SCORE, JUDGE_MODEL)

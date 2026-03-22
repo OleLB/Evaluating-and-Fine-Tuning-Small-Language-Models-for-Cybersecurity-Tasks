@@ -57,5 +57,5 @@ def generate_all_outputs(model_name: str):
 
 
 if __name__ == "__main__":
-    MODEL_NAME = "mistral-nemo-cve2"
+    MODEL_NAME = "llama3.1_cve"
     generate_all_outputs(MODEL_NAME)

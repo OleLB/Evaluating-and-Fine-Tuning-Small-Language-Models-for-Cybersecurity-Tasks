@@ -23,6 +23,7 @@ def initialize_new_database(db_name="scores.db"):
             cve_data TEXT,
             LLM_score REAL,
             Human_score REAL,
+            reasoning TEXT,
             FOREIGN KEY (input_id) REFERENCES Inputs(id)
         );
     """)
