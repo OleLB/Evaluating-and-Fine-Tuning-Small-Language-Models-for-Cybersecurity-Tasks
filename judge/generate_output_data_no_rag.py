@@ -25,7 +25,7 @@ import ollama
 from judge.score_db_utils import add_entry, get_connection
 
 
-DEFAULT_MODEL_TO_TEST = "llama3.1:8b"   # Override via --model CLI argument
+DEFAULT_MODEL_TO_TEST = "mistral-nemo:12b-instruct-2407-q8_0"
 SOURCE_MODEL          = "mistral-nemo-cve2"  # Only process rows where model = SOURCE_MODEL
 
 

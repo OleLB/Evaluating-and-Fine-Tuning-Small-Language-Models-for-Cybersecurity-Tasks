@@ -1,92 +1,24 @@
-
 from scipy import stats
 import numpy as np
-from judge.score_db_utils import get_all_unscored_by_llm, update_llm_score, get_connection
+from judge.score_db_utils import get_connection
 from typing import Tuple, Optional
-
-import matplotlib.pyplot as plt
-import os
-
-def plot_score_histogram(model_name: str) -> None:
-    """
-    Plot a histogram of LLM evaluation scores and save to /results/.
-
-    Args:
-        scores: List of integer scores (1-10)
-        model_name: Name of the model (used in title and filename)
-    """
-    # connect to DB
-    with get_connection() as conn:
-        cursor = conn.cursor()
-        cursor.execute(
-            """
-            SELECT LLM_score
-            FROM Scores
-            WHERE model_name = ? AND LLM_score IS NOT NULL
-            """,
-            (model_name,),
-        )
-        scores = [row[0] for row in cursor.fetchall()]
-
-    n = len(scores)
-    mean = np.mean(scores)
-    sd = np.std(scores, ddof=1)
-    se = sd / np.sqrt(n)
-    ci_lower, ci_upper = stats.t.interval(0.95, df=n-1, loc=mean, scale=se)
-
-    fig, ax = plt.subplots(figsize=(8, 5))
-
-    ax.hist(scores, bins=range(1, 12), align="left", color="steelblue",
-            edgecolor="white", linewidth=0.8, rwidth=0.85)
-
-    ax.axvline(mean, color="crimson", linewidth=1.8, linestyle="--", label=f"Mean: {mean:.2f}")
-    ax.axvspan(ci_lower, ci_upper, alpha=0.28, color="crimson", label=f"95% CI: ({ci_lower:.2f}, {ci_upper:.2f})")
-
-    ax.set_title(f"Score Distribution — {model_name}", fontsize=14, fontweight="bold", pad=14)
-    ax.set_xlabel("Score", fontsize=12)
-    ax.set_ylabel("Count", fontsize=12)
-    ax.set_xticks(range(1, 11))
-    ax.set_xlim(0.5, 10.5)
-    ax.legend(fontsize=10)
-
-    # stats_text = f"N={n}  |  Mean={mean:.2f}  |  SD={sd:.2f}"
-    # ax.text(0.5, -0.12, transform=ax.transAxes,
-    #         ha="center", fontsize=9.5, color="gray")
-
-    os.makedirs("results", exist_ok=True)
-    output_path = f"results/histogram_{model_name}.png"
-    fig.savefig(output_path, dpi=150, bbox_inches="tight")
-    plt.close(fig)
-    print(f"Saved: {output_path}")
-
 
 
 def get_ci(scores, confidence_level: float = 0.95) -> Optional[Tuple[float, float]]:
     n = len(scores)
     if n < 1:
         return None
-
     avg = np.mean(scores)
-    sd = np.std(scores, ddof=1)  # Sample standard deviation
-    se = sd / np.sqrt(n)  # Standard error
-
+    sd = np.std(scores, ddof=1)
+    se = sd / np.sqrt(n)
     a = 1 - confidence_level
     t_value = stats.t.ppf(1 - a/2, df=n-1)
     ci = (avg - t_value * se, avg + t_value * se)
-
     return ci
 
 
 def get_confidence_intervals(model: str, confidence_level: float = 0.95) -> Tuple[Optional[Tuple[float, float]], Optional[Tuple[float, float]]]:
-    """
-    Return the CI for nodel score. Using t-distribtion.
-    df = n-1, where n = score count
-    [avg +- t_value,df * (sd / sqrt(n))]
-    Returns:
-        tuple(human_ci, llm_ci)
-    """
     scores = {'human': [], 'llm': []}
-    # get all scores for the model
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
@@ -103,8 +35,6 @@ def get_confidence_intervals(model: str, confidence_level: float = 0.95) -> Tupl
                 scores['human'].append(human_score)
             if llm_score is not None:
                 scores['llm'].append(llm_score)
-
-    # llm judge first
     human_ci = get_ci(scores['human'], confidence_level)
     llm_ci = get_ci(scores['llm'], confidence_level)
     return human_ci, llm_ci
@@ -126,18 +56,179 @@ def find_average_scores_by_model(model: str) -> Tuple[Optional[float], Optional[
         )
         result = cursor.fetchone()
         return result if result else (None, None)
-    
+
+
+def get_median_scores(model: str) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Returns the median (human_median, llm_median) for a given model.
+    Returns (None, None) if no scores are found.
+    """
+    scores = {'human': [], 'llm': []}
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT Human_score, LLM_score
+            FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        for row in cursor.fetchall():
+            human_score, llm_score = row
+            if human_score is not None:
+                scores['human'].append(human_score)
+            if llm_score is not None:
+                scores['llm'].append(llm_score)
+
+    human_median = float(np.median(scores['human'])) if scores['human'] else None
+    llm_median = float(np.median(scores['llm'])) if scores['llm'] else None
+    return human_median, llm_median
+
+
+def get_failure_rate(model: str, threshold: int = 3) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Returns the critical failure rate (human_rate, llm_rate) for a given model.
+    Failure is defined as score < threshold (default: 3).
+    Rate = count(score < threshold) / total scores.
+    Returns (None, None) if no scores are found.
+    """
+    scores = {'human': [], 'llm': []}
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT Human_score, LLM_score
+            FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        for row in cursor.fetchall():
+            human_score, llm_score = row
+            if human_score is not None:
+                scores['human'].append(human_score)
+            if llm_score is not None:
+                scores['llm'].append(llm_score)
+
+    human_rate = sum(s < threshold for s in scores['human']) / len(scores['human']) if scores['human'] else None
+    llm_rate = sum(s < threshold for s in scores['llm']) / len(scores['llm']) if scores['llm'] else None
+    return human_rate, llm_rate
+
+
+def get_excellent_rate(model: str, threshold: int = 8) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Returns the excellent rate (human_rate, llm_rate) for a given model.
+    Excellent is defined as score > threshold (default: 8).
+    Rate = count(score > threshold) / total scores.
+    Returns (None, None) if no scores are found.
+    """
+    scores = {'human': [], 'llm': []}
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT Human_score, LLM_score
+            FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        for row in cursor.fetchall():
+            human_score, llm_score = row
+            if human_score is not None:
+                scores['human'].append(human_score)
+            if llm_score is not None:
+                scores['llm'].append(llm_score)
+
+    human_rate = sum(s > threshold for s in scores['human']) / len(scores['human']) if scores['human'] else None
+    llm_rate = sum(s > threshold for s in scores['llm']) / len(scores['llm']) if scores['llm'] else None
+    return human_rate, llm_rate
+
+
+def get_most_frequent_score(model: str) -> Tuple[Optional[int], Optional[int]]:
+    """
+    Returns the most frequent (mode) score (human_mode, llm_mode) for a given model.
+    If multiple scores share the highest frequency, the lowest value is returned.
+    Returns (None, None) if no scores are found.
+    """
+    scores = {'human': [], 'llm': []}
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT Human_score, LLM_score
+            FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        for row in cursor.fetchall():
+            human_score, llm_score = row
+            if human_score is not None:
+                scores['human'].append(human_score)
+            if llm_score is not None:
+                scores['llm'].append(llm_score)
+
+    human_mode = int(stats.mode(scores['human'], keepdims=False).mode) if scores['human'] else None
+    llm_mode = int(stats.mode(scores['llm'], keepdims=False).mode) if scores['llm'] else None
+    return human_mode, llm_mode
+
+
+def get_sd(model: str) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Returns the standard deviation (human_sd, llm_sd) for a given model.
+    Returns (None, None) if no scores are found.
+    """
+    scores = {'human': [], 'llm': []}
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT Human_score, LLM_score
+            FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        for row in cursor.fetchall():
+            human_score, llm_score = row
+            if human_score is not None:
+                scores['human'].append(human_score)
+            if llm_score is not None:
+                scores['llm'].append(llm_score)
+
+    human_sd = float(np.std(scores['human'], ddof=1)) if scores['human'] else None
+    llm_sd = float(np.std(scores['llm'], ddof=1)) if scores['llm'] else None
+    return human_sd, llm_sd
 
 
 if __name__ == "__main__":
-    models = ["mistral-nemo-cve2", "llama3.1_cve"]
-
+    models = ["llama3.1:8b", "deepseek_coder_cve", "deepseek-coder", "mistral-nemo-cve2", "llama3.1_cve", "mistral-nemo:12b-instruct-2407-q8_0"]
     for model in models:
-        avg_human, avg_llm = find_average_scores_by_model(model)
-        print(f"Average scores for model '{model}': Human_score = {avg_human}, LLM_score = {avg_llm}")
-        human_ci, llm_ci = get_confidence_intervals(model)
-        print(f"Model: {model}")
-        print(f"  Human_score 95% CI: {human_ci}")
-        print(f"  LLM_score 95% CI: {llm_ci}")
+        print(f"\n=== Model: {model} ===")
 
-        plot_score_histogram(model)
+        avg_human, avg_llm = find_average_scores_by_model(model)
+        print(f"  Average:        Human={avg_human}, LLM={avg_llm}")
+
+        human_ci, llm_ci = get_confidence_intervals(model)
+        print(f"  95% CI:         Human={human_ci}, LLM={llm_ci}")
+
+        human_median, llm_median = get_median_scores(model)
+        print(f"  Median:         Human={human_median}, LLM={llm_median}")
+
+        human_failure, llm_failure = get_failure_rate(model)
+        human_failure_str = f"{human_failure:.2%}" if human_failure is not None else "N/A"
+        llm_failure_str = f"{llm_failure:.2%}" if llm_failure is not None else "N/A"
+        print(f"  Failure rate:   Human={human_failure_str}, LLM={llm_failure_str}")
+
+        human_excellent, llm_excellent = get_excellent_rate(model)
+        human_excellent_str = f"{human_excellent:.2%}" if human_excellent is not None else "N/A"
+        llm_excellent_str = f"{llm_excellent:.2%}" if llm_excellent is not None else "N/A"
+        print(f"  Excellent rate: Human={human_excellent_str}, LLM={llm_excellent_str}")
+
+        human_mode, llm_mode = get_most_frequent_score(model)
+        print(f"  Mode:           Human={human_mode}, LLM={llm_mode}")
+
+        human_sd, llm_sd = get_sd(model)
+        print(f"  Standard deviation: Human={human_sd}, LLM={llm_sd}")
