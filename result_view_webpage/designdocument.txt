@@ -1,0 +1,46 @@
+
+
+# Background info
+
+DATABASE schema:
+sqlite> .fullschema
+CREATE TABLE Inputs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            input TEXT NOT NULL UNIQUE
+        );
+CREATE TABLE Scores (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            model_name TEXT NOT NULL,
+            input_id INTEGER NOT NULL,
+            output TEXT NOT NULL,
+            rag_output TEXT,
+            cve_data TEXT,
+            LLM_score REAL,
+            Human_score REAL, reasoning TEXT,
+            FOREIGN KEY (input_id) REFERENCES Inputs(id)
+        );
+/* No STAT tables available */
+
+
+Schema expanation:
+"input" is a question the model had to answer
+"output" is the model response
+"rag_output" is the additional context provided to the model for a specific input.
+"cve_data" is also additional info provided by the rag system
+"LLM_score" is a number from 1-10 indicating the quality of the given answer. Score is given by a large LLM based on factual accuracy and subjective helpfullness of the answer.
+"Human_score" is alwasy NULL (not implemented and probably wont ever be added)
+the rest should be self explanatory
+
+
+# Your job
+
+Create a python flask jinja2 webpage to view the test results of the AI models
+Test results are found in "db/scores.db"
+it should be simple (single page application, one template, no login or users or anything)
+It will function as a dynamic document where model results can easily be viewed
+The webpage should have functionality to sort by useful info such as model_name or LLM_score
+It should be possible to view results for a specific model. (filter non-relevant results)
+Build the webpage in the folder "result_view_webpage"
+ALL files related to the webpage should be in "result_view_webpage"
+The website should be started with the command "python3 app.py" or "python -m app"
+it should run on localhost:5000
