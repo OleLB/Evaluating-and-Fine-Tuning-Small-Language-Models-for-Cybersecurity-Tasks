@@ -1,3 +1,5 @@
+# File was not used to fine-tune any of the three final models
+
 import json
 from datasets import Dataset, load_dataset, concatenate_datasets
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, Trainer, TrainingArguments, DataCollatorForSeq2Seq

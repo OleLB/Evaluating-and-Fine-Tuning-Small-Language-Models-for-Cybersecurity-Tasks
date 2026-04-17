@@ -7,7 +7,7 @@ from huggingface_hub import login
 import torch
 import os
 
-HUGGINGFACE_TOKEN = "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"
+HUGGINGFACE_TOKEN = "removed"
 login(token=HUGGINGFACE_TOKEN)
 
 # --------------------------
