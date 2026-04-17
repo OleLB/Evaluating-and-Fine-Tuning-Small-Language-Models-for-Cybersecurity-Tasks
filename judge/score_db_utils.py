@@ -147,6 +147,19 @@ def delete_LLM_scores_by_model(model: str) -> int:
         conn.commit()
         return cursor.rowcount
 
+def delete_rows_by_model(model: str) -> int:
+    # Deletes all rows for the specified model
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            DELETE FROM Scores
+            WHERE model_name = ?
+            """,
+            (model,),
+        )
+        conn.commit()
+        return cursor.rowcount
 
 # 8. Get average Human_score and LLM_score
 def get_average_scores(model: str) -> Tuple[Optional[float], Optional[float]]:
