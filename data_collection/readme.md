@@ -1,7 +1,6 @@
 CVEs with: vulnStatus = "Rejected" are ignored by this system.
-NVD does not provide exploitation instructions or detailed descriptions. Might want to add a separate source that supplies this.
 
-==Data should already be collected and stored in db/cve_database.db, so there is no need to run anything in this folder==
+!!Data should already be collected and stored in db/cve_database.db, so there is no need to run anything in this folder!!
 
 # Instructions
 
