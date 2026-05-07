@@ -15,10 +15,13 @@ python -m data_collection.record_collector
 
 ### Get attack techniques
 Collect MITRE ATT&CK attack techniques with:  
+```python
 python -m data_collection.technique_labelling.techniqueCollector      # Will collect attack technique id's  
 python -m data_collection.attack_technique_discovery.getTechniqueName    # Will find technique common names by their id's  
-  
+```
 
 ### Get mitigation techniques
 Get MITRE ATT&CK mitigation techniqus with:  
+```python
 python -m data_collection.mitigation_technique_discovery.mitigationCollector  
+```
