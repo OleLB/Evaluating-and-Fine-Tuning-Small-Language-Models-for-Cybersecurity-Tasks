@@ -1,6 +1,7 @@
 """
 This file uses the CVE API to collect CVE data and stores it in an sqlite database.
 It also uses the cweCollector.py to get CWE data for each CVE.
+python -m data_collection.record_collector
 """
 
 # from pdb import main

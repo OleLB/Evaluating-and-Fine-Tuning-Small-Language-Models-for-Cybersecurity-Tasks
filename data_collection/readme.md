@@ -7,11 +7,14 @@ CVEs with: vulnStatus = "Rejected" are ignored by this system.
 
 ### Get CVE entries
 Run the record collector "record_collector.py", this will collect CVE entries and store them in a local database "/db/cve_database.db"  
-    - Specify a year range  
+Specify a year range and ammount of CVE to collect from each year, then run:    
+```python
+python -m data_collection.record_collector
+```  
 
 
 ### Get attack techniques
-Collect MITRE ATT&CK attack techniques with:
+Collect MITRE ATT&CK attack techniques with:  
 python -m data_collection.technique_labelling.techniqueCollector      # Will collect attack technique id's  
 python -m data_collection.attack_technique_discovery.getTechniqueName    # Will find technique common names by their id's  
   
