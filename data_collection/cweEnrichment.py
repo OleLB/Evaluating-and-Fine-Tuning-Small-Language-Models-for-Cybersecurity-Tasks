@@ -14,13 +14,18 @@ def collect_cwe(cwe_id: int):
         A CWE object
     """
     db = Database()
-    cwe = db.get(cwe_id)()
+    cwe = db.get(cwe_id)
     return cwe
-# Output: "Server-Side Request Forgery (SSRF)"
 
 
 if __name__ == "__main__":
     cwe = collect_cwe(918)  # Example CWE ID
+    
     if cwe:
         print(f"Name: {cwe.name}")
         print(f"Description: {cwe.description}")
+    """
+    Expected output:
+        Name: Server-Side Request Forgery (SSRF)
+        Description: The web server receives a URL ...
+    """

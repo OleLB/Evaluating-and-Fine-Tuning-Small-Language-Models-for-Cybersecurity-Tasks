@@ -115,13 +115,13 @@ def main():
     randomCVEs = getRandomCVEs()
     total_price = 0.0
     for cve in randomCVEs:
-        description = getDescription(cve)
-        prompt = preparePrompt(description)
+        descriptions = getDescription(cve)
+        prompt = preparePrompt(descriptions)
         response, usage_info = queryGPT(prompt, "gpt-4o")
         response = cleanResponse(response)
         if validateJSONResponse(response):
             response_array = json.loads(response)
-            arrayToFile(response_array, description)
+            arrayToFile(response_array, descriptions)
         else:
             print(f"Invalid JSON response for CVE {cve}. Response: {response}")
         total_price += usage_info["total_cost"]
