@@ -1,8 +1,11 @@
+"""
+Collect MITRE ATT&CK attack technique id's for all CVEs in the database
+python -m data_collection.technique_labelling.techniqueCollector
+"""
+
 from db.db_interaction import get_all_cves
 from data_collection.attack_technique_discovery.gpt_interact import get_attack_technique
 
-# Collect techniques for all CVEs in the database
-# python -m data_collection.technique_labelling.techniqueCollector
 
 def update_cve_with_technique(cve_id, technique, db_path="data_collection/db/cve_database.db"):
     import sqlite3

@@ -2,12 +2,11 @@
 Collects mitigation techniques for CVEs based on the MITRE ATT&CK technique ID associated with each CVE
 Script must be started manually
 Automatically enriches all entries in database.
+python -m data_collection.mitigation_technique_discovery.mitigationCollector
 """
 
-import sys
-from stix2 import MemoryStore, Filter
 from mitreattack.stix20 import MitreAttackData
-from data_collection.db.db_interaction import get_all_cves
+from db.db_interaction import get_all_cves
 import sqlite3
 
 DATABASE_PATH = "data_collection/db/cve_database.db"

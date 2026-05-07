@@ -1,4 +1,7 @@
-"""This script is used to fetch technique names based on their IDs."""
+"""
+This script is used to fetch technique names based on their IDs.
+python -m data_collection.attack_technique_discovery.getTechniqueName
+"""
 
 from mitreattack.stix20 import MitreAttackData
 from utils.querySQLite import getConnection, getAllCVEs

@@ -10,11 +10,16 @@ from requests.exceptions import HTTPError
 import random
 import time
 from db.db_interaction import add_cve, delete_cve, get_cve_by_id, get_all_cves
-from cweCollector import collect_cwe
+from data_collection.cweEnrichment import collect_cwe
 
+# read key in /keys/nvd.key
+try:
+    with open("keys/nvd.key", "r") as f:
+        API_KEY = f.read().strip()
+except Exception as e:
+    print(f"Error reading API key: {e}\n\nPlease ensure a valid API key is stored in keys/nvd.key")
+    exit(1)
 
-
-API_KEY = "8c14429b-01ef-420f-aa7c-2b0ea95c853a"
 YEARS = [2022, 2021]
 CVE_COUNT_PER_YEAR = 1000
 
