@@ -22,8 +22,8 @@ The system will likely perform poorly if run on anything less than this, and wil
 
 ## Install dependencies
 
-Ollama  # https://ollama.com/download/windows
-Docker  # https://docs.docker.com/desktop/setup/install/windows-install/
+Ollama  # https://ollama.com/download/windows  
+Docker  # https://docs.docker.com/desktop/setup/install/windows-install/  
 
 
 ## Download required AI models
