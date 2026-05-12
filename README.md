@@ -8,17 +8,17 @@ https://pytorch.org/get-started/locally/
 # Project has been tested on:
 
 ## Software
-Docker version 29.2.1, build a5c7197
-ollama version is 0.15.5
-Windows 11
+Docker version 29.2.1, build a5c7197  
+ollama version is 0.15.5  
+Windows 11  
 
 ## Hardware
 
-NVIDIA RTX4070TI (12GB VRAM)
-32GB DDR5 RAM (+40GB pagefile)
-AMD RYZEN 7 7700x 8-core
+NVIDIA RTX4070TI (12GB VRAM)  
+32GB DDR5 RAM (+40GB pagefile)  
+AMD RYZEN 7 7700x 8-core  
 
-The system will likely perform poorly if run on anything less than this, and will crash if not enough RAM or VRAM is available.
+The system will likely perform poorly if run on anything less than this, and will crash if not enough RAM or VRAM is available.  
 
 
 # Deployment
