@@ -1,9 +1,6 @@
-# Project Description
+# Description
 
-Pytorch installation:
-https://pytorch.org/get-started/locally/
-
-
+This project aims to evaluate the usefullness of small LLMs as penetration testing assistants in offline environments.
 
 # Project has been tested on:
 
