@@ -62,7 +62,7 @@ project-root/
 ```
 python -m virtualenv env
 ./env/script/activate
-# (or however you like to set up environments, this requires the virtualenv package)
+# or however you like to set up environments, this requires the virtualenv package
 
 pip install -r requirements.txt
 ```
