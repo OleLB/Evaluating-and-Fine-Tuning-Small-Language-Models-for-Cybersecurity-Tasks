@@ -18,7 +18,7 @@ from utils.readFile import readFile
 
 
 CVE_PATTERN = r"CVE-\d{4}-\d{4,7}"
-DEFAULT_AI_MODEL = "mistral-nemo-cve2:latest"
+DEFAULT_AI_MODEL = "mistral_nemo_cve:latest"
 RAG_MODEL = "mistral-nemo:latest"
 
 
@@ -79,17 +79,17 @@ def AI_pipeline(user_prompt: str, cve_data: dict, model: str) -> tuple[str, dict
     rag_results = ""
 
     # regex check for version numbers in the prompt to decide if RAG is needed
-    version_pattern = r"\b\d+\.\d+(\.\d+)?\b"
-    if re.search(version_pattern, user_prompt) and re.search(r"\b\w+\b", user_prompt):
-        # --- Stage 1: RAG model ---
-        # rag_results: formatted string of retrieved CVE data (or "" if no tool call)
+    version_pattern = r"\b\d+\.\d+(\.\d+)*\b"
+    any_word_pattern = r"\b\w+\b"
+    if re.search(version_pattern, user_prompt) and re.search(any_word_pattern, user_prompt):
+        # rag_results: formatted string of retrieved CVE data
         # rag_output:  metadata dict for logging {"used_rag": bool, "rag_results": ...}
         rag_results, rag_output = qdrant_RAG(user_prompt)
 
     if rag_output["used_rag"] and rag_results.strip() == "":
         rag_results = "Tried finding relevant CVEs with RAG but got no results. This may indicate that the software has no known vulnerabilities"
 
-    # --- Stage 2: Build context for the LoRA model ---
+    # Build context for the LoRA model
     context = build_context_block(cve_data, rag_results)
 
     if rag_output["used_rag"]:
@@ -106,12 +106,6 @@ def AI_pipeline(user_prompt: str, cve_data: dict, model: str) -> tuple[str, dict
     else:
         SYSTEM_PROMPT = GENERALL_INFORMATION_PROMPT
         # If no CVE data and no RAG results, we could choose to return early or proceed with a generic prompt.
-
-
-    # DEBUG: print the context being passed to the LoRA model
-    # print("\n--- Context passed to LoRA model ---")
-    # print(context)
-    # print("--- End of context ---\n")
 
     # Inject retrieved context as a second system message so the LoRA model
     # never mistakes it for user input.

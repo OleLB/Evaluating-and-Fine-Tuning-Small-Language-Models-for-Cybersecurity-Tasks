@@ -1,6 +1,6 @@
 """
 0. Open and read database db/scores.db
-1. Select * FROM table "Scores" where column "model" is "mistral-nemo-cve2"
+1. Select * FROM table "Scores" where column "model" is "mistral_nemo_cve"
 2. For each row, extract the "input_id", "cve_data" and "rag_output" columns.
 3. Using the "input_id", look up the corresponding "input" value from the "Inputs" table.
 4. use a specified AI model (MODEL_TO_TEST) and pass the "question" value using ollama (first check if the model has already answered that question, if so, skip to the next row) and get the output.
@@ -26,7 +26,7 @@ from judge.score_db_utils import add_entry, get_connection
 
 
 DEFAULT_MODEL_TO_TEST = "mistral-nemo:12b-instruct-2407-q8_0"
-SOURCE_MODEL          = "mistral-nemo-cve2"  # Only process rows where model = SOURCE_MODEL
+SOURCE_MODEL          = "mistral_nemo_cve"  # Only process rows where model = SOURCE_MODEL
 
 
 def fetch_source_rows(conn: sqlite3.Connection) -> list[dict]:

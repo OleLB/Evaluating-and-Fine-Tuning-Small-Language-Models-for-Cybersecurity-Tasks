@@ -80,7 +80,7 @@ def prep_question():
 
 
 if __name__ == "__main__":
-    model_name = "mistral-nemo-cve2"
+    model_name = "mistral_nemo_cve"
     for i in range(NUM_TO_GENERATE):
         print(f"Generating entry {i + 1}/{NUM_TO_GENERATE}...")
         question = prep_question()

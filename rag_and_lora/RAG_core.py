@@ -7,7 +7,7 @@ from rag_and_lora.qdrant.queryQdrant import query_qdrant
 from packaging import version
 
 DATABASE = "db/cve_database.db"
-DEFAULT_AI_MODEL = "mistral-nemo"
+DEFAULT_AI_MODEL = "mistral-nemo" # default model to manage the vector database retrieval stage of the pipeline
 
 SYSTEM_PROMPT = """
 ### ROLE
@@ -153,7 +153,7 @@ def qdrantRAG(software_name: str, target_version:str, top_x: int = 5) -> str:
             results.append(f"[{cve_id}] (Score: {item.score:.4f})\n  Note: {cve_info}")
             continue
 
-        # --- CLEANING STEP ---
+        # CLEANING STEP
         # Replace the massive JSON dump with a human-readable summary
         vuln_summary = clean_cpe_data(cve_info.get('Known Vulnerable Software', ''), target_version)
 
@@ -171,6 +171,7 @@ def qdrantRAG(software_name: str, target_version:str, top_x: int = 5) -> str:
         if len(results) >= top_x: break
 
     return "\n\n---\n\n".join(results)
+
 
 def qdrant_RAG(user_prompt: str, model: str = DEFAULT_AI_MODEL) -> tuple[str, dict]:
     """

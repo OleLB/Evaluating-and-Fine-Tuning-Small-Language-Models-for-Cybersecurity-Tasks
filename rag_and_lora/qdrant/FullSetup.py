@@ -7,32 +7,43 @@ from rag_and_lora.qdrant.loadCPEs import load_cpe_to_qdrant
 from rag_and_lora.qdrant.startQdrant import start_qdrant
 from rag_and_lora.qdrant.qdrantManager import QdrantManager
 
-print("Please ensure that Docker and ollama is running before executing this script.")
-confirm = input("Have you started Docker and Ollama? (y/n): ").strip().lower()
-if confirm != 'y':
-    print("Please start Docker and Ollama and then run this script again.")
-    exit(1)
 
-qdrant_available = start_qdrant()
-if not qdrant_available:
-    print("Failed to start Qdrant. Please check the logs.")
-    exit(1)
 
-print("Qdrant is running. Attempting to connect...")
-qdrant_manager = QdrantManager()
+def qdrant_data_initialization():
+    """
+    Will check platform, Docker installation, image and container status, and start Qdrant if necessary. 
+    Then it will check if the CPE collection exists in Qdrant and load the CPE data if not already loaded.
+    """
+    qdrant_available = start_qdrant()
+    if not qdrant_available:
+        print("Failed to start Qdrant. Please check the logs.")
+        exit(1)
 
-if not qdrant_manager.is_connected():
-    print("Failed to connect to Qdrant. Please check the logs.")
-    exit(1)
+    print("Qdrant is running. Attempting to connect...")
+    qdrant_manager = QdrantManager()
 
-print("Connected to Qdrant successfully!")
-print("Checking if CPE data is already loaded...")
+    if not qdrant_manager.is_connected():
+        print("Failed to connect to Qdrant. Please check the logs.")
+        exit(1)
 
-collections = qdrant_manager.list_collections()
-if "cpe_vulnerabilities" in collections:
-    print("CPE collection already exists. Assuming data is loaded.")
-else:
-    print("CPE collection not found. Loading CPE data...")
-    load_cpe_to_qdrant()
+    print("Connected to Qdrant successfully!")
+    print("Checking if CPE data is already loaded...")
 
-print("\nSetup complete! Qdrant is running and CPE data is loaded.")
+    collections = qdrant_manager.list_collections()
+    if "cpe_vulnerabilities" in collections:
+        print("CPE collection already exists. Assuming data is loaded.")
+    else:
+        print("CPE collection not found. Loading CPE data...")
+        load_cpe_to_qdrant()
+
+
+if __name__ == "__main__":
+    print("Please ensure that Docker and ollama is running before executing this script.")
+
+    confirm = input("Have you started Docker and Ollama? (y/n): ").strip().lower()
+    if confirm != 'y':
+        print("Please start Docker and Ollama and then run this script again.")
+        exit(1)
+
+    qdrant_data_initialization()
+    print("\nSetup complete! Qdrant is running and CPE data is loaded.")

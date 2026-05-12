@@ -182,7 +182,9 @@ def wait_for_qdrant(max_attempts=30, delay=1):
 
 
 def start_qdrant():
-    """Main execution flow."""
+    """
+    Will check platform, Docker installation, image and container status, and start Qdrant if necessary.
+    """
     print("=" * 60)
     print("Qdrant Docker Container Manager")
     print(f"Platform: {platform.system()}")

@@ -56,7 +56,7 @@ def plot_score_histogram(model_name: str) -> None:
 
 
 if __name__ == "__main__":
-    models = ["llama3.1:8b", "deepseek_coder_cve", "deepseek-coder", "mistral-nemo-cve2", "llama3.1_cve", "mistral-nemo:12b-instruct-2407-q8_0"]
+    models = ["llama3.1:8b", "deepseek_coder_cve", "deepseek-coder", "mistral_nemo_cve", "llama3.1_cve", "mistral-nemo:12b-instruct-2407-q8_0"]
 
     for model in models:
         plot_score_histogram(model)

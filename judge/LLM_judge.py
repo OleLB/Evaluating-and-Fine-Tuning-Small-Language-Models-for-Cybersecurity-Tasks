@@ -60,7 +60,7 @@ def main(model_to_score: str, judge_model: str):
 
 if __name__ == "__main__":
     JUDGE_MODEL = "gpt-5"
-    MODELS_TO_SCORE = ["deepseek-coder", "llama3.1:8b", "deepseek_coder_cve", "llama3.1_cve", "mistral-nemo:12b-instruct-2407-q8_0", "mistral-nemo-cve2"]
+    MODELS_TO_SCORE = ["deepseek-coder", "llama3.1:8b", "deepseek_coder_cve", "llama3.1_cve", "mistral-nemo:12b-instruct-2407-q8_0", "mistral_nemo_cve"]
     # MODEL_TO_SCORE = "llama3.1_cve"
     for MODEL_TO_SCORE in MODELS_TO_SCORE:
         main(MODEL_TO_SCORE, JUDGE_MODEL)

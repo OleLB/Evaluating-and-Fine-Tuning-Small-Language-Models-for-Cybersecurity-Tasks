@@ -25,5 +25,5 @@ def generate_output_data(model_name: str):
 
 
 if __name__ == "__main__":
-    model_name = "mistral-nemo-cve2"
+    model_name = "mistral_nemo_cve"
     generate_output_data(model_name)
