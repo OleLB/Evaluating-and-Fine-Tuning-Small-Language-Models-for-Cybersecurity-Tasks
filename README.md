@@ -50,10 +50,12 @@ Visit this huggingface page: https://huggingface.co/olelb/cybersecurity_model_pa
 and download the file "finetuned_models.zip", then extract it to the project root.  
 
 Your folder structure should be like this:  
+```
 project-root/  
    |--- main.py  
    |--- finetuned_models/mistral_nemo_cve/...  
    ...  
+```
 
 ## Create virtual environment and install python packages
 
